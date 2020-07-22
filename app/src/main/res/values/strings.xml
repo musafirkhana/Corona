@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">BAF CORONA INFO</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="no_internet_connection">Hello No Internet</string>
+
+    <string name="loading">Loading...</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="bottom_text">                                 FREE SHALL WE KEEP THE SKY OF BANGLADESH                         </string>
+    <string name="mapbox_access_token">pk.eyJ1IjoiYWxpLW1ic3R1LWljdCIsImEiOiJja2Nxa3BpdHQwaDR5MnFtZ2U0ZjFlamQ2In0.n_kdLBox5bym8mE-kCYKpA</string>
+    <string name="password_text">To access this section of app user need authentication from Air HQ, Please cantact with BAF Comm Unit</string>
+</resources>

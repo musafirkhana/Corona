@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:id="@+id/top_linear"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPurple_A400"
+        >
+
+        <RelativeLayout android:id="@+id/left_relative"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:onClick="BACK"
+            android:layout_alignParentLeft="true">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_back">
+
+            </ImageView>
+
+
+
+        </RelativeLayout>
+
+        <TextView android:id="@+id/topbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="BAF CORONA INFO"
+            android:textColor="@color/black_translucent"
+            android:textSize="18sp"
+            android:textStyle="bold|normal" />
+
+    </RelativeLayout>
+
+
+    <View android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/top_linear"
+        android:layout_height="1dp"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view"
+        android:background="@color/login_background"
+        android:layout_above="@+id/excercise_scroll"
+        android:orientation="horizontal">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:background="@color/colorPurple_900"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPurple_900"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#c2c2c2" />
+
+                    <RelativeLayout
+                        android:id="@+id/mll_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:clickable="true"
+                        android:onClick="PDF1"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        android:weightSum="1.5">
+
+                        <ImageView
+                            android:id="@+id/imageview_1"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentLeft="true"
+                            android:src="@drawable/ic_pdf" />
+
+                        <TextView
+                            android:id="@+id/ptv_1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@+id/imageview_1"
+                            android:gravity="center_vertical"
+                            android:text="Preventive Action"
+                            android:textColor="@color/fontBlack"
+                            android:textSize="18sp"
+                            />
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/forword" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#c2c2c2" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:onClick="PDF2"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        android:weightSum="1.5">
+
+                        <ImageView
+                            android:id="@+id/imageview_2"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentLeft="true"
+                            android:src="@drawable/ic_pdf" />
+
+                        <TextView android:id="@+id/ptv_2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@+id/imageview_2"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/fontBlack"
+                            android:text="Action For Cure"
+                            android:textSize="18sp"
+                           />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/forword" />
+                    </RelativeLayout>
+
+
+
+
+
+                </LinearLayout>
+
+                <!--<LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:onClick="BLANKLI"></LinearLayout>-->
+            </LinearLayout>
+        </ScrollView>
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

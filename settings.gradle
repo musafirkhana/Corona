@@ -1,0 +1,2 @@
+rootProject.name='BAF CORONA INFO'
+include ':app', ':mapbox-android-sdk-9.3.0'

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:padding="10dp"
+
+        android:orientation="horizontal"
+        >
+
+        <ss.com.bannerslider.Slider
+
+            android:id="@+id/slider"
+            android:layout_width="fill_parent"
+            app:slider_animateIndicators="true"
+            app:slider_loopSlides="true"
+            android:fitsSystemWindows="true"
+            android:background="@drawable/rounded_corner"
+            app:slider_interval="3000"
+            app:slider_selectedSlideIndicator="@drawable/selected_slide_indicator"
+            app:slider_indicatorSize="14dp"
+            app:slider_unselectedSlideIndicator="@drawable/unselected_slide_indicator"
+            android:layout_height="fill_parent" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/divider"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="5dp"
+        android:layout_weight="3">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:onClick="CoronaState"
+            android:layout_weight="2"
+            android:background="@drawable/cardlayout"
+            android:clickable="true">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ic_stat"
+                android:layout_height="35dp">
+
+            </ImageView>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_centerInParent="true"
+                android:layout_margin="20dp"
+                android:background="@drawable/corona_focused"
+                android:layout_height="match_parent">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+               android:padding="20dp"
+                android:text="Present State of Corona BAF"></TextView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_marginLeft="5dp"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:onClick="Prevention"
+            android:background="@drawable/cardlayout"
+            android:layout_weight="2">
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ic_what"
+                android:layout_height="35dp">
+
+            </ImageView>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_centerInParent="true"
+                android:layout_margin="20dp"
+                android:background="@drawable/corona_focused"
+                android:layout_height="match_parent">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:padding="20dp"
+                android:text="What to do for Corona"></TextView>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:paddingTop="5dp"
+        android:layout_weight="3">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:onClick="Help"
+            android:background="@drawable/cardlayout"
+            android:layout_weight="2">
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ic_help"
+                android:layout_height="35dp">
+
+            </ImageView>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_centerInParent="true"
+                android:layout_margin="20dp"
+                android:background="@drawable/corona_focused"
+                android:layout_height="match_parent">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:padding="20dp"
+                android:text="Helpline"></TextView>
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_marginLeft="5dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/cardlayout"
+            android:layout_weight="2">
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ic_success"
+                android:layout_height="35dp">
+
+            </ImageView>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_centerInParent="true"
+                android:layout_margin="20dp"
+                android:clickable="true"
+                android:onClick="Success"
+                android:background="@drawable/corona_focused"
+                android:layout_height="match_parent">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:padding="20dp"
+                android:text="Success Story"></TextView>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

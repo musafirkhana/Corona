@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:id="@+id/top_linear"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPurple_A400"
+        >
+
+        <RelativeLayout android:id="@+id/left_relative"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:onClick="BACK"
+            android:layout_alignParentLeft="true">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_back">
+
+            </ImageView>
+
+
+
+        </RelativeLayout>
+
+        <TextView android:id="@+id/topbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="BAF BASE BSR"
+            android:textColor="@color/black_translucent"
+            android:textSize="18sp"
+            android:textStyle="bold|normal" />
+
+    </RelativeLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top_linear"
+        android:background="@color/login_background"
+        android:layout_above="@+id/bottom_rl"
+        android:orientation="vertical">
+
+
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:background="@color/colorPurple_900"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPurple_900"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#c2c2c2" />
+
+                    <RelativeLayout
+                        android:id="@+id/mll_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:clickable="true"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        android:weightSum="1.5">
+
+                        <ImageView
+                            android:id="@+id/imageview_1"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentLeft="true"
+
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_contact" />
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:layout_toLeftOf="@+id/call_1"
+                            android:layout_toRightOf="@+id/imageview_1"
+                            android:layout_marginLeft="10dp">
+                            <TextView
+                                android:id="@+id/ptv_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="SMO"
+                                android:textStyle="bold"
+                                android:layout_alignParentLeft="true"
+                                android:textColor="@color/fontBlack"
+                                android:textSize="16sp"
+                                />
+                            <TextView
+                                android:id="@+id/contact_1tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="01769975230"
+                                android:layout_alignParentRight="true"
+                                android:textColor="@color/fontBlack"
+                                android:textSize="16sp"
+                                />
+                        </RelativeLayout>
+
+                        <ImageView android:id="@+id/call_1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:clickable="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ic_call" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#c2c2c2" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:clickable="true"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        android:weightSum="1.5">
+
+                        <ImageView
+                            android:id="@+id/imageview_2"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_contact" />
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:layout_toLeftOf="@+id/call_2"
+                            android:layout_toRightOf="@+id/imageview_2"
+                            android:layout_marginLeft="10dp">
+                            <TextView
+                                android:id="@+id/ptv_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="MI Room"
+                                android:textStyle="bold"
+                                android:layout_alignParentLeft="true"
+                                android:textColor="@color/fontBlack"
+                                android:textSize="16sp"
+                                />
+                            <TextView
+                                android:id="@+id/contact_2tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="01769975230"
+                                android:layout_alignParentRight="true"
+                                android:textColor="@color/fontBlack"
+                                android:textSize="16sp"
+                                />
+                        </RelativeLayout>
+
+                        <ImageView android:id="@+id/call_2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:clickable="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ic_call" />
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#c2c2c2" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:clickable="true"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        android:weightSum="1.5">
+
+                        <ImageView
+                            android:id="@+id/imageview_3"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_contact" />
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:layout_toLeftOf="@+id/call_3"
+                            android:layout_toRightOf="@+id/imageview_3"
+                            android:layout_marginLeft="10dp">
+                            <TextView
+                                android:id="@+id/ptv_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Dhaka CMH"
+                                android:textStyle="bold"
+                                android:layout_alignParentLeft="true"
+                                android:textColor="@color/fontBlack"
+                                android:textSize="16sp"
+                                />
+                            <TextView
+                                android:id="@+id/contact_3tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="01769975230"
+                                android:layout_alignParentRight="true"
+                                android:textColor="@color/fontBlack"
+                                android:textSize="16sp"
+                                />
+                        </RelativeLayout>
+
+                        <ImageView android:id="@+id/call_3"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:clickable="true"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ic_call" />
+
+                    </RelativeLayout>
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#c2c2c2" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:clickable="true"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        android:weightSum="1.5">
+
+                        <ImageView
+                            android:id="@+id/imageview_4"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_contact" />
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:layout_toLeftOf="@+id/call_4"
+                            android:layout_toRightOf="@+id/imageview_4"
+                            android:layout_marginLeft="10dp">
+                            <TextView
+                                android:id="@+id/ptv_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ambulance"
+                                android:textStyle="bold"
+                                android:layout_alignParentLeft="true"
+                                android:textColor="@color/fontBlack"
+                                android:textSize="16sp"
+                                />
+                            <TextView
+                                android:id="@+id/contact_4tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="01769975230"
+                                android:layout_alignParentRight="true"
+                                android:textColor="@color/fontBlack"
+                                android:textSize="16sp"
+                                />
+                        </RelativeLayout>
+
+                        <ImageView android:id="@+id/call_4"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:clickable="true"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ic_call" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout android:id="@+id/bottom_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="BaseFilter"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rounded_button_selector"
+       >
+        <ImageView
+            android:layout_width="35dp"
+            android:background="@drawable/ic_filter"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_height="35dp">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="Filter">
+
+        </TextView>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

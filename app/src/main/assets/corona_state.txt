@@ -1,0 +1,12 @@
+ [
+      {
+        "id": 0,
+        "present_state": "23",
+        "recovered": "233",
+        "death": "323",
+        "cmh": "45",
+        "isolation": "56",
+        "home_quarantine": "56"
+      }
+      
+    ]
