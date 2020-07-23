@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPurple_900"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
+
+
     <RelativeLayout
         android:id="@+id/top_linear"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
-        android:background="@color/colorPurple_A400"
-        >
+        android:background="@color/colorPurple_A400">
 
-        <RelativeLayout android:id="@+id/left_relative"
+        <RelativeLayout
+            android:id="@+id/left_relative"
             android:layout_width="50dp"
             android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
             android:clickable="true"
-            android:onClick="BACK"
-            android:layout_alignParentLeft="true">
+            android:onClick="BACK">
 
             <ImageView
                 android:layout_width="40dp"
@@ -29,10 +31,10 @@
             </ImageView>
 
 
-
         </RelativeLayout>
 
-        <TextView android:id="@+id/topbar"
+        <TextView
+            android:id="@+id/topbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -42,368 +44,426 @@
             android:textStyle="bold|normal" />
 
     </RelativeLayout>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_below="@+id/top_linear"
+        android:layout_height="match_parent"
         android:layout_above="@+id/excercise_scroll"
-        android:layout_height="match_parent">
+        android:layout_below="@+id/top_linear">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:padding="10dp"
-            android:layout_height="wrap_content">
-            <RadioGroup
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/text"
-                android:id="@+id/myRadioGroup"
-                android:orientation="horizontal"
-                android:checkedButton="@+id/sound" >
+                android:padding="10dp">
 
-                <RadioButton
+                <RadioGroup
+                    android:id="@+id/myRadioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text"
+                    android:checkedButton="@+id/sound"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_total"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/toggle_widget_background"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:shadowColor="@color/blue"
+                        android:text="Total"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/rb_today"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/toggle_widget_background"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:shadowColor="@color/blue"
+                        android:text="Today"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/rb_yesterday"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/toggle_widget_background"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:shadowColor="@color/blue"
+                        android:text="Yesterday"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp">
+
+                <RelativeLayout
                     android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
                     android:layout_weight="2"
-                    android:layout_height="40dp"
-                    android:id="@+id/rb_total"
-                    android:background="@drawable/toggle_widget_background"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:shadowColor="@color/blue"
-                    android:text="Total"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:background="@drawable/rounded_affected"
+                    android:clickable="true">
 
-                <RadioButton
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:padding="10dp"
+                        android:text="Present State"
+                        android:textColor="@color/white"
+                        android:textSize="16sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_present"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:padding="10dp"
+                        android:text="125"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"></TextView>
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
                     android:layout_weight="2"
-                    android:layout_height="40dp"
-                    android:id="@+id/rb_today"
-                    android:background="@drawable/toggle_widget_background"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:shadowColor="@color/blue"
-                    android:text="Today"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:background="@drawable/rounded_recover"
+                    android:clickable="true">
 
-                <RadioButton
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:padding="10dp"
+                        android:text="Recovered"
+                        android:textColor="@color/white"
+                        android:textSize="16sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_recover"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:padding="10dp"
+                        android:text="35"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"></TextView>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp">
+
+                <RelativeLayout
                     android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
                     android:layout_weight="2"
-                    android:layout_height="40dp"
-                    android:id="@+id/rb_yesterday"
-                    android:background="@drawable/toggle_widget_background"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:shadowColor="@color/blue"
-                    android:text="Yesterday"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-            </RadioGroup>
-
-        </LinearLayout>
+                    android:background="@drawable/rounded_death">
 
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:padding="10dp"
+                        android:text="Death"
+                        android:textColor="@color/white"
+                        android:textSize="16sp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"
-            android:paddingBottom="5dp"
-            >
+                    </TextView>
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginRight="5dp"
-                android:layout_weight="2"
-                android:background="@drawable/rounded_affected"
-                android:clickable="true">
+                    <TextView
+                        android:id="@+id/tv_death"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:padding="10dp"
+                        android:text="45"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"></TextView>
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:text="Present State">
+                </RelativeLayout>
 
-                </TextView>
-                <TextView android:id="@+id/tv_present"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:layout_alignParentRight="true"
-                    android:textSize="24sp"
-                    android:text="125"></TextView>
-            </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/rounded_cmh">
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_marginLeft="5dp"
-                android:layout_height="match_parent"
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:padding="10dp"
+                        android:text="CMH"
+                        android:textColor="@color/white"
+                        android:textSize="16sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_cmh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:padding="10dp"
+                        android:text="20"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"></TextView>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/rounded_isolation">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:padding="10dp"
+                        android:text="Isolation"
+                        android:textColor="@color/white"
+                        android:textSize="16sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_isolation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:padding="10dp"
+                        android:text="245"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"></TextView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/rounded_home">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:padding="10dp"
+                        android:text="Home Quarantine"
+                        android:textColor="@color/white"
+                        android:textSize="16sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_quarantine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:padding="10dp"
+                        android:text="1200"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"></TextView>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/re_filter"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/cardlayout"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/ic_filter">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:padding="10dp"
+                        android:text="Filter"
+                        android:textColor="@color/black"
+                        android:textSize="16sp">
+
+                    </TextView>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/cardlayout"
+                    android:clickable="true"
+                    android:onClick="MapLoad">
+
+                    <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/ic_map">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:padding="10dp"
+                        android:text="Map"
+
+                        android:textColor="@color/black"
+                        android:textSize="16sp">
+
+                    </TextView>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:checkable="true"
+                app:cardElevation="4dp"
+                android:theme="@style/Theme.MaterialComponents.Light"
                 android:clickable="true"
-                android:background="@drawable/rounded_recover"
-                android:layout_weight="2">
+                android:focusable="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@color/color_light_blue_700">
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:text="Recovered">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:padding="10dp"
+                        android:text="Isolation"
+                        android:textColor="@color/white"
+                        android:textSize="16sp">
 
-                </TextView>
-                <TextView android:id="@+id/tv_recover"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:padding="10dp"
-                    android:layout_alignParentRight="true"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="24sp"
-                    android:text="35"></TextView>
+                    </TextView>
 
-            </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:padding="10dp"
+                        android:text="245"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"></TextView>
 
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"
-            android:layout_marginBottom="10dp"
-            android:paddingTop="5dp"
-            >
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_marginRight="5dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/rounded_death"
-                android:layout_weight="2">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:text="Death">
-
-                </TextView>
-                <TextView android:id="@+id/tv_death"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="24sp"
-                    android:layout_alignParentRight="true"
-                    android:text="45"></TextView>
-
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_marginLeft="5dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/rounded_cmh"
-                android:layout_weight="2">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:text="CMH">
-
-                </TextView>
-                <TextView android:id="@+id/tv_cmh"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:layout_alignParentRight="true"
-                    android:textStyle="bold"
-                    android:textSize="24sp"
-                    android:text="20"></TextView>
-
-
-            </RelativeLayout>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"
-            android:layout_marginBottom="10dp"
-            android:paddingTop="5dp"
-            >
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_marginRight="5dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/rounded_isolation"
-                android:layout_weight="2">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:text="Isolation">
-
-                </TextView>
-                <TextView android:id="@+id/tv_isolation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentRight="true"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="24sp"
-                    android:text="245"></TextView>
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_marginLeft="5dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/rounded_home"
-                android:layout_weight="2">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:text="Home Quarantine">
-
-                </TextView>
-                <TextView android:id="@+id/tv_quarantine"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:layout_alignParentRight="true"
-                    android:textStyle="bold"
-                    android:textSize="24sp"
-                    android:text="1200"></TextView>
-
-
-            </RelativeLayout>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"
-            android:layout_marginBottom="10dp"
-            android:paddingTop="5dp"
-            >
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_marginRight="5dp"
-                android:layout_height="match_parent"
-                android:clickable="true"
-                android:onClick="Filter"
-                android:background="@drawable/cardlayout"
-                android:layout_weight="2">
-                <ImageView
-                    android:layout_width="35dp"
-                    android:background="@drawable/ic_filter"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_height="35dp">
-
-                </ImageView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:padding="10dp"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:text="Filter">
-
-                </TextView>
-
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_marginLeft="5dp"
-                android:layout_height="match_parent"
-                android:clickable="true"
-                android:onClick="MapLoad"
-                android:background="@drawable/cardlayout"
-                android:layout_weight="2">
-                <ImageView
-                    android:layout_width="55dp"
-                    android:background="@drawable/ic_map"
-                    android:layout_marginLeft="10dp"
-                    android:layout_centerVertical="true"
-                    android:layout_height="55dp">
-
-                </ImageView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_centerInParent="true"
-                    android:textColor="@color/black"
-
-                    android:textSize="16sp"
-                    android:text="Map">
-
-                </TextView>
-
-
-
-            </RelativeLayout>
-
-        </LinearLayout>
-    </LinearLayout>
 
     </ScrollView>
 
@@ -418,11 +478,11 @@
         android:focusableInTouchMode="true"
         android:freezesText="true"
         android:gravity="center"
-        android:textStyle="bold"
         android:marqueeRepeatLimit="marquee_forever"
         android:scrollHorizontally="true"
         android:singleLine="true"
-        android:textSize="20sp"
         android:text="@string/bottom_text"
-        android:textColor="@color/black_translucent" />
+        android:textColor="@color/black_translucent"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 </RelativeLayout>

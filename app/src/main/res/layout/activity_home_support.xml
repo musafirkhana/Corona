@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_home"
     android:orientation="vertical">
 
 
@@ -11,12 +12,9 @@
         android:layout_height="0dp"
         android:layout_weight="4"
         android:padding="10dp"
-
         android:orientation="horizontal"
         >
-
         <ss.com.bannerslider.Slider
-
             android:id="@+id/slider"
             android:layout_width="fill_parent"
             app:slider_animateIndicators="true"
@@ -45,73 +43,69 @@
         android:layout_height="0dp"
         android:paddingRight="10dp"
         android:paddingLeft="10dp"
-        android:paddingBottom="5dp"
         android:layout_weight="3">
-
-        <RelativeLayout
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginRight="5dp"
-            android:onClick="CoronaState"
             android:layout_weight="2"
-            android:background="@drawable/cardlayout"
+            android:checkable="true"
+            android:layout_margin="5dp"
+            app:cardElevation="4dp"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            android:clickable="true"
+            android:focusable="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="CoronaState"
+            android:background="@color/app_background"
             android:clickable="true">
-
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/ic_stat"
-                android:layout_height="35dp">
-
-            </ImageView>
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
+            <ImageView android:id="@+id/img_1"
+                android:layout_width="50dp"
                 android:layout_centerInParent="true"
-                android:layout_margin="20dp"
-                android:background="@drawable/corona_focused"
-                android:layout_height="match_parent">
-
+                android:background="@drawable/ic_stat"
+                android:layout_height="50dp">
             </ImageView>
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:layout_below="@+id/img_1"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-               android:padding="20dp"
-                android:text="Present State of Corona BAF"></TextView>
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:textStyle="bold"
+                android:text="PRESENT STATE">
+
+            </TextView>
 
         </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <RelativeLayout
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
-            android:layout_marginLeft="5dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:checkable="true"
+            android:layout_margin="5dp"
+            app:cardElevation="4dp"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            android:clickable="true"
+            android:focusable="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clickable="true"
             android:onClick="Prevention"
-            android:background="@drawable/cardlayout"
-            android:layout_weight="2">
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/ic_what"
-                android:layout_height="35dp">
+            android:background="@color/app_background"
+            >
 
-            </ImageView>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
+            <ImageView android:id="@+id/img_2"
+                android:layout_width="50dp"
                 android:layout_centerInParent="true"
-                android:layout_margin="20dp"
-                android:background="@drawable/corona_focused"
-                android:layout_height="match_parent">
+                android:background="@drawable/ic_what"
+                android:layout_height="50dp">
 
             </ImageView>
 
@@ -119,15 +113,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:layout_below="@+id/img_2"
                 android:layout_centerHorizontal="true"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:padding="20dp"
-                android:text="What to do for Corona"></TextView>
+                android:paddingTop="10dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="WHAT TO DO"></TextView>
 
 
         </RelativeLayout>
-
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -135,72 +132,74 @@
         android:paddingRight="10dp"
         android:paddingLeft="10dp"
         android:layout_marginBottom="10dp"
-        android:paddingTop="5dp"
         android:layout_weight="3">
-
-        <RelativeLayout
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
-            android:layout_marginRight="5dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:checkable="true"
+            android:layout_margin="5dp"
+            app:cardElevation="4dp"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            android:clickable="true"
+            android:focusable="true">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:onClick="Help"
+                android:background="@color/app_background"
+                >
+
+
+            <ImageView android:id="@+id/img_3"
+                android:layout_width="50dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_help"
+                android:layout_height="50dp">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/img_3"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:textStyle="bold"
+                android:text="HELPLINE"></TextView>
+
+
+        </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:checkable="true"
+            android:layout_margin="5dp"
+            app:cardElevation="4dp"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            android:clickable="true"
+            android:focusable="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clickable="true"
-            android:onClick="Help"
-            android:background="@drawable/cardlayout"
-            android:layout_weight="2">
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/ic_help"
-                android:layout_height="35dp">
+            android:onClick="Success"
+            android:background="@color/app_background"
+            >
 
-            </ImageView>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
+
+            <ImageView android:id="@+id/img_4"
+                android:layout_width="50dp"
                 android:layout_centerInParent="true"
-                android:layout_margin="20dp"
-                android:background="@drawable/corona_focused"
-                android:layout_height="match_parent">
-
-            </ImageView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_centerHorizontal="true"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:padding="20dp"
-                android:text="Helpline"></TextView>
-
-
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_marginLeft="5dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/cardlayout"
-            android:layout_weight="2">
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
                 android:background="@drawable/ic_success"
-                android:layout_height="35dp">
-
-            </ImageView>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_centerInParent="true"
-                android:layout_margin="20dp"
-                android:clickable="true"
-                android:onClick="Success"
-                android:background="@drawable/corona_focused"
-                android:layout_height="match_parent">
+                android:layout_height="50dp">
 
             </ImageView>
 
@@ -211,12 +210,15 @@
                 android:layout_centerHorizontal="true"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:padding="20dp"
-                android:text="Success Story"></TextView>
+                android:textStyle="bold"
+                android:paddingTop="10dp"
+                android:gravity="center"
+                android:layout_below="@+id/img_4"
+                android:text="SUCCESS STORY"></TextView>
 
 
         </RelativeLayout>
-
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 
 

@@ -28,7 +28,7 @@ public class CustomProgressDialog extends ProgressDialog {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dialog_loading);
 		setCancelable(false);
-		progressMessage = (TextView) findViewById(R.id.progressMessage);
-		progressMessage.setText(mMessage);
+//		progressMessage = (TextView) findViewById(R.id.progressMessage);
+//		progressMessage.setText(mMessage);
 	}
 }

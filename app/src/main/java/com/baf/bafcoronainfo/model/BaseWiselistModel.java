@@ -1,6 +1,16 @@
 package com.baf.bafcoronainfo.model;
 
 public class BaseWiselistModel {
+
+    private String total_tested = "";
+    private String total_affected = "";
+    private String total_recovered = "";
+    private String total_death = "";
+    private String total_cmh = "";
+    private String total_isolation = "";
+    private String total_home_quarantine = "";
+
+
     private String mtr_tested_total = "";
     private String mtr_affected_total = "";
     private String mtr_recovered_total = "";
@@ -48,6 +58,62 @@ public class BaseWiselistModel {
     private String cxb_cmh_total = "";
     private String cxb_isolation_total = "";
     private String cxb_home_quarantine_total = "";
+
+    public String getTotal_tested() {
+        return total_tested;
+    }
+
+    public void setTotal_tested(String total_tested) {
+        this.total_tested = total_tested;
+    }
+
+    public String getTotal_affected() {
+        return total_affected;
+    }
+
+    public void setTotal_affected(String total_affected) {
+        this.total_affected = total_affected;
+    }
+
+    public String getTotal_recovered() {
+        return total_recovered;
+    }
+
+    public void setTotal_recovered(String total_recovered) {
+        this.total_recovered = total_recovered;
+    }
+
+    public String getTotal_death() {
+        return total_death;
+    }
+
+    public void setTotal_death(String total_death) {
+        this.total_death = total_death;
+    }
+
+    public String getTotal_cmh() {
+        return total_cmh;
+    }
+
+    public void setTotal_cmh(String total_cmh) {
+        this.total_cmh = total_cmh;
+    }
+
+    public String getTotal_isolation() {
+        return total_isolation;
+    }
+
+    public void setTotal_isolation(String total_isolation) {
+        this.total_isolation = total_isolation;
+    }
+
+    public String getTotal_home_quarantine() {
+        return total_home_quarantine;
+    }
+
+    public void setTotal_home_quarantine(String total_home_quarantine) {
+        this.total_home_quarantine = total_home_quarantine;
+    }
 
     public String getMtr_tested_total() {
         return mtr_tested_total;
@@ -388,7 +454,14 @@ public class BaseWiselistModel {
     @Override
     public String toString() {
         return "BaseWiselistModel{" +
-                "mtr_tested_total='" + mtr_tested_total + '\'' +
+                "total_tested='" + total_tested + '\'' +
+                ", total_affected='" + total_affected + '\'' +
+                ", total_recovered='" + total_recovered + '\'' +
+                ", total_death='" + total_death + '\'' +
+                ", total_cmh='" + total_cmh + '\'' +
+                ", total_isolation='" + total_isolation + '\'' +
+                ", total_home_quarantine='" + total_home_quarantine + '\'' +
+                ", mtr_tested_total='" + mtr_tested_total + '\'' +
                 ", mtr_affected_total='" + mtr_affected_total + '\'' +
                 ", mtr_recovered_total='" + mtr_recovered_total + '\'' +
                 ", mtr_death_total='" + mtr_death_total + '\'' +

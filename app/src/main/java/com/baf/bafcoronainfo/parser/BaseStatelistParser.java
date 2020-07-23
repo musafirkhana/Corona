@@ -7,6 +7,7 @@ import com.baf.bafcoronainfo.holder.AllStateHolder;
 import com.baf.bafcoronainfo.holder.BasewiseStateHolder;
 import com.baf.bafcoronainfo.model.BaseWiselistModel;
 import com.baf.bafcoronainfo.model.StatelistModel;
+import com.baf.bafcoronainfo.util.Logger;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,17 +25,28 @@ public class BaseStatelistParser {
 
         }
 
-        final JSONArray mainJsonObject = new JSONArray(result);
+//        final JSONArray mainJsonObject = new JSONArray(result);
+        JSONObject mainJsonObject = new JSONObject(result);
+        JSONObject jsonObject = mainJsonObject.getJSONObject("Basewisetotal");
+        JSONObject total_jsonObject = mainJsonObject.getJSONObject("Alltimetotal");
 
-//		final JSONObject banner = mainJsonObject.getJSONObject("banner");
-//		final JSONArray banner_list = mainJsonObject.getJSONArray(result);
 
         BaseWiselistModel baseWiselistModel;
-        for (int i = 0; i < mainJsonObject.length(); i++) {
-            JSONObject jsonObject = mainJsonObject.getJSONObject(i);
+        for (int i = 0; i < jsonObject.length(); i++) {
+            Logger.debugLog("Api mtr_tested_total",""+ jsonObject.length()+"   "+total_jsonObject.length());
+            Logger.debugLog("Api jsonObject Length",""+ jsonObject.getString("mtr_tested_total"));
+            Logger.debugLog("Api total_tested",""+ total_jsonObject.getString("total_tested"));
 
             baseWiselistModel = new BaseWiselistModel();
             BasewiseStateHolder basewiseStateHolder = new BasewiseStateHolder();
+            //ALL
+            baseWiselistModel.setTotal_tested(total_jsonObject.getString("total_tested"));
+            baseWiselistModel.setTotal_affected(total_jsonObject.getString("total_affected"));
+            baseWiselistModel.setTotal_recovered(total_jsonObject.getString("total_recovered"));
+            baseWiselistModel.setTotal_death(total_jsonObject.getString("total_death"));
+            baseWiselistModel.setTotal_cmh(total_jsonObject.getString("total_cmh"));
+            baseWiselistModel.setTotal_isolation(total_jsonObject.getString("total_isolation"));
+            baseWiselistModel.setTotal_home_quarantine(total_jsonObject.getString("total_home_quarantine"));
             //BSR
             baseWiselistModel.setBsr_affected_total(jsonObject.getString("bsr_affected_total"));
             baseWiselistModel.setBsr_cmh_total(jsonObject.getString("bsr_cmh_total"));

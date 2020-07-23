@@ -13,7 +13,7 @@
     <color name="home_bg">#3F51B5</color>
     <color name="home_bg_2">#FFFFFF</color>
     <color name="signupColor">#066e8a</color>
-    <color name="background_home">#e3e5de</color>
+    <color name="background_home">#FAFAFA</color>
     <color name="orange_light">#ffffbb33</color>
 
 
@@ -36,6 +36,7 @@
     <color name="accent_color">@color/color_orange_A200</color>
     <color name="accent_color_light">@color/color_orange_A100</color>
     <color name="accent_color_dark">@color/color_orange_A400</color>
+    <color name="app_background">#ffffff</color>
 
     <!-- Drawer Article Color -->
     <color name="color_apps">#0277BD</color>
@@ -67,7 +68,6 @@
     <color name="login_background">#F1F5F7</color>
     <color name="edtitext_back">#FFFFFF</color>
     <color name="edtitext_hintcolor">#9FA2A4</color>
-    <color name="app_background">#023B4C</color>
     <color name="text_color">#616161</color>
     <color name="white">#FFFFFF</color>
     <color name="sky">#0099CC</color>
@@ -88,7 +88,7 @@
     <color name="fontBlack">#000000</color>
     <color name="green_title">#18441D</color>
     <color name="blue_title">#214A66</color>
-    <color name="skyblue">#0000FF</color>
+    <color name="skyblue">#35438E</color>
     <color name="sky_blue">#007AFF</color>
     <color name="scan_btbg">#9A5F30</color>
     <color name="circle_color">#112B38</color>
@@ -103,6 +103,8 @@
     <!-- 1st Gradient color -->
     <color name="colorPurple_A400">#d0fce3</color>
     <color name="colorPurple_900">#effff6</color>
+
+
     <!-- ./ 1st Gradient color -->
 
     <!-- 2nd Gradient color -->

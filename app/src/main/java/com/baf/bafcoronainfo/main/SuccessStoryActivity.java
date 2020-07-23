@@ -76,7 +76,7 @@ public class SuccessStoryActivity extends Activity  {
         settings.setDefaultTextEncodingName("utf-8");
 //        webView.loadDataWithBaseURL(null, msn_profile, "text/html", "UTF-8", null);
 
-			webView.loadUrl("https://www.bd.undp.org/content/bangladesh/en/home/stories/zhinu-bala--a-frontliner-fighting-covid-19-in-teknaf.html");
+			webView.loadUrl("https://baf.mil.bd/website/coas.php");
 //			mPlayer.start();
 
 

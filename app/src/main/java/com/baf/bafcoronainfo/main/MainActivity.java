@@ -19,11 +19,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.baf.bafcoronainfo.R;
 import com.baf.bafcoronainfo.adapter.MainSliderAdapter;
+import com.baf.bafcoronainfo.callbackinterface.ServerResponse;
+import com.baf.bafcoronainfo.networkcalls.ServerCallsProvider;
+import com.baf.bafcoronainfo.parser.BaseStatelistParser;
 import com.baf.bafcoronainfo.parser.StatelistParser;
+import com.baf.bafcoronainfo.util.AllUrls;
 import com.baf.bafcoronainfo.util.AppConstant;
+import com.baf.bafcoronainfo.util.BusyDialog;
+import com.baf.bafcoronainfo.util.Helpers;
+import com.baf.bafcoronainfo.util.Logger;
 import com.baf.bafcoronainfo.util.PersistentUser;
 import com.baf.bafcoronainfo.util.PicassoImageLoadingService;
 import com.baf.bafcoronainfo.util.ToastUtil;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,9 +45,12 @@ import java.util.HashMap;
 import ss.com.bannerslider.Slider;
 import ss.com.bannerslider.event.OnSlideClickListener;
 
+import static com.android.volley.VolleyLog.TAG;
+
 public class MainActivity extends Activity {
 
     private Context mContext;
+    private BusyDialog mBusyDialog;
     HashMap<String, Integer> HashMapForLocalRes;
     private Slider slider;
 
@@ -85,7 +101,7 @@ public class MainActivity extends Activity {
     public void CoronaState(View v) {
         Log.i("Password",PersistentUser.getUserpassword(mContext));
         if(PersistentUser.getUserpassword(mContext).equalsIgnoreCase(AppConstant.APP_PASSWORD)){
-            loadAssetData();
+
             Intent intent = new Intent(getApplicationContext(), CoronaStateActivity.class);
             startActivity(intent);
         }else {
@@ -105,70 +121,6 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
-    /*******************************
-     * Load Data From Asset Folder
-     ***************/
-    private void loadAssetData() {
-        try {
-            InputStream is = getAssets().open("corona_state.txt");
-
-            // We guarantee that the available method returns the total
-            // size of the asset... of course, this does mean that a single
-            // asset can't be more than 2 gigs.
-            int size = is.available();
-
-            // Read the entire asset into a local byte buffer.
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-
-            // Convert the buffer into a string.
-            text = new String(buffer);
-            Log.i("Hello ", text);
-
-        } catch (IOException e) {
-            // Should never happen!
-            throw new RuntimeException(e);
-        }
-
-        themeList(text);
-
-    }
-    private void themeList(final String url_string) {
-
-        final Thread d = new Thread(new Runnable() {
-            @Override
-            public void run() {
-
-                try {
-                    respones_results = url_string;
-                    if (StatelistParser.connect(getApplicationContext(),
-                            respones_results))
-                        ;
-
-                } catch (final Exception e) {
-                    e.printStackTrace();
-                }
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-
-
-                        try {
-
-
-                        } catch (Exception e) {
-                        }
-                    }
-
-                });
-
-            }
-        });
-
-        d.start();
-
-    }
 
 
     private void showCustomDialog() {
@@ -195,7 +147,7 @@ public class MainActivity extends Activity {
 
                 if(filter_head.getText().toString().equalsIgnoreCase(AppConstant.APP_PASSWORD)){
                     PersistentUser.setUserpassword(mContext,AppConstant.APP_PASSWORD);
-                    loadAssetData();
+
                     Intent intent = new Intent(getApplicationContext(), CoronaStateActivity.class);
                     startActivity(intent);
                     alertDialog.dismiss();

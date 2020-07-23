@@ -18,16 +18,16 @@ public class MainSliderAdapter extends SliderAdapter {
     public void onBindImageSlide(int position, ImageSlideViewHolder viewHolder) {
         switch (position) {
             case 0:
-//                viewHolder.bindImageSlide("https://assets.materialup.com/uploads/dcc07ea4-845a-463b-b5f0-4696574da5ed/preview.jpg");
-                viewHolder.bindImageSlide(R.drawable.banner_image);
+                viewHolder.bindImageSlide("https://baf.mil.bd/website/assets/img/photo-album/yak-130/8-8.png");
+//                viewHolder.bindImageSlide(R.drawable.banner_image);
                 break;
             case 1:
-                viewHolder.bindImageSlide(R.drawable.banner_image2);
-                //viewHolder.bindImageSlide("https://assets.materialup.com/uploads/20ded50d-cc85-4e72-9ce3-452671cf7a6d/preview.jpg");
+//                viewHolder.bindImageSlide(R.drawable.banner_image2);
+                viewHolder.bindImageSlide("https://baf.mil.bd/website/assets/img/photo-album/f-7bg2/9-9.png");
                 break;
             case 2:
-                viewHolder.bindImageSlide(R.drawable.banner_image1);
-               // viewHolder.bindImageSlide("https://assets.materialup.com/uploads/76d63bbc-54a1-450a-a462-d90056be881b/preview.png");
+//                viewHolder.bindImageSlide(R.drawable.banner_image1);
+                viewHolder.bindImageSlide("https://baf.mil.bd/website/assets/img/photo-album/f-7bg2/5-5.png");
                 break;
         }
     }

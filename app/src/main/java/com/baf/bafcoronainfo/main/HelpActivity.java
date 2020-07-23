@@ -252,7 +252,6 @@ public class HelpActivity extends Activity implements View.OnClickListener {
         @SuppressLint("NewApi")
         protected void onPostExecute(String getResult) {
             //progDialogConfirm.dismiss();
-            Log.i("BASE", AppConstant.BASE);
             setData();
         }
     }

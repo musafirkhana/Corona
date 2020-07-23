@@ -41,8 +41,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     List<Marker> liveMarker = new ArrayList<>();
     private double cameraZoomLat=23.8434;
     private double cameraZoomLong=90.4029;
-    private double latarray[]={23.7797806,23.8350313,24.2575976,22.2604611,22.6431702};
-    private double longarray[]={90.3890075,90.3886198,90.1542055,91.8210827,90.0555853};
+    private double latarray[]={23.7797806,23.8350313,24.2575976,22.2604611,21.4455484};
+    private double longarray[]={90.3890075,90.3886198,90.1542055,91.8210827,91.9589299};
 
     private int height[]={150,140,110,90,60};
     private int width[]={150,140,110,90,60};

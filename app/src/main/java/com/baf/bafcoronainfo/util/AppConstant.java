@@ -15,7 +15,7 @@ public class AppConstant extends Application {
 
     public static final int GPS_REQUEST = 1001;
 
-    public static String BASE = "ALL";
+    public static String BASE = "ALL BASES";
     public static String HELP_BASE = "BSR";
     public static String APP_PASSWORD = "1234";
 
