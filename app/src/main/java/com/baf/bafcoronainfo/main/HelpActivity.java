@@ -20,6 +20,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -57,10 +58,10 @@ public class HelpActivity extends Activity implements View.OnClickListener {
     private TextView contact_4tv;
     private TextView topbar;
 
-    private ImageView call_1;
-    private ImageView call_2;
-    private ImageView call_3;
-    private ImageView call_4;
+    private RelativeLayout call_1;
+    private RelativeLayout call_2;
+    private RelativeLayout call_3;
+    private RelativeLayout call_4;
 
 
     @Override
@@ -87,10 +88,10 @@ public class HelpActivity extends Activity implements View.OnClickListener {
         contact_4tv = (TextView) findViewById(R.id.contact_4tv);
         topbar = (TextView) findViewById(R.id.topbar);
 
-        call_1 = (ImageView) findViewById(R.id.call_1);
-        call_2 = (ImageView) findViewById(R.id.call_2);
-        call_3 = (ImageView) findViewById(R.id.call_3);
-        call_4 = (ImageView) findViewById(R.id.call_4);
+        call_1 = (RelativeLayout) findViewById(R.id.call_1);
+        call_2 = (RelativeLayout) findViewById(R.id.call_2);
+        call_3 = (RelativeLayout) findViewById(R.id.call_3);
+        call_4 = (RelativeLayout) findViewById(R.id.call_4);
 
         call_1.setOnClickListener(this);
         call_2.setOnClickListener(this);

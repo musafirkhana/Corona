@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
-        android:background="@color/colorPurple_A400"
+        android:background="@color/header_color"
         >
 
         <RelativeLayout android:id="@+id/left_relative"
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="BAF CORONA INFO"
-            android:textColor="@color/black_translucent"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold|normal" />
 
@@ -51,14 +51,31 @@
    <LinearLayout
        android:layout_width="match_parent"
        android:layout_below="@+id/top_linear"
+       android:orientation="vertical"
+       android:padding="15dp"
        android:layout_height="match_parent">
-
-       <WebView
-           android:id="@+id/webview"
+       <TextView
            android:layout_width="fill_parent"
-           android:layout_height="fill_parent"
-           android:gravity="center"
+           android:layout_height="wrap_content"
+           android:gravity="center|left"
+           android:textStyle="bold"
+           android:layout_marginBottom="10dp"
+           android:textSize="20sp"
+           android:text="@string/success_story_head"
            android:src="@mipmap/ic_launcher" />
+       <ScrollView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content">
+           <com.baf.bafcoronainfo.util.JustifiedTextView
+               android:id="@+id/success_story"
+               android:layout_width="fill_parent"
+               android:layout_height="fill_parent"
+               android:gravity="center"
+               android:textSize="14sp"
+               android:text="@string/success_story"
+               android:src="@mipmap/ic_launcher" />
+       </ScrollView>
+
 
    </LinearLayout>
 

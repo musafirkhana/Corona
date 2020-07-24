@@ -71,6 +71,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
     private TextView tv_isolation;
     private TextView tv_quarantine;
     private TextView topbar;
+    private TextView tested_total;
     private RelativeLayout re_filter;
 
     @Override
@@ -105,6 +106,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
         tv_isolation=(TextView)findViewById(R.id.tv_isolation);
         tv_quarantine=(TextView)findViewById(R.id.tv_quarantine);
         topbar=(TextView)findViewById(R.id.topbar);
+        tested_total=(TextView)findViewById(R.id.tested_total);
 
         re_filter.setOnClickListener(this);
         radioGroup.setOnCheckedChangeListener(this);
