@@ -51,7 +51,6 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/top_linear"
         android:background="@color/login_background"
-        android:layout_above="@+id/bottom_rl"
         android:orientation="vertical">
 
 
@@ -78,99 +77,16 @@
                         android:layout_width="fill_parent"
                         android:layout_height="1dp"
                         android:background="#c2c2c2" />
+
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:checkable="true"
                         android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginBottom="5dp"
                         android:layout_marginTop="5dp"
-                        app:cardElevation="4dp"
-                        android:clickable="true"
-                        android:theme="@style/Theme.MaterialComponents.Light"
-                        android:focusable="true">
-                    <RelativeLayout
-                        android:id="@+id/mll_home"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:clickable="true"
-                        android:background="@color/app_background"
-                        android:orientation="horizontal"
-                        >
-
-                        <ImageView
-                            android:id="@+id/imageview_1"
-                            android:layout_width="45dp"
-                            android:layout_height="45dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_contact" />
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:orientation="horizontal"
-                            android:gravity="center_vertical"
-                            android:layout_marginRight="10dp"
-                            android:layout_toRightOf="@+id/imageview_1"
-                            android:layout_marginLeft="10dp">
-                            <TextView
-                                android:id="@+id/ptv_1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="SMO"
-                                android:textStyle="bold"
-                                android:layout_alignParentLeft="true"
-                                android:textColor="@color/fontBlack"
-                                android:textSize="16sp"
-                                />
-                            <TextView
-                                android:id="@+id/contact_1tv"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="01769975230"
-                                android:layout_below="@+id/ptv_1"
-                                android:textColor="@color/fontBlack"
-                                android:textSize="16sp"
-                                />
-                        </RelativeLayout>
-
-                        <RelativeLayout android:id="@+id/call_1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:clickable="true"
-                            android:layout_centerVertical="true"
-                            android:background="@drawable/rounded_cmh"
-                            android:layout_marginRight="10dp"
-                            android:layout_alignParentRight="true"
-                             >
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:text="Call Now"
-                                android:padding="10dp"
-                                android:textStyle="bold"
-                                android:textSize="12sp"
-                                android:textColor="@color/white"
-                                android:layout_height="wrap_content">
-
-                            </TextView>
-
-
-                        </RelativeLayout>
-                    </RelativeLayout>
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:checkable="true"
-                        android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
                         android:layout_marginBottom="5dp"
+
                         app:cardElevation="4dp"
                         android:clickable="true"
                         android:theme="@style/Theme.MaterialComponents.Light"
@@ -287,7 +203,7 @@
                                 <TextView android:id="@+id/txt_3"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Dhaka CMH"
+                                    android:text="Nearest CMH"
                                     android:textStyle="bold"
                                     android:layout_alignParentLeft="true"
                                     android:textColor="@color/fontBlack"
@@ -368,7 +284,7 @@
                                 <TextView android:id="@+id/txt_4"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Ambulance"
+                                    android:text="BAF Corona Cell"
                                     android:textStyle="bold"
                                     android:layout_alignParentLeft="true"
                                     android:textColor="@color/fontBlack"
@@ -409,6 +325,91 @@
                         </RelativeLayout>
                     </com.google.android.material.card.MaterialCardView>
 
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:checkable="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="5dp"
+
+                        app:cardElevation="4dp"
+                        android:clickable="true"
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        android:focusable="true">
+                        <RelativeLayout
+                            android:id="@+id/mll_home"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:background="@color/app_background"
+                            android:orientation="horizontal"
+                            >
+
+                            <ImageView
+                                android:id="@+id/imageview_1"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_contact" />
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginRight="10dp"
+                                android:layout_toRightOf="@+id/imageview_1"
+                                android:layout_marginLeft="10dp">
+                                <TextView
+                                    android:id="@+id/ptv_1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="CMH Corona Cell"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentLeft="true"
+                                    android:textColor="@color/fontBlack"
+                                    android:textSize="16sp"
+                                    />
+                                <TextView
+                                    android:id="@+id/contact_1tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="01769975230"
+                                    android:layout_below="@+id/ptv_1"
+                                    android:textColor="@color/fontBlack"
+                                    android:textSize="16sp"
+                                    />
+                            </RelativeLayout>
+
+                            <RelativeLayout android:id="@+id/call_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:layout_centerVertical="true"
+                                android:background="@drawable/rounded_cmh"
+                                android:layout_marginRight="10dp"
+                                android:layout_alignParentRight="true"
+                                >
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:text="Call Now"
+                                    android:padding="10dp"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/white"
+                                    android:layout_height="wrap_content">
+
+                                </TextView>
+
+
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
 
 
@@ -441,7 +442,7 @@
         android:layout_height="match_parent"
         android:clickable="true"
         android:onClick="BaseFilter"
-        android:background="@color/header_color"
+        android:background="@color/app_background"
        >
         <ImageView
             android:layout_width="35dp"
@@ -457,7 +458,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:padding="10dp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="24sp"
             android:text="Filter">
 

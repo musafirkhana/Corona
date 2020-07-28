@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
-        android:background="@color/colorPurple_A400"
+        android:background="@color/header_color"
         >
 
         <RelativeLayout android:id="@+id/left_relative"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="BAF CORONA INFO"
-            android:textColor="@color/black_translucent"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold|normal" />
 

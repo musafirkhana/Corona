@@ -40,7 +40,9 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 import ss.com.bannerslider.Slider;
 import ss.com.bannerslider.event.OnSlideClickListener;
@@ -58,7 +60,10 @@ public class MainActivity extends Activity {
     private String text;
     private String respones_results;
 
-
+    String[] alphabet = new String[]{"dai", "dplans", "dfs", "drect", "dproj", "dac", "dao", "dat",
+            "dad", "dedn", "dmet", "dats", "dcwit", "doao", "dengg", "dce", "darmt", "dsup", "dpers",
+            "dwks", "dfin", "pm", "dms", "dwc"};
+    List<String> list = Arrays.asList(alphabet);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,12 +100,18 @@ public class MainActivity extends Activity {
     }
 
     public void Prevention(View v) {
-        Intent intent = new Intent(this, PdfMainActivity.class);
+        /*Intent intent = new Intent(this, PdfMainActivity.class);
+        startActivity(intent);*/
+
+        Intent intent = new Intent(this, PdfActivity.class);
+        intent.putExtra("pdfName", "pdf.pdf");
+        intent.putExtra("head","BAF CORONA INFO");
         startActivity(intent);
     }
     public void CoronaState(View v) {
         Log.i("Password",PersistentUser.getUserpassword(mContext));
-        if(PersistentUser.getUserpassword(mContext).equalsIgnoreCase(AppConstant.APP_PASSWORD)){
+
+        if(list.contains(PersistentUser.getUserpassword(mContext))){
 
             Intent intent = new Intent(getApplicationContext(), CoronaStateActivity.class);
             startActivity(intent);
@@ -129,15 +140,14 @@ public class MainActivity extends Activity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setView(dialogView);
         final AlertDialog alertDialog = builder.create();
-        Button btn_cancel = (Button) dialogView.findViewById(R.id.btn_cancel);
-        Button btn_apply = (Button) dialogView.findViewById(R.id.btn_apply);
+        TextView btn_cancel = (TextView) dialogView.findViewById(R.id.btn_cancel);
+        TextView btn_apply = (TextView) dialogView.findViewById(R.id.btn_apply);
         final EditText filter_head=(EditText)dialogView.findViewById(R.id.et_password);
 
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                finish();
                 alertDialog.dismiss();
             }
         });
@@ -145,9 +155,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                if(filter_head.getText().toString().equalsIgnoreCase(AppConstant.APP_PASSWORD)){
-                    PersistentUser.setUserpassword(mContext,AppConstant.APP_PASSWORD);
-
+                if(list.contains(filter_head.getText().toString())){
+                    PersistentUser.setUserpassword(mContext,filter_head.getText().toString());
                     Intent intent = new Intent(getApplicationContext(), CoronaStateActivity.class);
                     startActivity(intent);
                     alertDialog.dismiss();

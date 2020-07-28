@@ -267,40 +267,40 @@ public class HelpActivity extends Activity implements View.OnClickListener {
                 contact_2tv.setText(query.getBsr_miroom());
                 contact_3tv.setText(query.getBsr_cmh());
                 contact_4tv.setText(query.getBsr_ambuloance());
-                topbar.setText("BAF BASE "+AppConstant.HELP_BASE);
+                topbar.setText("BAF Base "+AppConstant.HELP_BASE);
             }else if(AppConstant.HELP_BASE.equalsIgnoreCase("Bangabandhu")){
                 contact_1tv.setText(query.getBbd_smo());
                 contact_2tv.setText(query.getBbd_miroom());
                 contact_3tv.setText(query.getBbd_cmh());
                 contact_4tv.setText(query.getBbd_ambuloance());
-                topbar.setText("BAF BASE "+AppConstant.HELP_BASE);
+                topbar.setText("BAF Base "+AppConstant.HELP_BASE);
 
             }else if(AppConstant.HELP_BASE.equalsIgnoreCase("PKP")){
                 contact_1tv.setText(query.getPkp_smo());
                 contact_2tv.setText(query.getPkp_miroom());
                 contact_3tv.setText(query.getPkp_cmh());
                 contact_4tv.setText(query.getPkp_ambuloance());
-                topbar.setText("BAF BASE "+AppConstant.HELP_BASE);
+                topbar.setText("BAF Base "+AppConstant.HELP_BASE);
             }else if(AppConstant.HELP_BASE.equalsIgnoreCase("MTR")){
                 contact_1tv.setText(query.getMtr_smo());
                 contact_2tv.setText(query.getMtr_miroom());
                 contact_3tv.setText(query.getMtr_cmh());
                 contact_4tv.setText(query.getMtr_ambuloance());
-                topbar.setText("BAF BASE "+AppConstant.HELP_BASE);
+                topbar.setText("BAF Base "+AppConstant.HELP_BASE);
 
             }else if(AppConstant.HELP_BASE.equalsIgnoreCase("ZHR")){
                 contact_1tv.setText(query.getZhr_smo());
                 contact_2tv.setText(query.getZhr_miroom());
                 contact_3tv.setText(query.getZhr_cmh());
                 contact_4tv.setText(query.getZhr_ambuloance());
-                topbar.setText("BAF BASE "+AppConstant.HELP_BASE);
+                topbar.setText("BAF Base "+AppConstant.HELP_BASE);
 
             }else if(AppConstant.HELP_BASE.equalsIgnoreCase("Sheikh Hasina")){
                 contact_1tv.setText(query.getCkb_smo());
                 contact_2tv.setText(query.getCkb_miroom());
                 contact_3tv.setText(query.getCkb_cmh());
                 contact_4tv.setText(query.getCkb_ambuloance());
-                topbar.setText("BAF BASE "+AppConstant.HELP_BASE);
+                topbar.setText("BAF Base "+AppConstant.HELP_BASE);
 
             }
 

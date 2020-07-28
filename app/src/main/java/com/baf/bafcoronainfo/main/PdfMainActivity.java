@@ -33,7 +33,7 @@ public class PdfMainActivity extends Activity {
     public void PDF1(View v) {
 
         Intent intent = new Intent(this, PdfActivity.class);
-        intent.putExtra("pdfName", "corona1.pdf");
+        intent.putExtra("pdfName", "pdf_5.pdf");
         intent.putExtra("head","BAF CORONA INFO");
         startActivity(intent);
     }
@@ -41,21 +41,21 @@ public class PdfMainActivity extends Activity {
     public void PDF2(View v) {
 
         Intent intent = new Intent(this, PdfActivity.class);
-        intent.putExtra("pdfName", "corona1.pdf");
+        intent.putExtra("pdfName", "pdf_5.pdf");
         intent.putExtra("head","BAF CORONA INFO");
         startActivity(intent);
     }
 
     public void PDF3(View v) {
         Intent intent = new Intent(this, PdfActivity.class);
-        intent.putExtra("pdfName", "corona1.pdf");
+        intent.putExtra("pdfName", "pdf_5.pdf");
         intent.putExtra("head","BAF CORONA INFO");
         startActivity(intent);
     }
 
     public void PDF4(View v) {
         Intent intent = new Intent(this, PdfActivity.class);
-        intent.putExtra("pdfName", "corona1.pdf");
+        intent.putExtra("pdfName", "pdf_5.pdf");
         intent.putExtra("head","BAF CORONA INFO");
         startActivity(intent);
     }

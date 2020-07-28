@@ -33,6 +33,7 @@ import com.baf.bafcoronainfo.util.AppConstant;
 import com.baf.bafcoronainfo.util.BusyDialog;
 import com.baf.bafcoronainfo.util.Helpers;
 import com.baf.bafcoronainfo.util.Logger;
+import com.baf.bafcoronainfo.util.PersistentUser;
 import com.baf.bafcoronainfo.util.ToastUtil;
 import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.DoubleBounce;
@@ -71,7 +72,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
     private TextView tv_isolation;
     private TextView tv_quarantine;
     private TextView topbar;
-    private TextView tested_total;
+    private TextView tv_tested_total;
     private RelativeLayout re_filter;
 
     @Override
@@ -106,7 +107,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
         tv_isolation=(TextView)findViewById(R.id.tv_isolation);
         tv_quarantine=(TextView)findViewById(R.id.tv_quarantine);
         topbar=(TextView)findViewById(R.id.topbar);
-        tested_total=(TextView)findViewById(R.id.tested_total);
+        tv_tested_total=(TextView)findViewById(R.id.tv_tested_total);
 
         re_filter.setOnClickListener(this);
         radioGroup.setOnCheckedChangeListener(this);
@@ -147,10 +148,14 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
     }
     }
 
-    public void MapLoad(View v) {
+    /*public void MapLoad(View v) {
         Intent intent = new Intent(this, MapActivity.class);
         startActivity(intent);
 
+    }*/
+    public void Logout(View view){
+        PersistentUser.setUserpassword(mContext,"");
+        this.finish();
     }
 
     public void BACK(View v) {
@@ -232,6 +237,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
                     tv_cmh.setText(query.getBsr_cmh_total());
                     tv_isolation.setText(query.getBsr_isolation_total());
                     tv_quarantine.setText(query.getBsr_home_quarantine_total());
+                    tv_tested_total.setText(query.getBsr_tested_total());
                     topbar.setText("BAF BASE " + AppConstant.BASE);
                 }
             }else if(AppConstant.BASE.equalsIgnoreCase("Bangabandhu")){
@@ -245,6 +251,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
                     tv_cmh.setText(query.getBbd_cmh_total());
                     tv_isolation.setText(query.getBbd_isolation_total());
                     tv_quarantine.setText(query.getBbd_home_quarantine_total());
+                    tv_tested_total.setText(query.getBbd_tested_total());
                     topbar.setText("BAF BASE "+AppConstant.BASE);
                 }
 
@@ -258,6 +265,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
                     tv_cmh.setText(query.getPkp_cmh_total());
                     tv_isolation.setText(query.getPkp_isolation_total());
                     tv_quarantine.setText(query.getPkp_home_quarantine_total());
+                    tv_tested_total.setText(query.getPkp_tested_total());
                     topbar.setText("BAF BASE "+AppConstant.BASE);
                 }
 
@@ -271,6 +279,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
                     tv_cmh.setText(query.getMtr_cmh_total());
                     tv_isolation.setText(query.getMtr_isolation_total());
                     tv_quarantine.setText(query.getMtr_home_quarantine_total());
+                    tv_tested_total.setText(query.getMtr_tested_total());
                     topbar.setText("BAF BASE "+AppConstant.BASE);
                 }
 
@@ -286,6 +295,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
                     tv_cmh.setText(query.getZhr_cmh_total());
                     tv_isolation.setText(query.getZhr_isolation_total());
                     tv_quarantine.setText(query.getZhr_home_quarantine_total());
+                    tv_tested_total.setText(query.getZhr_tested_total());
                     topbar.setText("BAF BASE "+AppConstant.BASE);
                 }
 
@@ -300,6 +310,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
                     tv_cmh.setText(query.getCxb_cmh_total());
                     tv_isolation.setText(query.getCxb_isolation_total());
                     tv_quarantine.setText(query.getCxb_home_quarantine_total());
+                    tv_tested_total.setText(query.getCxb_tested_total());
                     topbar.setText("BAF BASE "+AppConstant.BASE);
                 }
 
@@ -314,7 +325,8 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
                     tv_cmh.setText(query.getTotal_cmh());
                     tv_isolation.setText(query.getTotal_isolation());
                     tv_quarantine.setText(query.getTotal_home_quarantine());
-                    topbar.setText("ALL BASES");
+                    tv_tested_total.setText(query.getTotal_tested());
+                    topbar.setText("ALL BASES ");
                     Log.i("Getting Data",BasewiseStateHolder.getBaseStatelist().get(1).getBsr_affected_total());
                 }
             }
