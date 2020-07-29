@@ -11,13 +11,13 @@
     <string name="loading">Loading...</string>
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="bottom_text">                                 FREE SHALL WE KEEP THE SKY OF BANGLADESH                         </string>
+    <string name="bottom_text">                                 Free shall we keep the sky of Bangladesh                         </string>
     <string name="mapbox_access_token">pk.eyJ1IjoiYWxpLW1ic3R1LWljdCIsImEiOiJja2Nxa3BpdHQwaDR5MnFtZ2U0ZjFlamQ2In0.n_kdLBox5bym8mE-kCYKpA</string>
     <string name="password_text">To access this section of app user need authentication from Air HQ, Please cantact with BAF Comm Unit</string>
     <string name="success_story_head">একজন বিমানসেনার করােনা জয়ের যুদ্ধ</string>
-    <string name="corona_direction_head_1" >ভূমিকা,ভাইরাস বিস্তার,লক্ষণ সমূহ</string>
+    <string name="corona_direction_head_1" >ভূমিকা, ভাইরাস বিস্তার, লক্ষণ সমূহ</string>
     <string name="corona_direction_head_2" >প্রতিরোধ ব্যবস্থা</string>
-    <string name="corona_direction_head_3" >বহির্দেশ ভ্রমন</string>
+    <string name="corona_direction_head_3" >বহির্দেশ ভ্রমণ </string>
     <string name="corona_direction_head_4" >কোয়ারেন্টিন</string>
     <string name="corona_direction_head_5" >স্বাস্থ্য সেবা প্রদানকরী ব্যক্তিবর্গের জন্য করণীয়</string>
     <string name="corona_direction_body_5" >স্বাস্থ্য সেবা প্রদানকরী ব্যক্তিবর্গের জন্য করণীয়ঃ\n\n
@@ -44,7 +44,7 @@
 গ।	রোগের লক্ষন নির্ণিত হলে সিএমএইচ/ করোনা চিকিৎসা কেন্দ্রে ভর্তি করা হবে।\n\n
 ঘ।	বিদেশ গমনের প্রাক্কালে এবং প্রত্যাবর্তনের পর ১৪ দিন কোয়ারেন্টিন সম্পন্ন করতে 	হবে।	\n\n
 </string>
-    <string name="corona_direction_body_1" >ভূমিকা \n\n
+    <string name="corona_direction_body_1" >
  বিশ্বের বিভিন্ন দেশের মত বাংলাদেশেও করোনা ভাইরাস (COVID-19) এর প্রকোপ দেখা দিয়েছে। বিশ্ব স্বাস্থ্য সংস্থা করোনা ভাইরাসের সংক্রমনকে জনস্বাস্থ্যের জন্য জরুরি অবস্থা ঘোষনা করেছে এবং সকল দেশকে সতর্ক থাকার জন্য অনুরোধ করেছে। এরই ধারাবাহিকতায় সামরিক চিকিৎসা সার্ভিস মহাপরিদপ্তরের নিদের্শনাক্রমে বাংলাদেশ বিমান বাহিনীর চিকিৎসা পরিদপ্তর সময় সময় সংশ্লিষ্ট বিষয়ে প্রয়োজনীয় দিকনির্দেশনা প্রদান করে আসছে।
 
 \n\n

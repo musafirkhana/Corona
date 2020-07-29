@@ -39,6 +39,7 @@ public class PdfActivity extends Activity  {
 
         section_name = getIntent().getStringExtra("section");
         if(section_name.equalsIgnoreCase("1")){
+
             tv_directories.setText(getResources().getString(R.string.corona_direction_body_1));
         }else if(section_name.equalsIgnoreCase("2")){
             tv_directories.setText(getResources().getString(R.string.corona_direction_body_2));

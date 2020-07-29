@@ -174,7 +174,6 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
         final AlertDialog alertDialog = builder.create();
         Button btn_cancel = (Button) dialogView.findViewById(R.id.btn_cancel);
         Button btn_apply = (Button) dialogView.findViewById(R.id.btn_apply);
-        TextView tv_base=(TextView)dialogView.findViewById(R.id.tv_base);
         TextView filter_head=(TextView)dialogView.findViewById(R.id.filter_head);
         final Spinner base_spinner = (Spinner) dialogView.findViewById(R.id.base_spinner);
 

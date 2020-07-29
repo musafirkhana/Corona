@@ -30,13 +30,7 @@
 
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@color/divider"></View>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,25 +48,29 @@
             android:theme="@style/Theme.MaterialComponents.Light"
             android:clickable="true"
             android:focusable="true">
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:onClick="CoronaState"
+            android:orientation="vertical"
+            android:gravity="center"
             android:background="@color/app_background"
             android:clickable="true">
+
             <ImageView android:id="@+id/img_1"
                 android:layout_width="50dp"
-                android:layout_centerInParent="true"
+                android:layout_gravity="center"
                 android:background="@drawable/ic_stat"
                 android:layout_height="50dp">
             </ImageView>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_below="@+id/img_1"
                 android:textColor="@color/black"
                 android:textSize="16sp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/bold"
                 android:gravity="center"
                 android:paddingTop="10dp"
                 android:textStyle="bold"
@@ -80,7 +78,7 @@
 
             </TextView>
 
-        </RelativeLayout>
+        </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
@@ -93,17 +91,19 @@
             android:theme="@style/Theme.MaterialComponents.Light"
             android:clickable="true"
             android:focusable="true">
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical"
             android:onClick="Prevention"
             android:background="@color/app_background"
             >
 
             <ImageView android:id="@+id/img_2"
                 android:layout_width="50dp"
-                android:layout_centerInParent="true"
+                android:layout_gravity="center"
                 android:background="@drawable/ic_what"
                 android:layout_height="50dp">
 
@@ -113,17 +113,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_below="@+id/img_2"
-                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
                 android:textColor="@color/black"
                 android:textSize="16sp"
+                android:fontFamily="@font/bold"
                 android:paddingTop="10dp"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:text="WHAT TO DO"></TextView>
 
 
-        </RelativeLayout>
+        </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
     <LinearLayout
@@ -143,10 +143,12 @@
             android:theme="@style/Theme.MaterialComponents.Light"
             android:clickable="true"
             android:focusable="true">
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:clickable="true"
+                android:orientation="vertical"
+                android:gravity="center"
                 android:onClick="Help"
                 android:background="@color/app_background"
                 >
@@ -154,7 +156,7 @@
 
             <ImageView android:id="@+id/img_3"
                 android:layout_width="50dp"
-                android:layout_centerInParent="true"
+                android:layout_gravity="center"
                 android:background="@drawable/ic_help"
                 android:layout_height="50dp">
 
@@ -163,18 +165,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/img_3"
+                android:layout_gravity="center"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:gravity="center"
                 android:paddingTop="10dp"
+                android:fontFamily="@font/bold"
                 android:textStyle="bold"
                 android:text="HELPLINE"></TextView>
 
 
-        </RelativeLayout>
+        </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
         <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
@@ -186,10 +187,12 @@
             android:theme="@style/Theme.MaterialComponents.Light"
             android:clickable="true"
             android:focusable="true">
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical"
             android:onClick="Success"
             android:background="@color/app_background"
             >
@@ -197,7 +200,7 @@
 
             <ImageView android:id="@+id/img_4"
                 android:layout_width="50dp"
-                android:layout_centerInParent="true"
+                android:layout_gravity="center"
                 android:background="@drawable/ic_success"
                 android:layout_height="50dp">
 
@@ -206,10 +209,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
                 android:textColor="@color/black"
                 android:textSize="16sp"
+                android:fontFamily="@font/bold"
                 android:textStyle="bold"
                 android:paddingTop="10dp"
                 android:gravity="center"
@@ -217,7 +220,7 @@
                 android:text="SUCCESS STORY"></TextView>
 
 
-        </RelativeLayout>
+        </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 

@@ -7,14 +7,16 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/colorPurple_A400">
+        android:background="@color/header_color">
 
         <TextView
             android:id="@+id/filter_head"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:fontFamily="@font/bold"
             android:layout_centerInParent="true"
-            android:text="Filter"
+            android:text="SELECT BASE"
             android:textSize="20sp" />
 
     </RelativeLayout>
@@ -34,18 +36,9 @@
             android:layout_marginRight="@dimen/main_margin_right"
             android:gravity="center">
 
-            <TextView
-                android:id="@+id/tv_base"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:gravity="center|start"
-                android:text="Base"
-                android:textColor="@color/black"
-                android:textSize="@dimen/main_text_size" />
 
             <RelativeLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:background="@drawable/rounded_corner">
@@ -69,7 +62,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="20dp"
-            android:background="@color/colorPurple_A400"
             android:orientation="horizontal">
 
             <Button
@@ -78,8 +70,10 @@
                 android:layout_height="50dp"
                 android:layout_weight="2"
                 android:gravity="center"
+                android:fontFamily="@font/bold"
                 android:text="Cancel"
-                android:textColor="@color/black"
+                android:background="@drawable/rounded_cmh"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -93,8 +87,10 @@
                 android:layout_height="50dp"
                 android:layout_weight="2"
                 android:gravity="center"
+                android:fontFamily="@font/bold"
                 android:text="APPLY"
-                android:textColor="@color/black"
+                android:background="@drawable/rounded_cmh"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>

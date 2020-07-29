@@ -29,10 +29,11 @@
         android:text="BAF CORONA INFO"
         android:layout_below="@+id/re_logo"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/bold"
         android:textColor="@color/google_white"
         android:layout_centerHorizontal="true"
         android:textSize="26sp"
-        android:textStyle="italic" />
+         />
 </RelativeLayout>
 
 
@@ -66,6 +67,7 @@
             android:textColor="@color/google_white"
             android:textSize="16sp"
             android:paddingRight="20sp"
+            android:fontFamily="@font/robo"
             android:paddingLeft="20sp"
             android:paddingBottom="40dp"
             android:gravity="center"

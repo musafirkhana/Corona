@@ -37,6 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="BAF CORONA INFO"
+            android:fontFamily="@font/bold"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold|normal" />
@@ -67,7 +68,7 @@
         android:padding="10dp"
         android:text="@string/corona_direction_body_5"
         android:textColor="@android:color/black"
-        android:textSize="18sp" />
+        android:textSize="20sp" />
 
 
 </ScrollView>

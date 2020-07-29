@@ -37,6 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="BAF CORONA INFO"
+            android:fontFamily="@font/bold"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold|normal" />
@@ -83,10 +84,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:checkable="true"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:layout_marginTop="12dp"
                         app:cardElevation="2dp"
                         android:clickable="true"
                         android:theme="@style/Theme.MaterialComponents.Light"
@@ -118,7 +119,7 @@
                                 android:gravity="center_vertical"
                                 android:layout_marginRight="10dp"
                                 android:layout_toRightOf="@+id/imageview_1"
-                                android:layout_marginLeft="10dp">
+                                android:layout_marginLeft="14dp">
 
                                 <TextView
                                     android:id="@+id/ptv_1"
@@ -127,29 +128,12 @@
                                     android:layout_alignParentLeft="true"
                                     android:text="@string/corona_direction_head_1"
                                     android:textColor="@color/fontBlack"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
+                                    android:textSize="14sp"
+                                    android:textStyle="normal" />
 
                             </RelativeLayout>
 
-                            <RelativeLayout android:id="@+id/call_1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:clickable="true"
-                                android:layout_centerVertical="true"
-                                android:layout_marginRight="10dp"
-                                android:layout_alignParentRight="true"
-                                >
-                                <ImageView
-                                    android:layout_width="50dp"
-                                    android:padding="10dp"
-                                    android:src="@drawable/forword"
-                                    android:layout_height="50dp">
 
-                                </ImageView>
-
-
-                            </RelativeLayout>
                         </RelativeLayout>
                     </com.google.android.material.card.MaterialCardView>
 
@@ -160,9 +144,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:checkable="true"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginBottom="12dp"
                         app:cardElevation="2dp"
                         android:clickable="true"
                         android:theme="@style/Theme.MaterialComponents.Light"
@@ -203,29 +187,12 @@
                                     android:layout_alignParentLeft="true"
                                     android:text="@string/corona_direction_head_2"
                                     android:textColor="@color/fontBlack"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
+                                    android:textSize="14dp"
+                                    android:textStyle="normal" />
 
                             </RelativeLayout>
 
-                            <RelativeLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:clickable="true"
-                                android:layout_centerVertical="true"
-                                android:layout_marginRight="10dp"
-                                android:layout_alignParentRight="true"
-                                >
-                                <ImageView
-                                    android:layout_width="50dp"
-                                    android:padding="10dp"
-                                    android:src="@drawable/forword"
-                                    android:layout_height="50dp">
 
-                                </ImageView>
-
-
-                            </RelativeLayout>
                         </RelativeLayout>
                     </com.google.android.material.card.MaterialCardView>
 
@@ -234,9 +201,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:checkable="true"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginBottom="12dp"
                         app:cardElevation="2dp"
                         android:clickable="true"
                         android:theme="@style/Theme.MaterialComponents.Light"
@@ -273,32 +240,15 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/corona_direction_head_3"
-                                    android:textStyle="bold"
+                                    android:textStyle="normal"
                                     android:layout_alignParentLeft="true"
                                     android:textColor="@color/fontBlack"
-                                    android:textSize="12sp"
+                                    android:textSize="14dp"
                                     />
 
                             </RelativeLayout>
 
-                            <RelativeLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:clickable="true"
-                                android:layout_centerVertical="true"
-                                android:layout_marginRight="10dp"
-                                android:layout_alignParentRight="true"
-                                >
-                                <ImageView
-                                    android:layout_width="50dp"
-                                    android:padding="10dp"
-                                    android:src="@drawable/forword"
-                                    android:layout_height="50dp">
 
-                                </ImageView>
-
-
-                            </RelativeLayout>
                         </RelativeLayout>
                     </com.google.android.material.card.MaterialCardView>
 
@@ -306,9 +256,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:checkable="true"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginBottom="12dp"
                         app:cardElevation="2dp"
                         android:clickable="true"
                         android:theme="@style/Theme.MaterialComponents.Light"
@@ -345,41 +295,24 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/corona_direction_head_4"
-                                    android:textStyle="bold"
+                                    android:textStyle="normal"
                                     android:layout_alignParentLeft="true"
                                     android:textColor="@color/fontBlack"
-                                    android:textSize="12sp"
+                                    android:textSize="14dp"
                                     />
 
                             </RelativeLayout>
 
-                            <RelativeLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:clickable="true"
-                                android:layout_centerVertical="true"
-                                android:layout_marginRight="10dp"
-                                android:layout_alignParentRight="true"
-                                >
-                                <ImageView
-                                    android:layout_width="50dp"
-                                    android:padding="10dp"
-                                    android:src="@drawable/forword"
-                                    android:layout_height="50dp">
 
-                                </ImageView>
-
-
-                            </RelativeLayout>
                         </RelativeLayout>
                     </com.google.android.material.card.MaterialCardView>
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:checkable="true"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginBottom="12dp"
                         app:cardElevation="2dp"
                         android:clickable="true"
                         android:theme="@style/Theme.MaterialComponents.Light"
@@ -416,43 +349,22 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/corona_direction_head_5"
-                                    android:textStyle="bold"
+                                    android:textStyle="normal"
                                     android:layout_alignParentLeft="true"
                                     android:textColor="@color/fontBlack"
-                                    android:textSize="12sp"
+                                    android:textSize="14dp"
                                     />
 
                             </RelativeLayout>
 
-                            <RelativeLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:clickable="true"
-                                android:layout_centerVertical="true"
-                                android:layout_marginRight="10dp"
-                                android:layout_alignParentRight="true"
-                                >
-                                <ImageView
-                                    android:layout_width="50dp"
-                                    android:padding="10dp"
-                                    android:src="@drawable/forword"
-                                    android:layout_height="50dp">
 
-                                </ImageView>
-
-
-                            </RelativeLayout>
                         </RelativeLayout>
                     </com.google.android.material.card.MaterialCardView>
 
 
                 </LinearLayout>
 
-                <!--<LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:clickable="true"
-                    android:onClick="BLANKLI"></LinearLayout>-->
+
             </LinearLayout>
         </ScrollView>
 
