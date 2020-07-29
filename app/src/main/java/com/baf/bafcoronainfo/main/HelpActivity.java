@@ -11,6 +11,9 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +22,10 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Filter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -28,6 +34,7 @@ import android.widget.Toast;
 import androidx.core.app.ActivityCompat;
 
 import com.baf.bafcoronainfo.R;
+import com.baf.bafcoronainfo.holder.AllStateHolder;
 import com.baf.bafcoronainfo.holder.BasewiseStateHolder;
 import com.baf.bafcoronainfo.holder.HelpHolder;
 import com.baf.bafcoronainfo.model.BaseWiselistModel;
@@ -39,29 +46,25 @@ import com.baf.bafcoronainfo.util.ToastUtil;
 
 import org.json.JSONException;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import timber.log.Timber;
 
-public class HelpActivity extends Activity implements View.OnClickListener {
+
+public class HelpActivity extends Activity  {
     private Context mContext;
     List<String> baseList = new ArrayList<String>();
-
-    private String text;
     private String[] respones_results;
 
-    private TextView contact_1tv;
-    private TextView contact_2tv;
-    private TextView contact_3tv;
-    private TextView contact_4tv;
-    private TextView topbar;
+    private String text;
+    private HelpAdapter helpAdapter;
+    public EditText mobile_no_search;
+    private ListView profile_list;
 
-    private RelativeLayout call_1;
-    private RelativeLayout call_2;
-    private RelativeLayout call_3;
-    private RelativeLayout call_4;
 
 
     @Override
@@ -76,118 +79,73 @@ public class HelpActivity extends Activity implements View.OnClickListener {
         baseList.add("MTR");
         baseList.add("ZHR");
         baseList.add("Sheikh Hasina");
-        initUI();
+
         loadAssetData("help.txt");
+        initUI();
 
     }
 
     private void initUI() {
-        contact_1tv = (TextView) findViewById(R.id.contact_1tv);
-        contact_2tv = (TextView) findViewById(R.id.contact_2tv);
-        contact_3tv = (TextView) findViewById(R.id.contact_3tv);
-        contact_4tv = (TextView) findViewById(R.id.contact_4tv);
-        topbar = (TextView) findViewById(R.id.topbar);
-
-        call_1 = (RelativeLayout) findViewById(R.id.call_1);
-        call_2 = (RelativeLayout) findViewById(R.id.call_2);
-        call_3 = (RelativeLayout) findViewById(R.id.call_3);
-        call_4 = (RelativeLayout) findViewById(R.id.call_4);
-
-        call_1.setOnClickListener(this);
-        call_2.setOnClickListener(this);
-        call_3.setOnClickListener(this);
-        call_4.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.call_1:
-                Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:" +contact_1tv.getText().toString()));
-                startActivity(intent);
-                break;
-            case R.id.call_2:
-                Intent intent2 = new Intent(Intent.ACTION_DIAL);
-                intent2.setData(Uri.parse("tel:" +contact_2tv.getText().toString()));
-                startActivity(intent2);
-                break;
-            case R.id.call_3:
-                Intent intent3 = new Intent(Intent.ACTION_DIAL);
-                intent3.setData(Uri.parse("tel:" +contact_3tv.getText().toString()));
-                startActivity(intent3);
-                break;
-            case R.id.call_4:
-                Intent intent4 = new Intent(Intent.ACTION_DIAL);
-                intent4.setData(Uri.parse("tel:" +contact_4tv.getText().toString()));
-                startActivity(intent4);
-                break;
-
-        }
-
-    }
-
-    private void showCustomDialog() {
-        // String downloadFileSize= FileUtils.getFileSize(downloadUrl);
-        ViewGroup viewGroup = findViewById(android.R.id.content);
-        final View dialogView = LayoutInflater.from(this).inflate(R.layout.my_dialog, viewGroup, false);
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setView(dialogView);
-        final AlertDialog alertDialog = builder.create();
-        Button btn_cancel = (Button) dialogView.findViewById(R.id.btn_cancel);
-        Button btn_apply = (Button) dialogView.findViewById(R.id.btn_apply);
-        TextView tv_base=(TextView)dialogView.findViewById(R.id.tv_base);
-        TextView filter_head=(TextView)dialogView.findViewById(R.id.filter_head);
-        final Spinner base_spinner = (Spinner) dialogView.findViewById(R.id.base_spinner);
-
-
-
-
-        ArrayAdapter daynightspinner = new ArrayAdapter(this, R.layout.salutation, baseList);
-        daynightspinner.setDropDownViewResource(R.layout.salutation);
-        base_spinner.setAdapter(daynightspinner);
-
-
-
-        base_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        mobile_no_search = (EditText) findViewById(R.id.mobile_no_search);
+        profile_list = (ListView) findViewById(R.id.profile_list);
+        helpAdapter = new HelpAdapter(this);
+        profile_list.setAdapter(helpAdapter);
+        profile_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                AppConstant.HELP_BASE=base_spinner.getSelectedItem().toString();
-            }
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+
+                HelpModel query= helpAdapter.planetList.get(position);
+               /* Intent intent = new Intent(mContext, ProfileActivity.class);
+                intent.putExtra("name",""+query.getName());
+                intent.putExtra("appoinment",""+query.getAppoinment());
+                intent.putExtra("rank",""+query.getRank());
+                intent.putExtra("branch",""+query.getBranch());
+                intent.putExtra("dob",""+query.getDob());
+                intent.putExtra("blood",""+query.getBlood_group());
+                intent.putExtra("mobile",""+query.getMobile());
+                intent.putExtra("email",""+query.getEmail());
+                intent.putExtra("profile",""+query.getMobile());
+//            toastUtil.appSuccessMsg(mContext,query.getName()+""+position);
+                startActivity(intent);*/
 
             }
         });
+        // TextFilter
+        profile_list.setTextFilterEnabled(true);
 
+        mobile_no_search.addTextChangedListener(new TextWatcher() {
 
-
-        //text_download.setText(Appconstant.SURA_NAME + " " + getResources().getText(R.string.download_text));
-        btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count) {
 
-                alertDialog.dismiss();
+                if (count < before) {
+                    // We're deleting char so we need to reset the adapter data
+                    helpAdapter.resetData();
+                }
+
+                helpAdapter.getFilter().filter(s.toString());
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
             }
         });
-        btn_apply.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                    loadAssetData("help.txt");
-
-                alertDialog.dismiss();
-            }
-        });
-        alertDialog.show();
     }
 
 
-    public void BaseFilter(View v) {
-        showCustomDialog();
 
-    }
+
+
+
     public void BACK(View v) {
         this.finish();
 
@@ -253,59 +211,150 @@ public class HelpActivity extends Activity implements View.OnClickListener {
         @SuppressLint("NewApi")
         protected void onPostExecute(String getResult) {
             //progDialogConfirm.dismiss();
-            setData();
+            //setData();
         }
     }
 
+    class HelpAdapter extends ArrayAdapter<HelpModel> {
+        Context context;
+        private File sdCard = Environment.getExternalStorageDirectory();
+        public String response;
+        public boolean asyncCheck = false;
+        public String ContentCode;
+        public String mobileNo;
+        File pathName = null;
 
-    private void setData(){
-        for (int i = 0; i < HelpHolder.getHelplist().size(); i++) {
-            HelpModel query = HelpHolder.getHelplist().get(i);
-            Log.i("Getting Data",query.getBsr_smo());
-            if(AppConstant.HELP_BASE.equalsIgnoreCase("BSR")){
-                contact_1tv.setText(query.getBsr_smo());
-                contact_2tv.setText(query.getBsr_miroom());
-                contact_3tv.setText(query.getBsr_cmh());
-                contact_4tv.setText(query.getBsr_ambuloance());
-                topbar.setText("BAF Base "+AppConstant.HELP_BASE);
-            }else if(AppConstant.HELP_BASE.equalsIgnoreCase("Bangabandhu")){
-                contact_1tv.setText(query.getBbd_smo());
-                contact_2tv.setText(query.getBbd_miroom());
-                contact_3tv.setText(query.getBbd_cmh());
-                contact_4tv.setText(query.getBbd_ambuloance());
-                topbar.setText("BAF Base "+AppConstant.HELP_BASE);
+        private Filter planetFilter;
+        private List<HelpModel> origPlanetList;
+        private List<HelpModel> planetList;
 
-            }else if(AppConstant.HELP_BASE.equalsIgnoreCase("PKP")){
-                contact_1tv.setText(query.getPkp_smo());
-                contact_2tv.setText(query.getPkp_miroom());
-                contact_3tv.setText(query.getPkp_cmh());
-                contact_4tv.setText(query.getPkp_ambuloance());
-                topbar.setText("BAF Base "+AppConstant.HELP_BASE);
-            }else if(AppConstant.HELP_BASE.equalsIgnoreCase("MTR")){
-                contact_1tv.setText(query.getMtr_smo());
-                contact_2tv.setText(query.getMtr_miroom());
-                contact_3tv.setText(query.getMtr_cmh());
-                contact_4tv.setText(query.getMtr_ambuloance());
-                topbar.setText("BAF Base "+AppConstant.HELP_BASE);
+        public HelpAdapter(Context context) {
+            super(context, R.layout.row_help, HelpHolder.getHelplist());
+            this.context = context;
+            this.context = context;
+            this.planetList = HelpHolder.getHelplist();
+            this.origPlanetList = HelpHolder.getHelplist();
 
-            }else if(AppConstant.HELP_BASE.equalsIgnoreCase("ZHR")){
-                contact_1tv.setText(query.getZhr_smo());
-                contact_2tv.setText(query.getZhr_miroom());
-                contact_3tv.setText(query.getZhr_cmh());
-                contact_4tv.setText(query.getZhr_ambuloance());
-                topbar.setText("BAF Base "+AppConstant.HELP_BASE);
+        }
 
-            }else if(AppConstant.HELP_BASE.equalsIgnoreCase("Sheikh Hasina")){
-                contact_1tv.setText(query.getCkb_smo());
-                contact_2tv.setText(query.getCkb_miroom());
-                contact_3tv.setText(query.getCkb_cmh());
-                contact_4tv.setText(query.getCkb_ambuloance());
-                topbar.setText("BAF Base "+AppConstant.HELP_BASE);
+        public int getCount() {
+            return planetList.size();
+        }
+
+        public HelpModel getItem(int position) {
+            return planetList.get(position);
+        }
+
+        public long getItemId(int position) {
+            return planetList.get(position).hashCode();
+        }
+
+        class ViewHolder {
+
+            private TextView tv_appt_name;
+            private TextView tv_mobileno;
+            private RelativeLayout call_1;
+        }
+
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            final ViewHolder holder;
+            View v = convertView;
+
+            if (v == null) {
+                final LayoutInflater vi = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                v = vi.inflate(R.layout.row_help, null);
+                holder = new ViewHolder();
+
+                holder.tv_appt_name = (TextView) v.findViewById(R.id.tv_appt_name);
+                holder.tv_mobileno = (TextView) v.findViewById(R.id.tv_mobileno);
+                holder.call_1=(RelativeLayout)v.findViewById(R.id.call_1);
+
+                v.setTag(holder);
+            } else {
+                holder = (ViewHolder) v.getTag();
+            }
+            if (position < HelpHolder.getHelplist().size()) {
+                final HelpModel query = planetList.get(position);
+                holder.tv_appt_name.setText(query.getAppoinment_name());
+                holder.tv_mobileno.setText(query.getMobile_no());
+                holder.call_1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel",
+                                query.getMobile_no(), null));
+                        startActivity(intent);
+                    }
+                });
+
 
             }
 
+            return v;
+        }
+
+        public void resetData() {
+            planetList = origPlanetList;
+        }
+        /*
+         * We create our filter
+         */
+
+        @Override
+        public Filter getFilter() {
+            if (planetFilter == null)
+                planetFilter = new PlanetFilter();
+
+            return planetFilter;
+        }
+
+        private class PlanetFilter extends Filter {
+
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                FilterResults results = new FilterResults();
+                // We implement here the filter logic
+                if (constraint == null || constraint.length() == 0) {
+                    // No filter implemented we return all the list
+                    results.values = origPlanetList;
+                    results.count = origPlanetList.size();
+                } else {
+                    // We perform filtering operation
+                    List<HelpModel> nPlanetList = new ArrayList<HelpModel>();
+                    for (HelpModel p : planetList) {
+
+                        if (p.getBase().toUpperCase().startsWith(constraint.toString().toUpperCase())||
+                                p.getAppoinment_name().toUpperCase().startsWith(constraint.toString().toUpperCase())) {
+                            nPlanetList.add(p);
+                        }
+                        Timber.i("Filter Places    " + p.getBase().toLowerCase());
+                        Timber.d("Filter constraint  " + constraint.toString().toLowerCase());
+
+                    }
+
+                    results.values = nPlanetList;
+                    results.count = nPlanetList.size();
+
+                }
+                return results;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+
+                // Now we have to inform the adapter about the new list filtered
+                if (results.count == 0)
+                    notifyDataSetInvalidated();
+                else {
+                    planetList = (List<HelpModel>) results.values;
+                    notifyDataSetChanged();
+                }
+
+            }
 
         }
     }
+
+
 
 }

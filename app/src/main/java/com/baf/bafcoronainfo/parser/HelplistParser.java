@@ -36,39 +36,14 @@ public class HelplistParser {
             helpModel = new HelpModel();
             HelpHolder helpHolder = new HelpHolder();
             //BSR
-            helpModel.setBsr_smo(jsonObject.getString("bsr_cmh_coronacell"));
-            helpModel.setBsr_miroom(jsonObject.getString("bsr_miroom"));
-            helpModel.setBsr_ambuloance(jsonObject.getString("bsr_coronacell"));
-            helpModel.setBsr_cmh(jsonObject.getString("bsr_cmh"));
-
-            helpModel.setBbd_smo(jsonObject.getString("bbd_cmh_coronacell"));
-            helpModel.setBbd_miroom(jsonObject.getString("bbd_miroom"));
-            helpModel.setBbd_ambuloance(jsonObject.getString("bbd_coronacell"));
-            helpModel.setBbd_cmh(jsonObject.getString("bbd_cmh"));
-
-            helpModel.setPkp_smo(jsonObject.getString("pkp_cmh_coronacell"));
-            helpModel.setPkp_miroom(jsonObject.getString("pkp_miroom"));
-            helpModel.setPkp_ambuloance(jsonObject.getString("pkp_coronacell"));
-            helpModel.setPkp_cmh(jsonObject.getString("pkp_cmh"));
-
-            helpModel.setMtr_smo(jsonObject.getString("mtr_cmh_coronacell"));
-            helpModel.setMtr_miroom(jsonObject.getString("mtr_miroom"));
-            helpModel.setMtr_ambuloance(jsonObject.getString("mtr_coronacell"));
-            helpModel.setMtr_cmh(jsonObject.getString("mtr_cmh"));
-
-            helpModel.setZhr_smo(jsonObject.getString("zhr_cmh_coronacell"));
-            helpModel.setZhr_miroom(jsonObject.getString("zhr_miroom"));
-            helpModel.setZhr_ambuloance(jsonObject.getString("zhr_coronacell"));
-            helpModel.setZhr_cmh(jsonObject.getString("zhr_cmh"));
-
-            helpModel.setCkb_smo(jsonObject.getString("ckb_cmh_coronacell"));
-            helpModel.setCkb_miroom(jsonObject.getString("ckb_miroom"));
-            helpModel.setCkb_ambuloance(jsonObject.getString("ckb_coronacell"));
-            helpModel.setCkb_cmh(jsonObject.getString("ckb_cmh"));
+            helpModel.setBase(jsonObject.getString("base"));
+            helpModel.setAppoinment_name(jsonObject.getString("appoinment_name"));
+            helpModel.setMobile_no(jsonObject.getString("mobile_no"));
 
 
 
-            Log.i("ckb_cmh",jsonObject.getString("ckb_cmh"));
+
+            Log.i("appoinment_name",jsonObject.getString("appoinment_name"));
 
             helpHolder.setHelplist(helpModel);
             helpModel = null;

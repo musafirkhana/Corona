@@ -27,15 +27,18 @@ public class TodayStatelistParser {
         JSONObject mainJsonObject = null;
         JSONObject jsonObject = null;
         JSONObject total_jsonObject = null;
+        JSONObject ForTotalTodayYesterday_jsonObject=null;
         if(AllUrls.API_KEY.equalsIgnoreCase(AllUrls.YESTREDAY_KEY)){
             mainJsonObject = new JSONObject(result);
             jsonObject = mainJsonObject.getJSONObject("Yesterday");
             total_jsonObject = mainJsonObject.getJSONObject("Alltimetotal");
+             ForTotalTodayYesterday_jsonObject = mainJsonObject.getJSONObject("ForTotalTodayYesterday");
 
         }else if(AllUrls.API_KEY.equalsIgnoreCase(AllUrls.TODAY_KEY)){
              mainJsonObject = new JSONObject(result);
              jsonObject = mainJsonObject.getJSONObject("Today");
              total_jsonObject = mainJsonObject.getJSONObject("Alltimetotal");
+             ForTotalTodayYesterday_jsonObject = mainJsonObject.getJSONObject("ForTotalTodayYesterday");
         }
 
 
@@ -53,9 +56,12 @@ public class TodayStatelistParser {
             baseWiselistModel.setTotal_affected(total_jsonObject.getString("total_affected"));
             baseWiselistModel.setTotal_recovered(total_jsonObject.getString("total_recovered"));
             baseWiselistModel.setTotal_death(total_jsonObject.getString("total_death"));
-            baseWiselistModel.setTotal_cmh(total_jsonObject.getString("total_cmh"));
-            baseWiselistModel.setTotal_isolation(total_jsonObject.getString("total_isolation"));
-            baseWiselistModel.setTotal_home_quarantine(total_jsonObject.getString("total_home_quarantine"));
+//            baseWiselistModel.setTotal_cmh(total_jsonObject.getString("total_cmh"));
+//            baseWiselistModel.setTotal_isolation(total_jsonObject.getString("total_isolation"));
+//            baseWiselistModel.setTotal_home_quarantine(total_jsonObject.getString("total_home_quarantine"));
+            baseWiselistModel.setTotal_cmh(ForTotalTodayYesterday_jsonObject.getString("total_cmh"));
+            baseWiselistModel.setTotal_isolation(ForTotalTodayYesterday_jsonObject.getString("total_isolation"));
+            baseWiselistModel.setTotal_home_quarantine(ForTotalTodayYesterday_jsonObject.getString("total_home_quarantine"));
             //BSR
             baseWiselistModel.setBsr_affected_total(jsonObject.getString("bsr_affected"));
             baseWiselistModel.setBsr_cmh_total(jsonObject.getString("bsr_cmh"));

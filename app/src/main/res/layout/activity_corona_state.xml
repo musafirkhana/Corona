@@ -180,7 +180,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:padding="10dp"
-                        android:text="Present State"
+                        android:text="Confirmed Case"
                         android:textColor="@color/white"
                         android:textSize="16sp">
 
