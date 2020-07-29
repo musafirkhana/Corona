@@ -62,7 +62,9 @@ public class MainActivity extends Activity {
 
     String[] alphabet = new String[]{"dai", "dplans", "dfs", "drect", "dproj", "dac", "dao", "dat",
             "dad", "dedn", "dmet", "dats", "dcwit", "doao", "dengg", "dce", "darmt", "dsup", "dpers",
-            "dwks", "dfin", "pm", "dms", "dwc"};
+            "dwks", "dfin", "pm", "dms", "dwc",
+            "coas", "pstocoas", "airsecy", "dyairsecy", "ci",
+            "acaso", "acasp", "acasm", "acasa"};
     List<String> list = Arrays.asList(alphabet);
 
     @Override

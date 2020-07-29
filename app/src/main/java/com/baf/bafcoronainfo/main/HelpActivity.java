@@ -89,6 +89,7 @@ public class HelpActivity extends Activity  {
         mobile_no_search = (EditText) findViewById(R.id.mobile_no_search);
         profile_list = (ListView) findViewById(R.id.profile_list);
         helpAdapter = new HelpAdapter(this);
+        mobile_no_search.setFocusableInTouchMode(true);
         profile_list.setAdapter(helpAdapter);
         profile_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -144,7 +145,11 @@ public class HelpActivity extends Activity  {
 
 
 
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mobile_no_search.clearFocus();
+    }
 
     public void BACK(View v) {
         this.finish();

@@ -61,6 +61,7 @@
             android:name=".main.HelpActivity"
             android:configChanges="locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:launchMode="singleTop"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden"
             android:screenOrientation="fullSensor">
 
         </activity>
