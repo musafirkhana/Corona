@@ -103,9 +103,7 @@ public class MainActivity extends Activity {
         /*Intent intent = new Intent(this, PdfMainActivity.class);
         startActivity(intent);*/
 
-        Intent intent = new Intent(this, PdfActivity.class);
-        intent.putExtra("pdfName", "pdf.pdf");
-        intent.putExtra("head","BAF CORONA INFO");
+        Intent intent = new Intent(this, PdfMainActivity.class);
         startActivity(intent);
     }
     public void CoronaState(View v) {

@@ -4,34 +4,25 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
 import com.baf.bafcoronainfo.R;
-import com.github.barteksc.pdfviewer.PDFView;
-import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
-import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
-import com.github.barteksc.pdfviewer.listener.OnPageErrorListener;
-import com.shockwave.pdfium.PdfDocument;
-
-import java.util.List;
 
 
-public class PdfActivity extends Activity implements OnPageChangeListener, OnLoadCompleteListener, OnPageErrorListener {
+
+public class PdfActivity extends Activity  {
     private Context mContext;
     private static final String TAG = PdfActivity.class.getSimpleName();
 
-    private final static int REQUEST_CODE = 42;
-    public static final int PERMISSION_CODE = 42042;
 
-    public static final String SAMPLE_FILE = "sample.pdf";
-    public static final String READ_EXTERNAL_STORAGE = "android.permission.READ_EXTERNAL_STORAGE";
     Integer pageNumber = 0;
-    private PDFView pdfView;
+    private TextView tv_directories;
     private TextView topbar;
-    private String pdf_name;
+    private String section_name;
     private String headName;
 
     String pdfFileName;
@@ -43,72 +34,25 @@ public class PdfActivity extends Activity implements OnPageChangeListener, OnLoa
         setContentView(R.layout.activity_pdfview);
         mContext = this;
 
-        pdfView = (PDFView) findViewById(R.id.pdfView);
+        tv_directories = (TextView) findViewById(R.id.tv_directories);
         topbar=(TextView)findViewById(R.id.topbar);
-        pdfFileName = getIntent().getStringExtra("pdfName");
-        headName = getIntent().getStringExtra("head");
-        displayFromAsset(pdfFileName);
-        topbar.setText(headName);
 
-    }
-
-    private void displayFromAsset(String assetFileName) {
-        pdfFileName = assetFileName;
-
-        pdfView.fromAsset(pdfFileName)
-                // .pages(0, 2, 1, 3, 3, 3) // all pages are displayed by default
-                .enableSwipe(true) // allows to block changing pages using swipe
-                .swipeHorizontal(true)
-                .enableDoubletap(true)
-                .defaultPage(0)
-                // allows to draw something on the current page, usually visible in the middle of the screen
-                .enableAnnotationRendering(true) // render annotations (such as comments, colors or forms)
-                .password(null)
-                .scrollHandle(null)
-                .enableAntialiasing(true) // improve rendering a little bit on low-res screens
-                // spacing between pages in dp. To define spacing color, set view background
-                .spacing(0)
-                .load();
-
-    }
-
-    @Override
-    public void loadComplete(int nbPages) {
-        PdfDocument.Meta meta = pdfView.getDocumentMeta();
-        Log.e(TAG, "title = " + meta.getTitle());
-        Log.e(TAG, "author = " + meta.getAuthor());
-        Log.e(TAG, "subject = " + meta.getSubject());
-        Log.e(TAG, "keywords = " + meta.getKeywords());
-        Log.e(TAG, "creator = " + meta.getCreator());
-        Log.e(TAG, "producer = " + meta.getProducer());
-        Log.e(TAG, "creationDate = " + meta.getCreationDate());
-        Log.e(TAG, "modDate = " + meta.getModDate());
-
-        printBookmarksTree(pdfView.getTableOfContents(), "-");
-
-    }
-
-    public void printBookmarksTree(List<PdfDocument.Bookmark> tree, String sep) {
-        for (PdfDocument.Bookmark b : tree) {
-
-            Log.e(TAG, String.format("%s %s, p %d", sep, b.getTitle(), b.getPageIdx()));
-
-            if (b.hasChildren()) {
-                printBookmarksTree(b.getChildren(), sep + "-");
-            }
+        section_name = getIntent().getStringExtra("section");
+        if(section_name.equalsIgnoreCase("1")){
+            tv_directories.setText(getResources().getString(R.string.corona_direction_body_1));
+        }else if(section_name.equalsIgnoreCase("2")){
+            tv_directories.setText(getResources().getString(R.string.corona_direction_body_2));
+        }else if(section_name.equalsIgnoreCase("3")){
+            tv_directories.setText(getResources().getString(R.string.corona_direction_body_3));
+        }else if(section_name.equalsIgnoreCase("4")){
+            tv_directories.setText(getResources().getString(R.string.corona_direction_body_4));
+        }else {
+            tv_directories.setText(getResources().getString(R.string.corona_direction_body_5));
         }
+
+
     }
 
-    @Override
-    public void onPageError(int page, Throwable t) {
-        Log.e(TAG, "Cannot load page " + page);
-    }
-
-    @Override
-    public void onPageChanged(int page, int pageCount) {
-        pageNumber = page;
-        setTitle(String.format("%s %s / %s", pdfFileName, page + 1, pageCount));
-    }
 
     public void BACK(View v) {
         this.finish();

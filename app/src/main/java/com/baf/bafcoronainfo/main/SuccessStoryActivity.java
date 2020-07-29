@@ -15,16 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baf.bafcoronainfo.R;
-import com.baf.bafcoronainfo.util.JustifiedTextView;
-import com.github.barteksc.pdfviewer.PDFView;
-import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
-import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
-import com.github.barteksc.pdfviewer.listener.OnPageErrorListener;
-import com.shockwave.pdfium.PdfDocument;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.util.List;
 
 
 public class SuccessStoryActivity extends Activity  {

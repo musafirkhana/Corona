@@ -57,13 +57,20 @@
         android:layout_below="@+id/view"
         android:background="@color/login_background"
         android:orientation="horizontal">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.codesgood.views.JustifiedTextView
+        android:id="@+id/tv_directories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/corona_direction_body_5"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
 
 
-        <com.github.barteksc.pdfviewer.PDFView
-            android:id="@+id/pdfView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
+</ScrollView>
 
     </LinearLayout>
 

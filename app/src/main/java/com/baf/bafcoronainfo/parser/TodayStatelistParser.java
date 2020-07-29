@@ -21,13 +21,13 @@ public class TodayStatelistParser {
         BasewiseStateHolder.removeBaseStatelist();
         if (result.length() < 1) {
             return false;
-
         }
 
         JSONObject mainJsonObject = null;
         JSONObject jsonObject = null;
         JSONObject total_jsonObject = null;
         JSONObject ForTotalTodayYesterday_jsonObject=null;
+
         if(AllUrls.API_KEY.equalsIgnoreCase(AllUrls.YESTREDAY_KEY)){
             mainJsonObject = new JSONObject(result);
             jsonObject = mainJsonObject.getJSONObject("Yesterday");
