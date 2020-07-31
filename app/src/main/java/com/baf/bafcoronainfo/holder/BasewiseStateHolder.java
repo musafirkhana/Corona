@@ -1,7 +1,6 @@
 package com.baf.bafcoronainfo.holder;
 
 import com.baf.bafcoronainfo.model.BaseWiselistModel;
-import com.baf.bafcoronainfo.model.StatelistModel;
 
 import java.util.Vector;
 

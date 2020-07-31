@@ -38,8 +38,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:fontFamily="@font/robotobold"
             android:text="ALL DATA"
-            android:fontFamily="@font/bold"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold|normal" />
@@ -78,10 +78,10 @@
                         android:layout_weight="2"
                         android:background="@drawable/toggle_widget_background"
                         android:button="@null"
+                        android:fontFamily="@font/robotobold"
                         android:gravity="center"
                         android:shadowColor="@color/blue"
                         android:text="Total"
-                        android:fontFamily="@font/bold"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -93,10 +93,10 @@
                         android:layout_weight="2"
                         android:background="@drawable/toggle_widget_background"
                         android:button="@null"
+                        android:fontFamily="@font/robotobold"
                         android:gravity="center"
                         android:shadowColor="@color/blue"
                         android:text="Today"
-                        android:fontFamily="@font/bold"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -108,10 +108,10 @@
                         android:layout_weight="2"
                         android:background="@drawable/toggle_widget_background"
                         android:button="@null"
+                        android:fontFamily="@font/robotobold"
                         android:gravity="center"
                         android:shadowColor="@color/blue"
                         android:text="Yesterday"
-                        android:fontFamily="@font/bold"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -125,17 +125,19 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:checkable="true"
-                android:visibility="gone"
-                app:cardElevation="4dp"
-                android:theme="@style/Theme.MaterialComponents.Light"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:visibility="gone"
+                app:cardElevation="4dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:background="@color/color_light_blue_700">
-                    <TextView android:id="@+id/tested_total"
+
+                    <TextView
+                        android:id="@+id/tested_total"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
@@ -146,7 +148,8 @@
 
                     </TextView>
 
-                    <TextView android:id="@+id/tv_tested_total"
+                    <TextView
+                        android:id="@+id/tv_tested_total"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -159,371 +162,394 @@
 
                 </RelativeLayout>
             </com.google.android.material.card.MaterialCardView>
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                >
+                android:layout_height="100dp">
+
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
                     android:layout_margin="8dp"
+                    android:layout_weight="2"
                     android:checkable="true"
-                    app:cardElevation="4dp"
-                    android:theme="@style/Theme.MaterialComponents.Light"
                     android:clickable="true"
-                    android:focusable="true">
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/affected_color"
-                    android:clickable="true">
 
-                    <TextView
+                    android:focusable="true"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardElevation="4dp">
+
+                    <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:padding="10dp"
-                        android:fontFamily="@font/bold"
-                        android:text="CONFIRMED CASE"
-                        android:textColor="@color/white"
-                        android:textSize="16sp">
+                        android:background="@color/affected_color"
+                        android:clickable="true"
+                        android:onClick="Confirm">
 
-                    </TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:fontFamily="@font/robotobold"
+                            android:padding="10dp"
+                            android:text="CONFIRMED CASE"
+                            android:textColor="@color/white"
+                            android:textSize="16sp">
 
-                    <TextView
-                        android:id="@+id/tv_present"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
-                        android:padding="10dp"
-                        android:text="125"
-                        android:textColor="@color/white"
-                        android:textSize="24sp"
-                        android:textStyle="bold"></TextView>
-                </RelativeLayout>
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/tv_present"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:padding="10dp"
+                            android:text="125"
+                            android:textColor="@color/white"
+                            android:textSize="24sp"
+                            android:textStyle="bold"></TextView>
+                    </RelativeLayout>
                 </com.google.android.material.card.MaterialCardView>
+
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
                     android:layout_margin="8dp"
+                    android:layout_weight="2"
                     android:checkable="true"
-                    app:cardElevation="4dp"
-                    android:theme="@style/Theme.MaterialComponents.Light"
                     android:clickable="true"
-                    android:focusable="true">
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/recoverd_color"
-                    android:clickable="true">
 
+                    android:focusable="true"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardElevation="4dp">
 
-                    <TextView
+                    <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:padding="10dp"
-                        android:fontFamily="@font/bold"
-                        android:text="RECOVERED"
-                        android:textColor="@color/white"
-                        android:textSize="16sp">
+                        android:background="@color/recoverd_color"
+                        android:clickable="true"
+                        android:onClick="Recovered">
 
-                    </TextView>
 
-                    <TextView
-                        android:id="@+id/tv_recover"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
-                        android:padding="10dp"
-                        android:text="35"
-                        android:textColor="@color/white"
-                        android:textSize="24sp"
-                        android:textStyle="bold"></TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:fontFamily="@font/robotobold"
+                            android:padding="10dp"
+                            android:text="RECOVERED"
+                            android:textColor="@color/white"
+                            android:textSize="16sp">
 
-                </RelativeLayout>
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/tv_recover"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:padding="10dp"
+                            android:text="35"
+                            android:textColor="@color/white"
+                            android:textSize="24sp"
+                            android:textStyle="bold"></TextView>
+
+                    </RelativeLayout>
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                >
+                android:layout_height="100dp">
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
                     android:layout_margin="8dp"
+                    android:layout_weight="2"
                     android:checkable="true"
-                    app:cardElevation="4dp"
-                    android:theme="@style/Theme.MaterialComponents.Light"
                     android:clickable="true"
-                    android:focusable="true">
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/death_color"
-                    android:clickable="true">
 
+                    android:focusable="true"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardElevation="4dp">
 
-                    <TextView
+                    <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:padding="10dp"
-                        android:fontFamily="@font/bold"
-                        android:text="DEATH"
-                        android:textColor="@color/white"
-                        android:textSize="16sp">
-
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/tv_death"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
-                        android:padding="10dp"
-                        android:text="45"
-                        android:textColor="@color/white"
-                        android:textSize="24sp"
-                        android:textStyle="bold"></TextView>
+                        android:background="@color/death_color"
+                        android:clickable="true"
+                        android:onClick="Death">
 
 
-                </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:fontFamily="@font/robotobold"
+                            android:padding="10dp"
+                            android:text="DEATH"
+                            android:textColor="@color/white"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/tv_death"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:padding="10dp"
+                            android:text="45"
+                            android:textColor="@color/white"
+                            android:textSize="24sp"
+                            android:textStyle="bold"></TextView>
+
+
+                    </RelativeLayout>
                 </com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:layout_margin="8dp"
-                    android:checkable="true"
-                    app:cardElevation="4dp"
-                    android:theme="@style/Theme.MaterialComponents.Light"
-                    android:clickable="true"
-                    android:focusable="true">
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/cmh_color"
-                    android:clickable="true">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:padding="10dp"
-                        android:text="CMH"
-                        android:fontFamily="@font/bold"
-                        android:textColor="@color/white"
-                        android:textSize="16sp">
-
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/tv_cmh"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
-                        android:padding="10dp"
-                        android:text="20"
-                        android:textColor="@color/white"
-                        android:textSize="24sp"
-                        android:textStyle="bold"></TextView>
-
-
-                </RelativeLayout>
-                </com.google.android.material.card.MaterialCardView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-            >
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
                     android:layout_margin="8dp"
-                    android:checkable="true"
-                    app:cardElevation="4dp"
-                    android:theme="@style/Theme.MaterialComponents.Light"
-                    android:clickable="true"
-                    android:focusable="true">
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/isolation_color"
-                    android:clickable="true">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:padding="10dp"
-                        android:text="ISOLATION"
-                        android:fontFamily="@font/bold"
-                        android:textColor="@color/white"
-                        android:textSize="16sp">
-
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/tv_isolation"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
-                        android:padding="10dp"
-                        android:text="245"
-                        android:textColor="@color/white"
-                        android:textSize="24sp"
-                        android:textStyle="bold"></TextView>
-
-                </RelativeLayout>
-                </com.google.android.material.card.MaterialCardView>
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:layout_weight="2"
-                    android:layout_margin="8dp"
                     android:checkable="true"
-                    app:cardElevation="4dp"
-                    android:theme="@style/Theme.MaterialComponents.Light"
+
                     android:clickable="true"
-                    android:focusable="true">
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/home_color"
-                    android:clickable="true">
+                    android:focusable="true"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardElevation="4dp">
 
-
-                    <TextView
+                    <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:padding="10dp"
-                        android:text="HOME QUARANTINE"
-                        android:fontFamily="@font/bold"
-                        android:textColor="@color/white"
-                        android:textSize="16sp">
-
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/tv_quarantine"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
-                        android:padding="10dp"
-                        android:text="1200"
-                        android:textColor="@color/white"
-                        android:textSize="24sp"
-                        android:textStyle="bold"></TextView>
+                        android:background="@color/cmh_color"
+                        android:clickable="true"
+                        android:onClick="Chm">
 
 
-                </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:fontFamily="@font/robotobold"
+                            android:padding="10dp"
+                            android:text="CMH"
+                            android:textColor="@color/white"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/tv_cmh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:padding="10dp"
+                            android:text="20"
+                            android:textColor="@color/white"
+                            android:textSize="24sp"
+                            android:textStyle="bold"></TextView>
+
+
+                    </RelativeLayout>
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-        >
+                android:layout_height="100dp">
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
                     android:layout_margin="8dp"
+                    android:layout_weight="2"
                     android:checkable="true"
-                    app:cardElevation="8dp"
-                    android:theme="@style/Theme.MaterialComponents.Light"
                     android:clickable="true"
-                    android:focusable="true">
-                <RelativeLayout android:id="@+id/re_filter"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/app_background"
-                    android:clickable="true">
 
-                    <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/ic_filter">
+                    android:focusable="true"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardElevation="4dp">
 
-                    </ImageView>
-
-                    <TextView
+                    <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:padding="10dp"
-                        android:text="Filter"
-                        android:fontFamily="@font/bold"
-                        android:textColor="@color/black"
-                        android:textSize="16sp">
-
-                    </TextView>
+                        android:background="@color/isolation_color"
+                        android:clickable="true"
+                        android:onClick="Isolation">
 
 
-                </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:fontFamily="@font/robotobold"
+                            android:padding="10dp"
+                            android:text="ISOLATION"
+                            android:textColor="@color/white"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/tv_isolation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:padding="10dp"
+                            android:text="245"
+                            android:textColor="@color/white"
+                            android:textSize="24sp"
+                            android:textStyle="bold"></TextView>
+
+                    </RelativeLayout>
                 </com.google.android.material.card.MaterialCardView>
+
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
                     android:layout_margin="8dp"
+                    android:layout_weight="2"
                     android:checkable="true"
-
-                    app:cardElevation="8dp"
-                    android:theme="@style/Theme.MaterialComponents.Light"
                     android:clickable="true"
-                    android:focusable="true">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:onClick="Logout"
-                    android:background="@color/app_background"
-                    android:clickable="true">
 
-                    <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/ic_logout">
+                    android:focusable="true"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardElevation="4dp">
 
-                    </ImageView>
-
-                    <TextView
+                    <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:padding="10dp"
-                        android:text="Logout"
-                        android:fontFamily="@font/bold"
-                        android:textColor="@color/black"
-                        android:textSize="16sp">
-
-                    </TextView>
+                        android:background="@color/home_color"
+                        android:clickable="true"
+                        android:onClick="HomeQ">
 
 
-                </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:fontFamily="@font/robotobold"
+                            android:padding="10dp"
+                            android:text="HOME QUARANTINE"
+                            android:textColor="@color/white"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/tv_quarantine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:padding="10dp"
+                            android:text="1200"
+                            android:textColor="@color/white"
+                            android:textSize="24sp"
+                            android:textStyle="bold"></TextView>
+
+
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:layout_weight="2"
+                    android:checkable="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardElevation="8dp">
+
+                    <RelativeLayout
+                        android:id="@+id/re_filter"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/app_background"
+                        android:clickable="true">
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/ic_filter">
+
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/robotobold"
+                            android:padding="10dp"
+                            android:text="Filter"
+                            android:textColor="@color/black"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:layout_weight="2"
+                    android:checkable="true"
+
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardElevation="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/app_background"
+                        android:clickable="true"
+                        android:onClick="Logout">
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/ic_logout">
+
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/robotobold"
+                            android:padding="10dp"
+                            android:text="Logout"
+                            android:textColor="@color/black"
+                            android:textSize="16sp">
+
+                        </TextView>
+
+
+                    </RelativeLayout>
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
@@ -541,6 +567,7 @@
         android:ellipsize="marquee"
         android:focusable="true"
         android:focusableInTouchMode="true"
+        android:fontFamily="@font/robotobold"
         android:freezesText="true"
         android:gravity="center"
         android:marqueeRepeatLimit="marquee_forever"

@@ -32,31 +32,31 @@ public class PdfMainActivity extends Activity {
 
     public void PDF1(View v) {
 
-        Intent intent = new Intent(this, PdfActivity.class);
+        Intent intent = new Intent(this, WebViewActivity.class);
         intent.putExtra("section", "1");
         startActivity(intent);
     }
 
     public void PDF2(View v) {
 
-        Intent intent = new Intent(this, PdfActivity.class);
+        Intent intent = new Intent(this, WebViewActivity.class);
         intent.putExtra("section", "2");
         startActivity(intent);
     }
 
     public void PDF3(View v) {
-        Intent intent = new Intent(this, PdfActivity.class);
+        Intent intent = new Intent(this, WebViewActivity.class);
         intent.putExtra("section", "3");
         startActivity(intent);
     }
 
     public void PDF4(View v) {
-        Intent intent = new Intent(this, PdfActivity.class);
+        Intent intent = new Intent(this, WebViewActivity.class);
         intent.putExtra("section", "4");
         startActivity(intent);
     }
     public void PDF5(View v) {
-        Intent intent = new Intent(this, PdfActivity.class);
+        Intent intent = new Intent(this, WebViewActivity.class);
         intent.putExtra("section", "5");
         startActivity(intent);
     }

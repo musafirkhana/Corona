@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="BAF CORONA INFO"
-            android:fontFamily="@font/bold"
+            android:fontFamily="@font/robotobold"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold|normal" />

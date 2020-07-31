@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/top_linear"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/header_color"
+        >
+
+        <RelativeLayout android:id="@+id/left_relative"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:onClick="BACK"
+            android:layout_alignParentLeft="true">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_back">
+
+            </ImageView>
+
+
+
+        </RelativeLayout>
+
+        <TextView android:id="@+id/topbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="BAF CORONA INFO"
+            android:fontFamily="@font/bold"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold|normal" />
+
+    </RelativeLayout>
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/top_linear"></View>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkable="true"
+        android:id="@+id/top_mat"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        app:cardElevation="4dp"
+        android:layout_below="@+id/view"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        android:clickable="true"
+        android:focusable="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:background="@color/login_background"
+        android:orientation="vertical">
+
+        <TextView android:id="@+id/tv_head"
+            android:layout_width="match_parent"
+            android:text="TOTAL CONFIRMATION CASE"
+            android:textSize="20sp"
+            android:fontFamily="@font/robotobold"
+            android:layout_height="wrap_content">
+        </TextView>
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/gray"
+            android:layout_marginTop="5dp"
+            android:layout_height="2dp">
+
+        </View>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="match_parent">
+            <TextView android:id="@+id/tv_base_1"
+                android:layout_width="wrap_content"
+                android:text="BAF BSR"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/robotolight"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_data_base_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/robotobold"
+                android:text="..."
+                android:textColor="@color/black"
+                android:textSize="16sp"></TextView>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="match_parent">
+            <TextView android:id="@+id/tv_base_2"
+                android:layout_width="wrap_content"
+                android:text="BAF Bangabandhu"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/robotolight"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView android:id="@+id/tv_data_base_2"
+                android:layout_width="wrap_content"
+                android:text="..."
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/robotobold"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="match_parent">
+            <TextView android:id="@+id/tv_base_3"
+                android:layout_width="wrap_content"
+                android:text="BAF PKP"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/robotolight"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView android:id="@+id/tv_data_base_3"
+                android:layout_width="wrap_content"
+                android:text="..."
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/robotobold"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="match_parent">
+            <TextView android:id="@+id/tv_base_4"
+                android:layout_width="wrap_content"
+                android:text="BAF MTR"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/robotolight"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView android:id="@+id/tv_data_base_4"
+                android:layout_width="wrap_content"
+                android:text="..."
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/robotobold"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="match_parent">
+            <TextView android:id="@+id/tv_base_5"
+                android:layout_width="wrap_content"
+                android:text="BAF ZHR"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/robotolight"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_data_base_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/robotobold"
+                android:text="..."
+                android:textColor="@color/black"
+                android:textSize="16sp"></TextView>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="match_parent">
+            <TextView android:id="@+id/tv_base_6"
+                android:layout_width="wrap_content"
+                android:text="BAF Sheikh Hasina"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/robotolight"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView android:id="@+id/tv_data_base_6"
+                android:layout_width="wrap_content"
+                android:text="..."
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/robotobold"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </RelativeLayout>
+       <View
+           android:layout_width="match_parent"
+           android:background="@color/gray"
+           android:layout_marginTop="5dp"
+           android:layout_height="2dp">
+
+       </View>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="TOTAL"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/robotobold"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView android:id="@+id/tv_data_total"
+                android:layout_width="wrap_content"
+                android:text="..."
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"
+                android:textSize="16sp"
+                android:fontFamily="@font/robotobold"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </RelativeLayout>
+
+
+
+
+
+    </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkable="true"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/top_mat"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        app:cardElevation="4dp"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        android:clickable="true"
+        android:focusable="true">
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/fragment_verticalbarchart_chart"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+
+        android:layout_height="200dp" />
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>

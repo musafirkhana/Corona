@@ -18,6 +18,8 @@ public class AppConstant extends Application {
     public static String BASE = "ALL BASES";
     public static String HELP_BASE = "BSR";
     public static String APP_PASSWORD = "1234";
+    public static String SELECTION = "0";
+    public static String SECTION = "1";
 
 
 

@@ -3,13 +3,10 @@ package com.baf.bafcoronainfo.parser;
 import android.content.Context;
 import android.util.Log;
 
-import com.baf.bafcoronainfo.holder.AllStateHolder;
 import com.baf.bafcoronainfo.holder.BasewiseStateHolder;
 import com.baf.bafcoronainfo.model.BaseWiselistModel;
-import com.baf.bafcoronainfo.model.StatelistModel;
 import com.baf.bafcoronainfo.util.Logger;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 

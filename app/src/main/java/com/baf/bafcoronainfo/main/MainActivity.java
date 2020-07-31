@@ -9,45 +9,23 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 
-import androidx.appcompat.app.AppCompatActivity;
-
-
 import com.baf.bafcoronainfo.R;
 import com.baf.bafcoronainfo.adapter.MainSliderAdapter;
-import com.baf.bafcoronainfo.callbackinterface.ServerResponse;
-import com.baf.bafcoronainfo.networkcalls.ServerCallsProvider;
-import com.baf.bafcoronainfo.parser.BaseStatelistParser;
-import com.baf.bafcoronainfo.parser.StatelistParser;
-import com.baf.bafcoronainfo.util.AllUrls;
-import com.baf.bafcoronainfo.util.AppConstant;
 import com.baf.bafcoronainfo.util.BusyDialog;
-import com.baf.bafcoronainfo.util.Helpers;
-import com.baf.bafcoronainfo.util.Logger;
 import com.baf.bafcoronainfo.util.PersistentUser;
 import com.baf.bafcoronainfo.util.PicassoImageLoadingService;
 import com.baf.bafcoronainfo.util.ToastUtil;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
 import ss.com.bannerslider.Slider;
 import ss.com.bannerslider.event.OnSlideClickListener;
-
-import static com.android.volley.VolleyLog.TAG;
 
 public class MainActivity extends Activity {
 
@@ -102,8 +80,6 @@ public class MainActivity extends Activity {
     }
 
     public void Prevention(View v) {
-        /*Intent intent = new Intent(this, PdfMainActivity.class);
-        startActivity(intent);*/
 
         Intent intent = new Intent(this, PdfMainActivity.class);
         startActivity(intent);

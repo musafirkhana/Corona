@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -21,10 +20,8 @@ import android.widget.TextView;
 
 import com.baf.bafcoronainfo.R;
 import com.baf.bafcoronainfo.callbackinterface.ServerResponse;
-import com.baf.bafcoronainfo.holder.AllStateHolder;
 import com.baf.bafcoronainfo.holder.BasewiseStateHolder;
 import com.baf.bafcoronainfo.model.BaseWiselistModel;
-import com.baf.bafcoronainfo.model.StatelistModel;
 import com.baf.bafcoronainfo.networkcalls.ServerCallsProvider;
 import com.baf.bafcoronainfo.parser.BaseStatelistParser;
 import com.baf.bafcoronainfo.parser.TodayStatelistParser;
@@ -35,14 +32,8 @@ import com.baf.bafcoronainfo.util.Helpers;
 import com.baf.bafcoronainfo.util.Logger;
 import com.baf.bafcoronainfo.util.PersistentUser;
 import com.baf.bafcoronainfo.util.ToastUtil;
-import com.github.ybq.android.spinkit.sprite.Sprite;
-import com.github.ybq.android.spinkit.style.DoubleBounce;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
-import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -122,15 +113,18 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
             switch (checkedId) {
                 case R.id.rb_yesterday:
                     AppConstant.BASE="ALL BASES";
+                    AppConstant.SELECTION="2";
                     AllUrls.API_KEY=AllUrls.YESTREDAY_KEY;
                     ServerRequest(AllUrls.YESTREDAY_KEY);
                     break;
                 case R.id.rb_total:
+                    AppConstant.SELECTION="0";
                     AppConstant.BASE="ALL BASES";
                     AllUrls.API_KEY=AllUrls.BASE_WISE_KEY;
                     ServerRequest(AllUrls.BASE_WISE_KEY);
                     break;
                 case R.id.rb_today:
+                    AppConstant.SELECTION="1";
                     AppConstant.BASE="ALL BASES";
                     AllUrls.API_KEY=AllUrls.TODAY_KEY;
                     ServerRequest(AllUrls.TODAY_KEY);
@@ -148,11 +142,44 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
     }
     }
 
-    /*public void MapLoad(View v) {
-        Intent intent = new Intent(this, MapActivity.class);
+    public void Confirm(View v) {
+        Intent intent = new Intent(this, StateDetailActivity.class);
+        intent.putExtra("section","CONFIRMED");
         startActivity(intent);
 
-    }*/
+    }
+    public void Recovered(View v) {
+        Intent intent = new Intent(this, StateDetailActivity.class);
+        intent.putExtra("section","RECOVERED");
+        startActivity(intent);
+
+    }
+    public void Death(View v) {
+        Intent intent = new Intent(this, StateDetailActivity.class);
+        intent.putExtra("section","DEATH");
+        startActivity(intent);
+
+    }
+    public void Chm(View v) {
+        Intent intent = new Intent(this, StateDetailActivity.class);
+        intent.putExtra("section","CMH");
+        startActivity(intent);
+
+    }
+    public void Isolation(View v) {
+        Intent intent = new Intent(this, StateDetailActivity.class);
+        intent.putExtra("section","ISOLATION");
+        startActivity(intent);
+
+    }
+
+    public void HomeQ(View v) {
+        Intent intent = new Intent(this, StateDetailActivity.class);
+        intent.putExtra("section","HOME QUARANTINE");
+        startActivity(intent);
+
+    }
+
     public void Logout(View view){
         PersistentUser.setUserpassword(mContext,"");
         this.finish();
