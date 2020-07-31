@@ -38,7 +38,7 @@
 
         </activity>
         <activity
-            android:name=".main.PdfMainActivity"
+            android:name=".main.WhattoDoActivity"
             android:configChanges="locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:launchMode="singleTop"
             android:screenOrientation="fullSensor">
@@ -87,7 +87,20 @@
             android:screenOrientation="fullSensor">
 
         </activity>
+        <activity
+            android:name=".main.CoronaBotActivity"
+            android:configChanges="locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="fullSensor">
 
+        </activity>
+        <activity
+            android:name=".main.AboutActivity"
+            android:configChanges="locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="fullSensor">
+
+        </activity>
 
     </application>
 

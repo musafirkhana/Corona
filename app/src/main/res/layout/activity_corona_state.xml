@@ -553,6 +553,38 @@
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/header_color"
+                    android:fontFamily="@font/robotobold"
+                    android:text="Last Update :"
+                    android:textSize="20sp">
+                </TextView>
+
+                <TextView android:id="@+id/tv_updatetime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/robotolight"
+                    android:text="2020-07-31T08:55:06.000000Z"
+                    android:textSize="16sp">
+                </TextView>
+
+            </RelativeLayout>
+
+
+
+
 
         </LinearLayout>
 
@@ -567,7 +599,7 @@
         android:ellipsize="marquee"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:fontFamily="@font/robotobold"
+        android:fontFamily="@font/robotolight"
         android:freezesText="true"
         android:gravity="center"
         android:marqueeRepeatLimit="marquee_forever"

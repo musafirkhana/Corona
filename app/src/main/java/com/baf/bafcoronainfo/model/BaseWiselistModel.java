@@ -59,6 +59,9 @@ public class BaseWiselistModel {
     private String cxb_isolation_total = "";
     private String cxb_home_quarantine_total = "";
 
+    private String created_at = "";
+    private String updated_at = "";
+
     public String getTotal_tested() {
         return total_tested;
     }
@@ -451,6 +454,22 @@ public class BaseWiselistModel {
         this.cxb_home_quarantine_total = cxb_home_quarantine_total;
     }
 
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
+
+    public String getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(String updated_at) {
+        this.updated_at = updated_at;
+    }
+
     @Override
     public String toString() {
         return "BaseWiselistModel{" +
@@ -503,6 +522,8 @@ public class BaseWiselistModel {
                 ", cxb_cmh_total='" + cxb_cmh_total + '\'' +
                 ", cxb_isolation_total='" + cxb_isolation_total + '\'' +
                 ", cxb_home_quarantine_total='" + cxb_home_quarantine_total + '\'' +
+                ", created_at='" + created_at + '\'' +
+                ", updated_at='" + updated_at + '\'' +
                 '}';
     }
 }

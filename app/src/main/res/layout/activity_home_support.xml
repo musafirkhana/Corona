@@ -7,28 +7,39 @@
     android:orientation="vertical">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4"
-        android:padding="10dp"
+        android:layout_weight="5"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal"
         >
-        <ss.com.bannerslider.Slider
-            android:id="@+id/slider"
-            android:layout_width="fill_parent"
-            app:slider_animateIndicators="true"
-            app:slider_loopSlides="true"
-            android:fitsSystemWindows="true"
-            android:background="@drawable/rounded_corner"
-            app:slider_interval="3000"
-            app:slider_selectedSlideIndicator="@drawable/selected_slide_indicator"
-            app:slider_indicatorSize="14dp"
-            app:slider_unselectedSlideIndicator="@drawable/unselected_slide_indicator"
-            android:layout_height="fill_parent" />
 
 
-    </LinearLayout>
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/imageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:sliderAnimationDuration="600"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderAutoCycleEnabled="true"
+                app:sliderIndicatorAnimationDuration="600"
+                app:sliderIndicatorGravity="center_horizontal|bottom"
+                app:sliderIndicatorMargin="15dp"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorPadding="3dp"
+                app:sliderIndicatorRadius="2dp"
+                app:sliderIndicatorSelectedColor="#5A5A5A"
+                app:sliderIndicatorUnselectedColor="#FFF"
+                app:sliderScrollTimeInSec="1"
+                app:sliderStartAutoCycle="true" />
+
+
+
+    </RelativeLayout>
 
 
 
@@ -44,6 +55,7 @@
             android:layout_weight="2"
             android:checkable="true"
             android:layout_margin="5dp"
+            android:id="@+id/mat_corona_state"
             app:cardElevation="4dp"
             android:theme="@style/Theme.MaterialComponents.Light"
             android:clickable="true"
@@ -51,11 +63,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="CoronaState"
             android:orientation="vertical"
             android:gravity="center"
             android:background="@color/app_background"
-            android:clickable="true">
+            >
 
             <ImageView android:id="@+id/img_1"
                 android:layout_width="50dp"
@@ -87,17 +98,16 @@
             android:layout_weight="2"
             android:checkable="true"
             android:layout_margin="5dp"
+            android:id="@+id/mat_prevention"
             app:cardElevation="4dp"
             android:theme="@style/Theme.MaterialComponents.Light"
             android:clickable="true"
-            android:focusable="true">
+            >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clickable="true"
             android:gravity="center"
             android:orientation="vertical"
-            android:onClick="Prevention"
             android:background="@color/app_background"
             >
 
@@ -131,7 +141,6 @@
         android:layout_height="0dp"
         android:paddingRight="10dp"
         android:paddingLeft="10dp"
-        android:layout_marginBottom="10dp"
         android:layout_weight="3">
         <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
@@ -139,6 +148,7 @@
             android:layout_weight="2"
             android:checkable="true"
             android:layout_margin="5dp"
+            android:id="@+id/mat_help"
             app:cardElevation="4dp"
             android:theme="@style/Theme.MaterialComponents.Light"
             android:clickable="true"
@@ -146,10 +156,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:clickable="true"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:onClick="Help"
                 android:background="@color/app_background"
                 >
 
@@ -183,6 +191,7 @@
             android:layout_weight="2"
             android:checkable="true"
             android:layout_margin="5dp"
+            android:id="@+id/mat_success"
             app:cardElevation="4dp"
             android:theme="@style/Theme.MaterialComponents.Light"
             android:clickable="true"
@@ -190,10 +199,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clickable="true"
             android:gravity="center"
             android:orientation="vertical"
-            android:onClick="Success"
             android:background="@color/app_background"
             >
 
@@ -221,6 +228,101 @@
 
 
         </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="3">
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:checkable="true"
+            android:layout_margin="5dp"
+            app:cardElevation="4dp"
+            android:id="@+id/mat_coronabot"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            android:clickable="true"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@color/app_background"
+                >
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_corona"
+                    android:layout_height="50dp">
+
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:fontFamily="@font/robotobold"
+                    android:textStyle="bold"
+                    android:text="CORONA BOT"></TextView>
+
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:checkable="true"
+            android:id="@+id/card_about"
+            android:layout_margin="5dp"
+            app:cardElevation="4dp"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            android:clickable="true"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="@color/app_background"
+                >
+
+
+                <ImageView android:id="@+id/img_5"
+                    android:layout_width="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_info"
+                    android:layout_height="50dp">
+
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/robotobold"
+                    android:textStyle="bold"
+                    android:paddingTop="10dp"
+                    android:gravity="center"
+                    android:layout_below="@+id/img_5"
+                    android:text="ABOUT"></TextView>
+
+
+            </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 

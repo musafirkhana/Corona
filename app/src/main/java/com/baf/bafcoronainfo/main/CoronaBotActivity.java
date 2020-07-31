@@ -5,7 +5,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.webkit.WebSettings;
@@ -17,20 +16,19 @@ import android.widget.Toast;
 import com.baf.bafcoronainfo.R;
 
 
-
-public class SuccessStoryActivity extends Activity  {
+public class CoronaBotActivity extends Activity  {
     private Context mContext;
 
-    private TextView header;
     private WebView webView;
     ProgressDialog dialog;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_story);
+        setContentView(R.layout.activity_coronabot);
         mContext = this;
         webView = (WebView) findViewById(R.id.webview);
         webviewSetting();
@@ -40,12 +38,11 @@ public class SuccessStoryActivity extends Activity  {
     private void webviewSetting() {
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
-
         webView.setWebViewClient(new WebViewClient() {
 
             // This method will be triggered when the Page Started Loading
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
-                dialog = ProgressDialog.show(SuccessStoryActivity.this, null,
+                dialog = ProgressDialog.show(CoronaBotActivity.this, null,
                         "PLease wait .....");
                 dialog.setCancelable(true);
                 super.onPageStarted(view, url, favicon);
@@ -61,25 +58,15 @@ public class SuccessStoryActivity extends Activity  {
                 dialog.dismiss();
                 // You can redirect to your own page instead getting the default
                 // error page
-                Toast.makeText(SuccessStoryActivity.this,
+                Toast.makeText(CoronaBotActivity.this,
                         "The Requested Page Does Not Exist", Toast.LENGTH_LONG).show();
                 webView.loadUrl("Musafir Ali");
                 super.onReceivedError(view, errorCode, description, failingUrl);
             }
         });
         settings.setDefaultTextEncodingName("utf-8");
-
-//        webView.loadDataWithBaseURL(null, getResources().getString(R.string.corona_direction_body_1), "text/html", "UTF-8", null);
-//        webView.loadUrl("file:///android_res/raw/test.html");
-			webView.loadUrl("https://skyapi.website/allpost");
-
-
-
-
-
-
+        webView.loadUrl("https://livecoronatest.com/");
     }
-
     public void BACK(View v) {
         this.finish();
 

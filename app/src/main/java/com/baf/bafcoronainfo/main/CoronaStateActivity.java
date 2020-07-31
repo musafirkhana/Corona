@@ -65,6 +65,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
     private TextView topbar;
     private TextView tv_tested_total;
     private RelativeLayout re_filter;
+    private TextView tv_updatetime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +100,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
         tv_quarantine=(TextView)findViewById(R.id.tv_quarantine);
         topbar=(TextView)findViewById(R.id.topbar);
         tv_tested_total=(TextView)findViewById(R.id.tv_tested_total);
+        tv_updatetime=(TextView)findViewById(R.id.tv_updatetime);
 
         re_filter.setOnClickListener(this);
         radioGroup.setOnCheckedChangeListener(this);
@@ -265,6 +267,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
                     tv_quarantine.setText(query.getBsr_home_quarantine_total());
                     tv_tested_total.setText(query.getBsr_tested_total());
                     topbar.setText("BAF BASE " + AppConstant.BASE);
+                    tv_updatetime.setText(query.getUpdated_at());
                 }
             }else if(AppConstant.BASE.equalsIgnoreCase("Bangabandhu")){
 
@@ -279,6 +282,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
                     tv_quarantine.setText(query.getBbd_home_quarantine_total());
                     tv_tested_total.setText(query.getBbd_tested_total());
                     topbar.setText("BAF BASE "+AppConstant.BASE);
+                    tv_updatetime.setText(query.getUpdated_at());
                 }
 
             }else if(AppConstant.BASE.equalsIgnoreCase("PKP")){
@@ -293,6 +297,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
                     tv_quarantine.setText(query.getPkp_home_quarantine_total());
                     tv_tested_total.setText(query.getPkp_tested_total());
                     topbar.setText("BAF BASE "+AppConstant.BASE);
+                    tv_updatetime.setText(query.getUpdated_at());
                 }
 
             }else if(AppConstant.BASE.equalsIgnoreCase("MTR")){
@@ -307,6 +312,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
                     tv_quarantine.setText(query.getMtr_home_quarantine_total());
                     tv_tested_total.setText(query.getMtr_tested_total());
                     topbar.setText("BAF BASE "+AppConstant.BASE);
+                    tv_updatetime.setText(query.getUpdated_at());
                 }
 
 
@@ -323,6 +329,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
                     tv_quarantine.setText(query.getZhr_home_quarantine_total());
                     tv_tested_total.setText(query.getZhr_tested_total());
                     topbar.setText("BAF BASE "+AppConstant.BASE);
+                    tv_updatetime.setText(query.getUpdated_at());
                 }
 
             }else if(AppConstant.BASE.equalsIgnoreCase("Sheikh Hasina")){
@@ -338,6 +345,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
                     tv_quarantine.setText(query.getCxb_home_quarantine_total());
                     tv_tested_total.setText(query.getCxb_tested_total());
                     topbar.setText("BAF BASE "+AppConstant.BASE);
+                    tv_updatetime.setText(query.getUpdated_at());
                 }
 
             }else if(AppConstant.BASE.equalsIgnoreCase("ALL BASES")){
@@ -353,6 +361,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
                     tv_quarantine.setText(query.getTotal_home_quarantine());
                     tv_tested_total.setText(query.getTotal_tested());
                     topbar.setText("ALL BASES ");
+                    tv_updatetime.setText(query.getUpdated_at());
                     Log.i("Getting Data",BasewiseStateHolder.getBaseStatelist().get(1).getBsr_affected_total());
                 }
             }

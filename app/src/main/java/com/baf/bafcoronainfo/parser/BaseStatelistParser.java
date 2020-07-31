@@ -27,7 +27,7 @@ public class BaseStatelistParser {
         JSONObject jsonObject = mainJsonObject.getJSONObject("Basewisetotal");
         JSONObject total_jsonObject = mainJsonObject.getJSONObject("Alltimetotal");
         JSONObject ForTotalTodayYesterday_jsonObject = mainJsonObject.getJSONObject("ForTotalTodayYesterday");
-
+        JSONObject UpdatedOn = mainJsonObject.getJSONObject("UpdatedOn");
 
         BaseWiselistModel baseWiselistModel;
         for (int i = 0; i < jsonObject.length(); i++) {
@@ -49,6 +49,8 @@ public class BaseStatelistParser {
             baseWiselistModel.setTotal_cmh(ForTotalTodayYesterday_jsonObject.getString("total_cmh"));
             baseWiselistModel.setTotal_isolation(ForTotalTodayYesterday_jsonObject.getString("total_isolation"));
             baseWiselistModel.setTotal_home_quarantine(ForTotalTodayYesterday_jsonObject.getString("total_home_quarantine"));
+            baseWiselistModel.setCreated_at(UpdatedOn.getString("created_at"));
+            baseWiselistModel.setUpdated_at(UpdatedOn.getString("updated_at"));
             //BSR
             baseWiselistModel.setBsr_affected_total(jsonObject.getString("bsr_affected_total"));
             baseWiselistModel.setBsr_cmh_total(jsonObject.getString("bsr_cmh_total"));
