@@ -27,7 +27,7 @@ public class BaseStatelistParser {
         JSONObject jsonObject = mainJsonObject.getJSONObject("Basewisetotal");
         JSONObject total_jsonObject = mainJsonObject.getJSONObject("Alltimetotal");
         JSONObject ForTotalTodayYesterday_jsonObject = mainJsonObject.getJSONObject("ForTotalTodayYesterday");
-//        JSONObject UpdatedOn = mainJsonObject.getJSONObject("UpdatedOn");
+        JSONObject CmhisohqforTotalTodayYesterday = mainJsonObject.getJSONObject("CmhisohqforTotalTodayYesterday");
 
         BaseWiselistModel baseWiselistModel;
         for (int i = 0; i < jsonObject.length(); i++) {
@@ -52,50 +52,50 @@ public class BaseStatelistParser {
             baseWiselistModel.setUpdated_at(mainJsonObject.getString("updated_at"));
             //BSR
             baseWiselistModel.setBsr_affected_total(jsonObject.getString("bsr_affected_total"));
-            baseWiselistModel.setBsr_cmh_total(jsonObject.getString("bsr_cmh_total"));
+            baseWiselistModel.setBsr_cmh_total(CmhisohqforTotalTodayYesterday.getString("bsr_cmh"));
             baseWiselistModel.setBsr_death_total(jsonObject.getString("bsr_death_total"));
-            baseWiselistModel.setBsr_home_quarantine_total(jsonObject.getString("bsr_home_quarantine_total"));
-            baseWiselistModel.setBsr_isolation_total(jsonObject.getString("bsr_isolation_total"));
+            baseWiselistModel.setBsr_home_quarantine_total(CmhisohqforTotalTodayYesterday.getString("bsr_home_quarantine"));
+            baseWiselistModel.setBsr_isolation_total(CmhisohqforTotalTodayYesterday.getString("bsr_isolation"));
             baseWiselistModel.setBsr_recovered_total(jsonObject.getString("bsr_recovered_total"));
             baseWiselistModel.setBsr_tested_total(jsonObject.getString("bsr_tested_total"));
             //MTR
             baseWiselistModel.setMtr_affected_total(jsonObject.getString("mtr_affected_total"));
-            baseWiselistModel.setMtr_cmh_total(jsonObject.getString("mtr_cmh_total"));
+            baseWiselistModel.setMtr_cmh_total(CmhisohqforTotalTodayYesterday.getString("mtr_cmh"));
             baseWiselistModel.setMtr_death_total(jsonObject.getString("mtr_death_total"));
-            baseWiselistModel.setMtr_home_quarantine_total(jsonObject.getString("mtr_home_quarantine_total"));
-            baseWiselistModel.setMtr_isolation_total(jsonObject.getString("mtr_isolation_total"));
+            baseWiselistModel.setMtr_home_quarantine_total(CmhisohqforTotalTodayYesterday.getString("mtr_home_quarantine"));
+            baseWiselistModel.setMtr_isolation_total(CmhisohqforTotalTodayYesterday.getString("mtr_isolation"));
             baseWiselistModel.setMtr_recovered_total(jsonObject.getString("mtr_recovered_total"));
             baseWiselistModel.setMtr_tested_total(jsonObject.getString("mtr_tested_total"));
             //BBD
             baseWiselistModel.setBbd_affected_total(jsonObject.getString("bbd_affected_total"));
-            baseWiselistModel.setBbd_cmh_total(jsonObject.getString("bbd_cmh_total"));
+            baseWiselistModel.setBbd_cmh_total(CmhisohqforTotalTodayYesterday.getString("bbd_cmh"));
             baseWiselistModel.setBbd_death_total(jsonObject.getString("bbd_death_total"));
-            baseWiselistModel.setBbd_home_quarantine_total(jsonObject.getString("bbd_home_quarantine_total"));
-            baseWiselistModel.setBbd_isolation_total(jsonObject.getString("bbd_isolation_total"));
+            baseWiselistModel.setBbd_home_quarantine_total(CmhisohqforTotalTodayYesterday.getString("bbd_home_quarantine"));
+            baseWiselistModel.setBbd_isolation_total(CmhisohqforTotalTodayYesterday.getString("bbd_isolation"));
             baseWiselistModel.setBbd_recovered_total(jsonObject.getString("bbd_recovered_total"));
             baseWiselistModel.setBbd_tested_total(jsonObject.getString("bbd_tested_total"));
             //ZHR
             baseWiselistModel.setZhr_affected_total(jsonObject.getString("zhr_affected_total"));
-            baseWiselistModel.setZhr_cmh_total(jsonObject.getString("zhr_cmh_total"));
+            baseWiselistModel.setZhr_cmh_total(CmhisohqforTotalTodayYesterday.getString("zhr_cmh"));
             baseWiselistModel.setZhr_death_total(jsonObject.getString("zhr_death_total"));
-            baseWiselistModel.setZhr_home_quarantine_total(jsonObject.getString("zhr_home_quarantine_total"));
-            baseWiselistModel.setZhr_isolation_total(jsonObject.getString("zhr_isolation_total"));
+            baseWiselistModel.setZhr_home_quarantine_total(CmhisohqforTotalTodayYesterday.getString("zhr_home_quarantine"));
+            baseWiselistModel.setZhr_isolation_total(CmhisohqforTotalTodayYesterday.getString("zhr_isolation"));
             baseWiselistModel.setZhr_recovered_total(jsonObject.getString("zhr_recovered_total"));
             baseWiselistModel.setZhr_tested_total(jsonObject.getString("zhr_tested_total"));
             //PKP
             baseWiselistModel.setPkp_affected_total(jsonObject.getString("pkp_affected_total"));
-            baseWiselistModel.setPkp_cmh_total(jsonObject.getString("pkp_cmh_total"));
+            baseWiselistModel.setPkp_cmh_total(CmhisohqforTotalTodayYesterday.getString("pkp_cmh"));
             baseWiselistModel.setPkp_death_total(jsonObject.getString("pkp_death_total"));
-            baseWiselistModel.setPkp_home_quarantine_total(jsonObject.getString("pkp_home_quarantine_total"));
-            baseWiselistModel.setPkp_isolation_total(jsonObject.getString("pkp_isolation_total"));
+            baseWiselistModel.setPkp_home_quarantine_total(CmhisohqforTotalTodayYesterday.getString("pkp_home_quarantine"));
+            baseWiselistModel.setPkp_isolation_total(CmhisohqforTotalTodayYesterday.getString("pkp_isolation"));
             baseWiselistModel.setPkp_recovered_total(jsonObject.getString("pkp_recovered_total"));
             baseWiselistModel.setPkp_tested_total(jsonObject.getString("pkp_tested_total"));
             //CXB
             baseWiselistModel.setCxb_affected_total(jsonObject.getString("cxb_affected_total"));
-            baseWiselistModel.setCxb_cmh_total(jsonObject.getString("cxb_cmh_total"));
+            baseWiselistModel.setCxb_cmh_total(CmhisohqforTotalTodayYesterday.getString("cxb_cmh"));
             baseWiselistModel.setCxb_death_total(jsonObject.getString("cxb_death_total"));
-            baseWiselistModel.setCxb_home_quarantine_total(jsonObject.getString("cxb_home_quarantine_total"));
-            baseWiselistModel.setCxb_isolation_total(jsonObject.getString("cxb_isolation_total"));
+            baseWiselistModel.setCxb_home_quarantine_total(CmhisohqforTotalTodayYesterday.getString("cxb_home_quarantine"));
+            baseWiselistModel.setCxb_isolation_total(CmhisohqforTotalTodayYesterday.getString("cxb_isolation"));
             baseWiselistModel.setCxb_recovered_total(jsonObject.getString("cxb_recovered_total"));
             baseWiselistModel.setCxb_tested_total(jsonObject.getString("cxb_tested_total"));
 

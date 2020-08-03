@@ -31,7 +31,10 @@
             </ImageView>
 
 
+
+
         </RelativeLayout>
+
 
         <TextView
             android:id="@+id/topbar"
@@ -43,19 +46,30 @@
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold|normal" />
+        <ImageView
+            android:layout_width="30dp"
+            android:id="@+id/img_logout"
+            android:layout_height="30dp"
+            android:clickable="true"
+            android:onClick="Logout"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/ic_logout">
+
+        </ImageView>
+
 
     </RelativeLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/excercise_scroll"
-        android:layout_below="@+id/top_linear">
+
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@+id/top_linear"
+            android:layout_above="@+id/excercise_scroll"
             android:orientation="vertical">
 
             <LinearLayout
@@ -165,7 +179,15 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp">
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4">
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_corfirmed"
@@ -258,7 +280,8 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp">
+                android:layout_height="0dp"
+                android:layout_weight="4">
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_death"
@@ -355,7 +378,8 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp">
+                android:layout_height="0dp"
+                android:layout_weight="4">
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_isolation"
@@ -452,18 +476,18 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp">
+                android:layout_height="0dp"
+                android:layout_weight="2">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
-                    android:layout_weight="2"
                     android:checkable="true"
                     android:clickable="true"
                     android:focusable="true"
                     android:theme="@style/Theme.MaterialComponents.Light"
-                    app:cardElevation="8dp">
+                    app:cardElevation="4dp">
 
                     <RelativeLayout
                         android:id="@+id/re_filter"
@@ -497,56 +521,15 @@
                     </RelativeLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="8dp"
-                    android:layout_weight="2"
-                    android:checkable="true"
 
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:theme="@style/Theme.MaterialComponents.Light"
-                    app:cardElevation="8dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/app_background"
-                        android:clickable="true"
-                        android:onClick="Logout">
-
-                        <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="10dp"
-                            android:background="@drawable/ic_logout">
-
-                        </ImageView>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:fontFamily="@font/robotobold"
-                            android:padding="10dp"
-                            android:text="@string/logout_string"
-                            android:textColor="@color/black"
-                            android:textSize="16sp">
-
-                        </TextView>
-
-
-                    </RelativeLayout>
-                </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginRight="15dp">
 
                 <TextView
@@ -570,11 +553,10 @@
                     android:textSize="16sp"></TextView>
 
             </RelativeLayout>
-
+            </LinearLayout>
 
         </LinearLayout>
 
-    </ScrollView>
 
     <TextView
         android:id="@+id/excercise_scroll"
@@ -584,6 +566,7 @@
         android:background="@color/header_color"
         android:ellipsize="marquee"
         android:focusable="true"
+        android:visibility="gone"
         android:focusableInTouchMode="true"
         android:fontFamily="@font/robotolight"
         android:freezesText="true"
