@@ -208,7 +208,7 @@
             <ImageView android:id="@+id/img_4"
                 android:layout_width="50dp"
                 android:layout_gravity="center"
-                android:background="@drawable/ic_success"
+                android:background="@drawable/ic_target"
                 android:layout_height="50dp">
 
             </ImageView>

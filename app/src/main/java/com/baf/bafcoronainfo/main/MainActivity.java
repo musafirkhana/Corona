@@ -176,7 +176,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 } else if (filter_head.getText().toString().equalsIgnoreCase("")) {
                     toastUtil.appSuccessMsg(mContext, "Please Enter Password");
                 } else {
-                    toastUtil.appSuccessMsg(mContext, "Sory Password Does not match Try Again");
+                    toastUtil.appSuccessMsg(mContext, "Sorry Password Does not match Try Again");
                 }
 
 

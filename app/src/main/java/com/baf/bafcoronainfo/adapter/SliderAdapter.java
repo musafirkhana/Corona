@@ -81,6 +81,7 @@ public class SliderAdapter extends
 
                     @Override
                     public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+
                         return false;
                     }
                 })
@@ -104,13 +105,11 @@ public class SliderAdapter extends
         View itemView;
         ImageView imageViewBackground;
         ImageView imageGifContainer;
-        ProgressBar progressBar1;
 
         public SliderAdapterVH(View itemView) {
             super(itemView);
             imageViewBackground = itemView.findViewById(R.id.iv_auto_image_slider);
             imageGifContainer = itemView.findViewById(R.id.iv_gif_container);
-            progressBar1=itemView.findViewById(R.id.progressBar1);
 
 
             this.itemView = itemView;

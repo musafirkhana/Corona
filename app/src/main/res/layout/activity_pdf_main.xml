@@ -109,7 +109,7 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
-                                android:src="@drawable/ic_pdf" />
+                                android:src="@drawable/ic_info" />
 
                             <RelativeLayout
                                 android:layout_width="wrap_content"
@@ -166,7 +166,7 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
-                                android:src="@drawable/ic_pdf" />
+                                android:src="@drawable/ic_info" />
 
                             <RelativeLayout
                                 android:layout_width="wrap_content"
@@ -221,7 +221,7 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
-                                android:src="@drawable/ic_pdf" />
+                                android:src="@drawable/ic_info" />
 
                             <RelativeLayout
                                 android:layout_width="wrap_content"
@@ -275,7 +275,7 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
-                                android:src="@drawable/ic_pdf" />
+                                android:src="@drawable/ic_info" />
 
                             <RelativeLayout
                                 android:layout_width="wrap_content"
@@ -329,7 +329,7 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
-                                android:src="@drawable/ic_pdf" />
+                                android:src="@drawable/ic_info" />
 
                             <RelativeLayout
                                 android:layout_width="wrap_content"
