@@ -53,6 +53,7 @@
         android:background="@color/header_color"
         android:ellipsize="marquee"
         android:focusable="true"
+        android:visibility="gone"
         android:focusableInTouchMode="true"
         android:freezesText="true"
         android:fontFamily="@font/robo"

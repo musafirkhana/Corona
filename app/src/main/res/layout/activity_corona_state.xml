@@ -168,13 +168,13 @@
                 android:layout_height="100dp">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_corfirmed"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
                     android:layout_weight="2"
                     android:checkable="true"
                     android:clickable="true"
-
                     android:focusable="true"
                     android:theme="@style/Theme.MaterialComponents.Light"
                     app:cardElevation="4dp">
@@ -182,9 +182,7 @@
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@color/affected_color"
-                        android:clickable="true"
-                        android:onClick="Confirm">
+                        android:background="@color/affected_color">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -192,7 +190,7 @@
                             android:layout_alignParentTop="true"
                             android:fontFamily="@font/robotobold"
                             android:padding="10dp"
-                            android:text="CONFIRMED CASE"
+                            android:text="@string/confirmed_case_string"
                             android:textColor="@color/white"
                             android:textSize="16sp">
 
@@ -205,7 +203,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentBottom="true"
                             android:padding="10dp"
-                            android:text="125"
+                            android:text="..."
                             android:textColor="@color/white"
                             android:textSize="24sp"
                             android:textStyle="bold"></TextView>
@@ -213,13 +211,13 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_recover"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
                     android:layout_weight="2"
                     android:checkable="true"
                     android:clickable="true"
-
                     android:focusable="true"
                     android:theme="@style/Theme.MaterialComponents.Light"
                     app:cardElevation="4dp">
@@ -227,9 +225,7 @@
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@color/recoverd_color"
-                        android:clickable="true"
-                        android:onClick="Recovered">
+                        android:background="@color/recoverd_color">
 
 
                         <TextView
@@ -238,7 +234,7 @@
                             android:layout_alignParentTop="true"
                             android:fontFamily="@font/robotobold"
                             android:padding="10dp"
-                            android:text="RECOVERED"
+                            android:text="@string/recovered_string"
                             android:textColor="@color/white"
                             android:textSize="16sp">
 
@@ -251,7 +247,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentBottom="true"
                             android:padding="10dp"
-                            android:text="35"
+                            android:text="..."
                             android:textColor="@color/white"
                             android:textSize="24sp"
                             android:textStyle="bold"></TextView>
@@ -265,13 +261,13 @@
                 android:layout_height="100dp">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_death"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
                     android:layout_weight="2"
                     android:checkable="true"
                     android:clickable="true"
-
                     android:focusable="true"
                     android:theme="@style/Theme.MaterialComponents.Light"
                     app:cardElevation="4dp">
@@ -279,9 +275,7 @@
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@color/death_color"
-                        android:clickable="true"
-                        android:onClick="Death">
+                        android:background="@color/death_color">
 
 
                         <TextView
@@ -290,7 +284,7 @@
                             android:layout_alignParentTop="true"
                             android:fontFamily="@font/robotobold"
                             android:padding="10dp"
-                            android:text="DEATH"
+                            android:text="@string/death_string"
                             android:textColor="@color/white"
                             android:textSize="16sp">
 
@@ -303,7 +297,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentBottom="true"
                             android:padding="10dp"
-                            android:text="45"
+                            android:text="..."
                             android:textColor="@color/white"
                             android:textSize="24sp"
                             android:textStyle="bold"></TextView>
@@ -313,12 +307,12 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_cmh"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
                     android:layout_weight="2"
                     android:checkable="true"
-
                     android:clickable="true"
                     android:focusable="true"
                     android:theme="@style/Theme.MaterialComponents.Light"
@@ -327,9 +321,7 @@
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@color/cmh_color"
-                        android:clickable="true"
-                        android:onClick="Chm">
+                        android:background="@color/cmh_color">
 
 
                         <TextView
@@ -338,7 +330,7 @@
                             android:layout_alignParentTop="true"
                             android:fontFamily="@font/robotobold"
                             android:padding="10dp"
-                            android:text="CMH"
+                            android:text="@string/cmh_string"
                             android:textColor="@color/white"
                             android:textSize="16sp">
 
@@ -351,7 +343,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentBottom="true"
                             android:padding="10dp"
-                            android:text="20"
+                            android:text="..."
                             android:textColor="@color/white"
                             android:textSize="24sp"
                             android:textStyle="bold"></TextView>
@@ -366,13 +358,13 @@
                 android:layout_height="100dp">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_isolation"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
                     android:layout_weight="2"
                     android:checkable="true"
                     android:clickable="true"
-
                     android:focusable="true"
                     android:theme="@style/Theme.MaterialComponents.Light"
                     app:cardElevation="4dp">
@@ -380,9 +372,7 @@
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@color/isolation_color"
-                        android:clickable="true"
-                        android:onClick="Isolation">
+                        android:background="@color/isolation_color">
 
 
                         <TextView
@@ -391,7 +381,7 @@
                             android:layout_alignParentTop="true"
                             android:fontFamily="@font/robotobold"
                             android:padding="10dp"
-                            android:text="ISOLATION"
+                            android:text="@string/isolation_string"
                             android:textColor="@color/white"
                             android:textSize="16sp">
 
@@ -404,7 +394,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentBottom="true"
                             android:padding="10dp"
-                            android:text="245"
+                            android:text="..."
                             android:textColor="@color/white"
                             android:textSize="24sp"
                             android:textStyle="bold"></TextView>
@@ -413,13 +403,13 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_homeq"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
                     android:layout_weight="2"
                     android:checkable="true"
                     android:clickable="true"
-
                     android:focusable="true"
                     android:theme="@style/Theme.MaterialComponents.Light"
                     app:cardElevation="4dp">
@@ -428,8 +418,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/home_color"
-                        android:clickable="true"
-                        android:onClick="HomeQ">
+                      >
 
 
                         <TextView
@@ -438,7 +427,7 @@
                             android:layout_alignParentTop="true"
                             android:fontFamily="@font/robotobold"
                             android:padding="10dp"
-                            android:text="HOME QUARANTINE"
+                            android:text="@string/homeq_string"
                             android:textColor="@color/white"
                             android:textSize="16sp">
 
@@ -451,7 +440,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentBottom="true"
                             android:padding="10dp"
-                            android:text="1200"
+                            android:text="..."
                             android:textColor="@color/white"
                             android:textSize="24sp"
                             android:textStyle="bold"></TextView>
@@ -498,7 +487,7 @@
                             android:layout_centerInParent="true"
                             android:fontFamily="@font/robotobold"
                             android:padding="10dp"
-                            android:text="Filter"
+                            android:text="@string/filter_string"
                             android:textColor="@color/black"
                             android:textSize="16sp">
 
@@ -542,7 +531,7 @@
                             android:layout_centerInParent="true"
                             android:fontFamily="@font/robotobold"
                             android:padding="10dp"
-                            android:text="Logout"
+                            android:text="@string/logout_string"
                             android:textColor="@color/black"
                             android:textSize="16sp">
 
@@ -559,31 +548,28 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="15dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_centerInParent="true"
-                    android:textColor="@color/header_color"
                     android:fontFamily="@font/robotobold"
                     android:text="Last Update :"
-                    android:textSize="20sp">
-                </TextView>
+                    android:textColor="@color/header_color"
+                    android:textSize="20sp"></TextView>
 
-                <TextView android:id="@+id/tv_updatetime"
+                <TextView
+                    android:id="@+id/tv_updatetime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
                     android:fontFamily="@font/robotolight"
                     android:text="2020-07-31T08:55:06.000000Z"
-                    android:textSize="16sp">
-                </TextView>
+                    android:textSize="16sp"></TextView>
 
             </RelativeLayout>
-
-
-
 
 
         </LinearLayout>

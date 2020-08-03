@@ -32,6 +32,7 @@ import com.baf.bafcoronainfo.util.Helpers;
 import com.baf.bafcoronainfo.util.Logger;
 import com.baf.bafcoronainfo.util.PersistentUser;
 import com.baf.bafcoronainfo.util.ToastUtil;
+import com.google.android.material.card.MaterialCardView;
 
 import org.json.JSONException;
 
@@ -56,16 +57,15 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
     private String[] base_respones_results;
     private BusyDialog mBusyDialog;
 
-    private TextView tv_present;
-    private TextView tv_recover;
-    private TextView tv_death;
-    private TextView tv_cmh;
-    private TextView tv_isolation;
-    private TextView tv_quarantine;
+    private TextView tv_present, tv_recover, tv_death,
+            tv_cmh,tv_isolation, tv_quarantine;
     private TextView topbar;
     private TextView tv_tested_total;
     private RelativeLayout re_filter;
     private TextView tv_updatetime;
+
+    private MaterialCardView card_corfirmed,card_recover,card_death,
+            card_cmh,card_isolation,card_homeq;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,9 +102,23 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
         tv_tested_total=(TextView)findViewById(R.id.tv_tested_total);
         tv_updatetime=(TextView)findViewById(R.id.tv_updatetime);
 
+        card_corfirmed=(MaterialCardView)findViewById(R.id.card_corfirmed);
+        card_recover=(MaterialCardView)findViewById(R.id.card_recover);
+        card_death=(MaterialCardView)findViewById(R.id.card_death);
+        card_cmh=(MaterialCardView)findViewById(R.id.card_cmh);
+        card_isolation=(MaterialCardView)findViewById(R.id.card_isolation);
+        card_homeq=(MaterialCardView)findViewById(R.id.card_homeq);
+
+
         re_filter.setOnClickListener(this);
         radioGroup.setOnCheckedChangeListener(this);
         rb_total.setChecked(true);
+        card_corfirmed.setOnClickListener(this);
+        card_recover.setOnClickListener(this);
+        card_death.setOnClickListener(this);
+        card_cmh.setOnClickListener(this);
+        card_isolation.setOnClickListener(this);
+        card_homeq.setOnClickListener(this);
 
 
         //ServerRequest("basewisetotal");
@@ -141,46 +155,44 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
             case R.id.re_filter:
                 showCustomDialog();
                 break;
+            case R.id.card_corfirmed:
+                Intent intent = new Intent(this, StateDetailActivity.class);
+                intent.putExtra("section","CONFIRMED");
+                startActivity(intent);
+                break;
+            case R.id.card_recover:
+                Intent intentRecover = new Intent(this, StateDetailActivity.class);
+                intentRecover.putExtra("section","RECOVERED");
+                startActivity(intentRecover);
+                break;
+            case R.id.card_death:
+                Intent intentDeath = new Intent(this, StateDetailActivity.class);
+                intentDeath.putExtra("section","DEATH");
+                startActivity(intentDeath);
+                break;
+            case R.id.card_cmh:
+                Intent intentCmh = new Intent(this, StateDetailActivity.class);
+                intentCmh.putExtra("section","CMH");
+                startActivity(intentCmh);
+                break;
+            case R.id.card_isolation:
+                Intent intentIsolation = new Intent(this, StateDetailActivity.class);
+                intentIsolation.putExtra("section","ISOLATION");
+                startActivity(intentIsolation);
+                break;
+            case R.id.card_homeq:
+                Intent intentH = new Intent(this, StateDetailActivity.class);
+                intentH.putExtra("section","HOME QUARANTINE");
+                startActivity(intentH);
+                break;
+
     }
     }
 
-    public void Confirm(View v) {
-        Intent intent = new Intent(this, StateDetailActivity.class);
-        intent.putExtra("section","CONFIRMED");
-        startActivity(intent);
 
-    }
-    public void Recovered(View v) {
-        Intent intent = new Intent(this, StateDetailActivity.class);
-        intent.putExtra("section","RECOVERED");
-        startActivity(intent);
 
-    }
-    public void Death(View v) {
-        Intent intent = new Intent(this, StateDetailActivity.class);
-        intent.putExtra("section","DEATH");
-        startActivity(intent);
 
-    }
-    public void Chm(View v) {
-        Intent intent = new Intent(this, StateDetailActivity.class);
-        intent.putExtra("section","CMH");
-        startActivity(intent);
 
-    }
-    public void Isolation(View v) {
-        Intent intent = new Intent(this, StateDetailActivity.class);
-        intent.putExtra("section","ISOLATION");
-        startActivity(intent);
-
-    }
-
-    public void HomeQ(View v) {
-        Intent intent = new Intent(this, StateDetailActivity.class);
-        intent.putExtra("section","HOME QUARANTINE");
-        startActivity(intent);
-
-    }
 
     public void Logout(View view){
         PersistentUser.setUserpassword(mContext,"");
@@ -391,11 +403,9 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
                     try {
                         if(apiName.equalsIgnoreCase(AllUrls.BASE_WISE_KEY)){
                             if (BaseStatelistParser.connect(getApplicationContext(), responseServer));
-
                             setBaseData();
                         }else {
                             if (TodayStatelistParser.connect(getApplicationContext(), responseServer));
-
                             setBaseData();
                         }
 

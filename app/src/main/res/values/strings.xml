@@ -21,5 +21,25 @@
     <string name="corona_direction_head_4" >কোয়ারেন্টিন</string>
     <string name="corona_direction_head_5" >স্বাস্থ্য সেবা প্রদানকরী ব্যক্তিবর্গের জন্য করণীয়</string>
 
+    <!--Home page -->
+    <string name="prsente_state">PRESENT STATE</string>
+    <string name="what_to_do">WHAT TO DO</string>
+    <string name="help_line">HELPLINE</string>
+    <string name="success_story">SUCCESS STORY</string>
+    <string name="corona_robot">CORONA ROBOT</string>
+    <string name="about">ABOUT</string>
+
+   <!-- Statistics Page-->
+    <string name="confirmed_case_string">CONFIRMED CASE</string>
+    <string name="recovered_string">RECOVERED</string>
+    <string name="death_string">DEATH</string>
+    <string name="cmh_string">CMH</string>
+    <string name="isolation_string">ISOLATION</string>
+    <string name="homeq_string">HOME QUARANTINE</string>
+    <string name="filter_string">FILTER</string>
+    <string name="logout_string">LOGOUT</string>
+
+
+
 
 </resources>
