@@ -19,7 +19,7 @@ public class AppConstant extends Application {
     public static String HELP_BASE = "BSR";
     public static String APP_PASSWORD = "1234";
     public static String SELECTION = "0";
-    public static String SECTION = "1";
+    public static String SHARE_URL = "https://drive.google.com/file/d/1yoy6e6irASrTyInHiTp7od35NEy_K63l/view?usp=sharing";
 
 
 
