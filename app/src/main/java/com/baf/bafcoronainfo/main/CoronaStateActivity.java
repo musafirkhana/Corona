@@ -40,6 +40,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -405,6 +406,11 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
 
                 for (int i = 0; i < BasewiseStateHolder.getBaseStatelist().size(); i++) {
                     BaseWiselistModel query = BasewiseStateHolder.getBaseStatelist().get(i);
+
+//                     DecimalFormat df2 = new DecimalFormat("#.##");
+//                    double  recoverPer=(Double.parseDouble(query.getTotal_recovered())/Double.parseDouble(query.getTotal_affected()))*100;
+//                    double  deathPer=(Double.parseDouble(query.getTotal_death())/Double.parseDouble(query.getTotal_affected()))*100;
+
                     tv_present.setText(query.getTotal_affected());
                     tv_recover.setText(query.getTotal_recovered());
                     tv_death.setText(query.getTotal_death());
