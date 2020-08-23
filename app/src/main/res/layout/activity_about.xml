@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:fontFamily="@font/robotobold"
-            android:text="BAF CORONA INFO"
+            android:text="About"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold|normal" />
@@ -173,7 +173,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginTop="2dp"
                                 android:layout_marginBottom="15dp"
-                                android:text="© Bangladesh Airforce"
+                                android:text="© Bangladesh Air Force"
                                 android:textColor="@color/gray_dark"
                                 android:textSize="12sp" />
 
@@ -351,7 +351,62 @@
 
                         </LinearLayout>
                     </RelativeLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/gray_dark"></View>
 
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/img_5"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/ic_terms">
+
+                        </ImageView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/img_5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/designation"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Privacy Policy"
+                                android:textColor="@color/button_background"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <com.codesgood.views.JustifiedTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/designation"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="15dp"
+                                android:text="@string/terms_text"
+                                android:textColor="@color/gray"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+                    </RelativeLayout>
 
                 </LinearLayout>
             </LinearLayout>

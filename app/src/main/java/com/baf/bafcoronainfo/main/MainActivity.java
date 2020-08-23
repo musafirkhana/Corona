@@ -113,6 +113,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.mat_coronabot:
                 Intent intent = new Intent(this, CoronaBotActivity.class);
+                intent.putExtra("title","Corona Robot");
                 startActivity(intent);
                 break;
             case R.id.card_about:
@@ -121,6 +122,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.mat_prevention:
                 Intent prevention = new Intent(this, WhattoDoActivity.class);
+                prevention.putExtra("title","What To Do");
                 startActivity(prevention);
                 break;
             case R.id.mat_corona_state:
@@ -136,6 +138,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.mat_help:
                 Intent helpIntent = new Intent(this, HelpActivity.class);
+                helpIntent.putExtra("title","Helpline");
                 startActivity(helpIntent);
                 break;
             case R.id.mat_success:

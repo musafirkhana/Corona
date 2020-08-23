@@ -21,7 +21,8 @@ public class CoronaBotActivity extends Activity  {
 
     private WebView webView;
     ProgressDialog dialog;
-
+    private String titleText;
+    private TextView topbar;
 
 
     @Override
@@ -30,6 +31,9 @@ public class CoronaBotActivity extends Activity  {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_coronabot);
         mContext = this;
+        titleText=getIntent().getStringExtra("title");
+        topbar=(TextView)findViewById(R.id.topbar);
+        topbar.setText(titleText);
         webView = (WebView) findViewById(R.id.webview);
         webviewSetting();
 

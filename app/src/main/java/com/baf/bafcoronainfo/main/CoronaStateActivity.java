@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -36,6 +37,7 @@ import com.baf.bafcoronainfo.util.ToastUtil;
 import com.google.android.material.card.MaterialCardView;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -51,7 +53,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
 
 
     private RadioGroup radioGroup;
-    private RadioButton rb_total, rb_today, rb_yesterday;
+    private RadioButton rb_total, rb_today, rb_yesterday,rb_country;
     List<String> baseList = new ArrayList<String>();
     private String text;
     private String respones_results;
@@ -67,6 +69,13 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
 
     private MaterialCardView card_corfirmed,card_recover,card_death,
             card_cmh,card_isolation,card_homeq;
+
+
+    private LinearLayout country_li;
+    private LinearLayout li_baf;
+
+    private TextView country_conf_today,country_conf_total,country_recover_today,country_recover_total,
+    country_death_today,country_death_total,country_test_total,country_test_rate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,11 +95,17 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
 
 
     }
+
+
     private void initUI() {
+        country_li=(LinearLayout)findViewById(R.id.country_li);
+        li_baf=(LinearLayout)findViewById(R.id.li_baf);
+
         radioGroup = (RadioGroup) findViewById(R.id.myRadioGroup);
         rb_total = (RadioButton) findViewById(R.id.rb_total);
         rb_today = (RadioButton) findViewById(R.id.rb_today);
         rb_yesterday = (RadioButton) findViewById(R.id.rb_yesterday);
+        rb_country=(RadioButton)findViewById(R.id.rb_country);
         re_filter=(RelativeLayout)findViewById(R.id.re_filter);
 
         tv_present=(TextView)findViewById(R.id.tv_present);
@@ -123,28 +138,52 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
 
 
         //ServerRequest("basewisetotal");
-
+        countryUI();
     }
+    private void countryUI(){
+        country_conf_today=(TextView)findViewById(R.id.country_conf_today);
+        country_conf_total=(TextView)findViewById(R.id.country_conf_total);
+        country_recover_today=(TextView)findViewById(R.id.country_recover_today);
+        country_recover_total=(TextView)findViewById(R.id.country_recover_total);
+        country_death_today=(TextView)findViewById(R.id.country_death_today);
+        country_death_total=(TextView)findViewById(R.id.country_death_total);
+        country_test_total=(TextView)findViewById(R.id.country_test_total);
+        country_test_rate=(TextView)findViewById(R.id.country_test_rate);
+    }
+
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
             switch (checkedId) {
                 case R.id.rb_yesterday:
+                    country_li.setVisibility(View.GONE);
+                    li_baf.setVisibility(View.VISIBLE);
                     AppConstant.BASE="ALL BASES";
                     AppConstant.SELECTION="2";
                     AllUrls.API_KEY=AllUrls.YESTREDAY_KEY;
                     ServerRequest(AllUrls.YESTREDAY_KEY);
                     break;
                 case R.id.rb_total:
+                    country_li.setVisibility(View.GONE);
+                    li_baf.setVisibility(View.VISIBLE);
                     AppConstant.SELECTION="0";
                     AppConstant.BASE="ALL BASES";
                     AllUrls.API_KEY=AllUrls.BASE_WISE_KEY;
                     ServerRequest(AllUrls.BASE_WISE_KEY);
                     break;
                 case R.id.rb_today:
+                    country_li.setVisibility(View.GONE);
+                    li_baf.setVisibility(View.VISIBLE);
                     AppConstant.SELECTION="1";
                     AppConstant.BASE="ALL BASES";
                     AllUrls.API_KEY=AllUrls.TODAY_KEY;
                     ServerRequest(AllUrls.TODAY_KEY);
+                    break;
+
+                case R.id.rb_country:
+                    li_baf.setVisibility(View.GONE);
+                    country_li.setVisibility(View.VISIBLE);
+
+                    countryServerRequest(AllUrls.COUNTRY_API);
                     break;
             }
 
@@ -432,6 +471,58 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
         });
     }
 
+    //Get Total and Basewise Data from Server
+    private void countryServerRequest(final String apiName) {
+        if (!Helpers.isNetworkAvailable(mContext)) {
+            Helpers.showOkayDialog(mContext, R.string.no_internet_connection);
+            return;
+        }
+        mBusyDialog = new BusyDialog(mContext);
+        mBusyDialog.show();
 
+        final String url = apiName;
+
+        Logger.debugLog("Api BaseUrl", url);
+        ServerCallsProvider.volleyGetRequest(url, TAG, new ServerResponse() {
+            @Override
+            public void onSuccess(String statusCode, String responseServer) {
+                try {
+                    mBusyDialog.dismis();
+
+                    try {
+                        JSONObject mainJsonObject = new JSONObject(responseServer);
+                        Logger.debugLog("Api responseServer", responseServer);
+                        Logger.debugLog("Api todayCases", ""+mainJsonObject.getInt("todayCases"));
+                        country_conf_today.setText(": "+mainJsonObject.getInt("todayCases"));
+                        country_conf_total.setText(": "+mainJsonObject.getInt("cases"));
+
+                        country_recover_today.setText(": "+mainJsonObject.getInt("active"));
+                        country_recover_total.setText(": "+mainJsonObject.getInt("recovered"));
+
+                        country_death_today.setText(": "+mainJsonObject.getInt("todayDeaths"));
+                        country_death_total.setText(": "+mainJsonObject.getInt("deaths"));
+
+                        country_test_total.setText(": "+mainJsonObject.getInt("totalTests"));
+                        country_test_rate.setText(": "+mainJsonObject.getInt("testsPerOneMillion"));
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+
+                } catch (Exception e) {
+                    Logger.debugLog("Exception", e.getMessage());
+
+                }
+            }
+
+            @Override
+            public void onFailed(String statusCode, String serverResponse) {
+                mBusyDialog.dismis();
+
+
+            }
+        });
+    }
 
 }

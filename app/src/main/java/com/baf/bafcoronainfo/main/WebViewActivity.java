@@ -19,11 +19,12 @@ import com.baf.bafcoronainfo.R;
 public class WebViewActivity extends Activity  {
     private Context mContext;
 
-    private TextView topbar;
+    private TextView topbar_web;
     private WebView webView;
     ProgressDialog dialog;
 
     private String sectionString;
+    private String titleString;
 
 
     @Override
@@ -32,8 +33,10 @@ public class WebViewActivity extends Activity  {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_webview);
         mContext = this;
-        topbar=(TextView)findViewById(R.id.topbar);
+        topbar_web=(TextView)findViewById(R.id.topbar_web);
         sectionString=getIntent().getStringExtra("section");
+        titleString=getIntent().getStringExtra("title");
+        topbar_web.setText(titleString);
         webView = (WebView) findViewById(R.id.webview);
         webviewSetting();
 

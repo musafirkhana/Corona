@@ -12,4 +12,5 @@ public class AllUrls {
     public static String API_KEY = "";
     //public static String HTTP = "http://192.168.1.4:80/";
     //sudo php artisan serve --host 192.168.1.4 --port 80
+    public static String COUNTRY_API="https://coronavirus-19-api.herokuapp.com/countries/bangladesh";
 }

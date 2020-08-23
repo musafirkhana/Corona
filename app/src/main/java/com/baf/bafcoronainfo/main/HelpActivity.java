@@ -43,11 +43,13 @@ public class HelpActivity extends Activity  {
     private Context mContext;
     List<String> baseList = new ArrayList<String>();
     private String[] respones_results;
+    String titleText;
 
     private String text;
     private HelpAdapter helpAdapter;
     public EditText mobile_no_search;
     private ListView profile_list;
+    private TextView topbar;
 
 
 
@@ -57,6 +59,7 @@ public class HelpActivity extends Activity  {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_help);
         mContext = this;
+        titleText=getIntent().getStringExtra("title");
         baseList.add("Bangabandhu");
         baseList.add("BSR");
         baseList.add("PKP");
@@ -70,11 +73,13 @@ public class HelpActivity extends Activity  {
     }
 
     private void initUI() {
+        topbar=(TextView)findViewById(R.id.topbar);
         mobile_no_search = (EditText) findViewById(R.id.mobile_no_search);
         profile_list = (ListView) findViewById(R.id.profile_list);
         helpAdapter = new HelpAdapter(this);
         mobile_no_search.setFocusableInTouchMode(true);
         profile_list.setAdapter(helpAdapter);
+        topbar.setText(titleText);
         profile_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
