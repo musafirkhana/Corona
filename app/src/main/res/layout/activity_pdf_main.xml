@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
-        android:background="@color/color_light_blue_700">
+        android:background="@color/header_color">
 
         <RelativeLayout
             android:id="@+id/left_relative"
@@ -36,6 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
             android:fontFamily="@font/robotobold"
             android:text="BAF CORONA INFO"
             android:textColor="@color/white"
@@ -351,15 +352,9 @@
                                     android:textStyle="normal" />
 
                             </RelativeLayout>
-
-
                         </RelativeLayout>
                     </com.google.android.material.card.MaterialCardView>
-
-
                 </LinearLayout>
-
-
             </LinearLayout>
         </ScrollView>
 
