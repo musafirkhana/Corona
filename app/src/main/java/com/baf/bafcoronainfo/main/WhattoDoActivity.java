@@ -85,7 +85,7 @@ public class WhattoDoActivity extends Activity implements View.OnClickListener {
             case R.id.mat_direction_5:
                 Intent intent5 = new Intent(this, WebViewActivity.class);
                 intent5.putExtra("section", "5");
-                intent5.putExtra("title", getResources().getString(R.string.corona_direction_head_5));
+                intent5.putExtra("title", getResources().getString(R.string.corona_direction_head_5_));
                 startActivity(intent5);
                 break;
         }

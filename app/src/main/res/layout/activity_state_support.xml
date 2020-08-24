@@ -11,7 +11,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
-
         android:layout_height="match_parent">
 
 
@@ -63,7 +62,7 @@
                             android:layout_height="wrap_content">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="3"
+                                android:layout_weight="4"
                                 android:text="Today "
                                 android:textColor="@color/white"
                                 android:textSize="14sp"
@@ -90,7 +89,7 @@
                             android:layout_height="wrap_content">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="3"
+                                android:layout_weight="4"
                                 android:text="Total "
                                 android:textColor="@color/white"
                                 android:textSize="14sp"
@@ -139,7 +138,7 @@
                         android:layout_alignParentTop="true"
                         android:fontFamily="@font/robotobold"
                         android:padding="10dp"
-                        android:text="@string/recovered_string"
+                        android:text="STATUS"
                         android:textColor="@color/white"
                         android:textSize="16sp">
 
@@ -159,7 +158,7 @@
                             android:layout_height="wrap_content">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="3"
+                                android:layout_weight="4"
                                 android:text="Active "
                                 android:textColor="@color/white"
                                 android:textSize="14sp"
@@ -186,7 +185,7 @@
                             android:layout_height="wrap_content">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="3"
+                                android:layout_weight="4"
                                 android:text="Recovered "
                                 android:textColor="@color/white"
                                 android:textSize="14sp"
@@ -260,7 +259,7 @@
                             android:layout_height="wrap_content">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="3"
+                                android:layout_weight="4"
                                 android:text="Today "
                                 android:textColor="@color/white"
                                 android:textSize="14sp"
@@ -287,7 +286,7 @@
                             android:layout_height="wrap_content">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="3"
+                                android:layout_weight="4"
                                 android:text="Total "
                                 android:textColor="@color/white"
                                 android:textSize="14sp"
@@ -356,7 +355,7 @@
                             android:layout_height="wrap_content">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="3"
+                                android:layout_weight="4"
                                 android:text="Total "
                                 android:textColor="@color/white"
                                 android:textSize="14sp"
@@ -383,7 +382,7 @@
                             android:layout_height="wrap_content">
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_weight="3"
+                                android:layout_weight="4"
                                 android:text="Per Million "
                                 android:textColor="@color/white"
                                 android:textSize="14sp"

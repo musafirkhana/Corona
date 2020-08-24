@@ -20,6 +20,7 @@
     <string name="corona_direction_head_3" >বহির্দেশ ভ্রমণ </string>
     <string name="corona_direction_head_4" >কোয়ারেন্টিন</string>
     <string name="corona_direction_head_5" >স্বাস্থ্য সেবা প্রদানকরী ব্যক্তিবর্গের জন্য করণীয়</string>
+    <string name="corona_direction_head_5_" >স্বাস্থ্য সেবা প্রদানকরী ব্যক্তিবর্গের ...</string>
 
     <!--Home page -->
     <string name="prsente_state">PRESENT STATE</string>
