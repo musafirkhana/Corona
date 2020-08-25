@@ -16,7 +16,7 @@ import android.widget.Toast;
 import com.baf.bafcoronainfo.R;
 
 
-public class WebViewActivity extends Activity  {
+public class WebViewActivity extends Activity {
     private Context mContext;
 
     private TextView topbar_web;
@@ -33,15 +33,16 @@ public class WebViewActivity extends Activity  {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_webview);
         mContext = this;
-        topbar_web=(TextView)findViewById(R.id.topbar_web);
-        sectionString=getIntent().getStringExtra("section");
-        titleString=getIntent().getStringExtra("title");
+        topbar_web = (TextView) findViewById(R.id.topbar_web);
+        sectionString = getIntent().getStringExtra("section");
+        titleString = getIntent().getStringExtra("title");
         topbar_web.setText(titleString);
         webView = (WebView) findViewById(R.id.webview);
         webviewSetting();
 
 
     }
+
     private void webviewSetting() {
         WebSettings settings = webView.getSettings();
         webView.setWebViewClient(new WebViewClient() {
@@ -53,11 +54,13 @@ public class WebViewActivity extends Activity  {
                 dialog.setCancelable(true);
                 super.onPageStarted(view, url, favicon);
             }
+
             // This method will be triggered when the Page loading is completed
             public void onPageFinished(WebView view, String url) {
                 dialog.dismiss();
                 super.onPageFinished(view, url);
             }
+
             // This method will be triggered when error page appear
             public void onReceivedError(WebView view, int errorCode,
                                         String description, String failingUrl) {
@@ -74,24 +77,33 @@ public class WebViewActivity extends Activity  {
 
         loadSectionUrl();
     }
-private void loadSectionUrl(){
-        if(sectionString.equalsIgnoreCase("1")){
+
+    private void loadSectionUrl() {
+        if (sectionString.equalsIgnoreCase("1")) {
             webView.loadUrl("file:///android_asset/direction_1.html");
 //            topbar.setText(getResources().getString(R.string.corona_direction_head_1));
-        }else if(sectionString.equalsIgnoreCase("2")){
+        } else if (sectionString.equalsIgnoreCase("2")) {
             webView.loadUrl("file:///android_asset/direction_2.html");
 //            topbar.setText(getResources().getString(R.string.corona_direction_head_2));
-        }else if(sectionString.equalsIgnoreCase("3")){
+        } else if (sectionString.equalsIgnoreCase("3")) {
             webView.loadUrl("file:///android_asset/direction_3.html");
 //            topbar.setText(getResources().getString(R.string.corona_direction_head_3));
-        }else if(sectionString.equalsIgnoreCase("4")){
+        } else if (sectionString.equalsIgnoreCase("4")) {
             webView.loadUrl("file:///android_asset/direction_4.html");
 //            topbar.setText(getResources().getString(R.string.corona_direction_head_4));
-        }else {
+        } else if (sectionString.equalsIgnoreCase("5")) {
             webView.loadUrl("file:///android_asset/direction_5.html");
+//            topbar.setText(getResources().getString(R.string.corona_direction_head_4));
+        }
+        if (sectionString.equalsIgnoreCase("10")) {
+            webView.loadUrl("file:///android_asset/terms_condition.html");
+//            topbar.setText(getResources().getString(R.string.corona_direction_head_4));
+        } else if(sectionString.equalsIgnoreCase("11")) {
+            webView.loadUrl("file:///android_asset/privacy.html");
 //            topbar.setText(getResources().getString(R.string.corona_direction_head_5));
         }
-}
+    }
+
     public void BACK(View v) {
         this.finish();
 

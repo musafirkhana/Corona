@@ -20,6 +20,8 @@ public class AboutActivity extends Activity implements View.OnClickListener {
     private String TAG = AboutActivity.class.getSimpleName();
     private Context context;
     private RelativeLayout re_share;
+    private RelativeLayout re_terms;
+    private  RelativeLayout re_privacy;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +34,11 @@ public class AboutActivity extends Activity implements View.OnClickListener {
 
     private void initUI() {
         re_share=(RelativeLayout)findViewById(R.id.re_share);
+        re_terms=(RelativeLayout)findViewById(R.id.re_terms);
+        re_privacy=(RelativeLayout)findViewById(R.id.re_privacy);
         re_share.setOnClickListener(this);
+        re_terms.setOnClickListener(this);
+        re_privacy.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
@@ -43,6 +49,19 @@ public class AboutActivity extends Activity implements View.OnClickListener {
                 i.putExtra(Intent.EXTRA_SUBJECT, "BAF CORONA INFO URL ");
                 i.putExtra(Intent.EXTRA_TEXT, AppConstant.SHARE_URL);
                 startActivity(Intent.createChooser(i, "Share URL"));
+                break;
+
+            case R.id.re_terms:
+                Intent intent = new Intent(this, WebViewActivity.class);
+                intent.putExtra("section", "10");
+                intent.putExtra("title", getResources().getString(R.string.terms));
+                startActivity(intent);
+                break;
+            case R.id.re_privacy:
+                Intent privacyIntent = new Intent(this, WebViewActivity.class);
+                privacyIntent.putExtra("section", "11");
+                privacyIntent.putExtra("title", getResources().getString(R.string.privacy));
+                startActivity(privacyIntent);
                 break;
         }
 

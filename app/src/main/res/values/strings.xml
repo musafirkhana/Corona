@@ -29,6 +29,8 @@
     <string name="success_story">SUCCESS STORY</string>
     <string name="corona_robot">CORONA ROBOT</string>
     <string name="about">ABOUT</string>
+    <string name="terms">Terms and Conditions</string>
+    <string name="privacy">Privacy Policy</string>
 
    <!-- Statistics Page-->
     <string name="confirmed_case_string">CONFIRMED CASE</string>
@@ -40,8 +42,8 @@
     <string name="filter_string">FILTER</string>
     <string name="logout_string">LOGOUT</string>
 
-    <string name="terms_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry </string>
-
+    <string name="terms_text">Welcome to our terms and conditions of “BAF Corona Info”. All users of BAF Corona Infoare required to abide by this “Terms and Conditions”. Failure to comply with the terms may lead to, among others, suspension of account or prohibition from access to app </string>
+    <string name="privacy_text">BAF Corona Infodoes not sell, trade or otherwise provide personally identifiable information to any other parties except for those that assist BAF Corona Infoin operating the appand serving the users. It may share visitor’s/readers personal information internally to understand the user base, promote the number of users and increase user engagement </string>
 
 
 
