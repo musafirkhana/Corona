@@ -492,13 +492,22 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
                         JSONObject mainJsonObject = new JSONObject(responseServer);
                         Logger.debugLog("Api responseServer", responseServer);
                         Logger.debugLog("Api todayCases", "" + mainJsonObject.getInt("todayCases"));
-                        country_conf_today.setText(": " + mainJsonObject.getInt("todayCases"));
+
+                        if(mainJsonObject.getInt("todayCases")!=0){
+                            PersistentUser.setCountryConfToday(mContext,""+mainJsonObject.getInt("todayCases"));
+                        }
+                        if(mainJsonObject.getInt("todayDeaths")!=0){
+                            PersistentUser.setCountryDeath(mContext,""+mainJsonObject.getInt("todayDeaths"));
+                        }
+
+
+                        country_conf_today.setText(": " + PersistentUser.getCountryConfToday(mContext));
                         country_conf_total.setText(": " + mainJsonObject.getInt("cases"));
 
                         country_recover_today.setText(": " + mainJsonObject.getInt("active"));
                         country_recover_total.setText(": " + mainJsonObject.getInt("recovered"));
 
-                        country_death_today.setText(": " + mainJsonObject.getInt("todayDeaths"));
+                        country_death_today.setText(": " + PersistentUser.getCountryDeath(mContext));
                         country_death_total.setText(": " + mainJsonObject.getInt("deaths"));
 
                         country_test_total.setText(": " + mainJsonObject.getInt("totalTests"));

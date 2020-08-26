@@ -30,6 +30,8 @@ public  class PersistentUser {
 	public static final String REMEMBER = "remember";
 	private static final String PREFS_FILE_NAME = "Bafcoronainfo";
 	private static final String USERPASSWORD = "userpassword";
+	private static final String COUNTRY_CONF = "country_conf_today";
+	private static final String COUNTRY_DEATH = "country_death_today";
 
 
 
@@ -43,6 +45,34 @@ public  class PersistentUser {
 				PersistentUser.PREFS_FILE_NAME, Context.MODE_PRIVATE);
 		final Editor editor = prefs.edit();
 		editor.putString(PersistentUser.USERPASSWORD, data);
+		editor.commit();
+	}
+
+	public static String getCountryConfToday(final Context ctx) {
+		return ctx.getSharedPreferences(PersistentUser.PREFS_FILE_NAME,
+				Context.MODE_PRIVATE).getString(PersistentUser.COUNTRY_CONF, "");
+	}
+
+	public static void setCountryConfToday(final Context ctx, final String data) {
+		final SharedPreferences prefs = ctx.getSharedPreferences(
+				PersistentUser.PREFS_FILE_NAME, Context.MODE_PRIVATE);
+		final Editor editor = prefs.edit();
+		editor.putString(PersistentUser.COUNTRY_CONF, data);
+		editor.commit();
+	}
+
+
+
+	public static String getCountryDeath(final Context ctx) {
+		return ctx.getSharedPreferences(PersistentUser.PREFS_FILE_NAME,
+				Context.MODE_PRIVATE).getString(PersistentUser.COUNTRY_DEATH, "");
+	}
+
+	public static void setCountryDeath(final Context ctx, final String data) {
+		final SharedPreferences prefs = ctx.getSharedPreferences(
+				PersistentUser.PREFS_FILE_NAME, Context.MODE_PRIVATE);
+		final Editor editor = prefs.edit();
+		editor.putString(PersistentUser.COUNTRY_DEATH, data);
 		editor.commit();
 	}
 

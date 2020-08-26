@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/country_li"
-    android:visibility="gone"
+    android:visibility="visible"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background_home"
     android:orientation="vertical">
@@ -63,7 +63,7 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_weight="4"
-                                android:text="Today "
+                                android:text="Last 24 hrs "
                                 android:textColor="@color/white"
                                 android:textSize="14sp"
                                 android:textStyle="bold"
@@ -260,7 +260,7 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_weight="4"
-                                android:text="Today "
+                                android:text="Last 24 hrs "
                                 android:textColor="@color/white"
                                 android:textSize="14sp"
                                 android:textStyle="bold"
