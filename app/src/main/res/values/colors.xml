@@ -131,6 +131,7 @@
     <color name="cmh_color">#4cb5ff</color>
     <color name="isolation_color">#9059ff</color>
     <color name="home_color">#473f97</color>
+    <color name="actionbar_color">#3498db</color>
 
     <color name="transparent">#00000000</color>
     <color name="half_transparent">#44000000</color>

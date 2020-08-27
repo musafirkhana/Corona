@@ -139,7 +139,7 @@
                         android:fontFamily="@font/robotobold"
                         android:gravity="center"
                         android:shadowColor="@color/blue"
-                        android:text="Country"
+                        android:text="Bangladesh"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -555,18 +555,20 @@
                     android:layout_centerInParent="true"
                     android:fontFamily="@font/robotobold"
                     android:text="Last Update :"
+                    android:id="@+id/title_txt"
                     android:textColor="@color/header_color"
-                    android:textSize="20sp"></TextView>
+                    android:textSize="18sp"></TextView>
 
                 <TextView
                     android:id="@+id/tv_updatetime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
+                    android:paddingLeft="5dp"
+                    android:layout_toRightOf="@+id/title_txt"
                     android:fontFamily="@font/robotolight"
                     android:text="2020-07-31T08:55:06.000000Z"
-                    android:textSize="16sp"></TextView>
+                    android:textSize="18sp"></TextView>
 
             </RelativeLayout>
             </LinearLayout>

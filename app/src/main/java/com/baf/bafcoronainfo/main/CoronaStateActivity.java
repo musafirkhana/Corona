@@ -500,6 +500,7 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
                             PersistentUser.setCountryDeath(mContext,""+mainJsonObject.getInt("todayDeaths"));
                         }
 
+                        topbar.setText("BANGLADESH");
 
                         country_conf_today.setText(": " + PersistentUser.getCountryConfToday(mContext));
                         country_conf_total.setText(": " + mainJsonObject.getInt("cases"));
