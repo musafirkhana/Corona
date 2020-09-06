@@ -40,6 +40,7 @@
     <color name="accent_color_light">@color/color_orange_A100</color>
     <color name="accent_color_dark">@color/color_orange_A400</color>
     <color name="app_background">#ffffff</color>
+    <color name="login_background_">#f0f9ff</color>
 
     <!-- Drawer Article Color -->
     <color name="color_apps">#0277BD</color>

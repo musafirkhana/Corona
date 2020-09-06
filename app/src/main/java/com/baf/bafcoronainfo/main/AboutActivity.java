@@ -9,6 +9,7 @@ import android.view.Window;
 import android.widget.RelativeLayout;
 
 import com.baf.bafcoronainfo.R;
+import com.baf.bafcoronainfo.util.AllUrls;
 import com.baf.bafcoronainfo.util.AppConstant;
 import com.baf.bafcoronainfo.util.ToastUtil;
 
@@ -46,8 +47,8 @@ public class AboutActivity extends Activity implements View.OnClickListener {
             case R.id.re_share:
                 Intent i = new Intent(Intent.ACTION_SEND);
                 i.setType("text/plain");
-                i.putExtra(Intent.EXTRA_SUBJECT, "BAF CORONA INFO URL ");
-                i.putExtra(Intent.EXTRA_TEXT, AppConstant.SHARE_URL);
+                i.putExtra(Intent.EXTRA_SUBJECT, "Copy the app download link and paste it on your browser to download the app. ");
+                i.putExtra(Intent.EXTRA_TEXT, AllUrls.SHARE_URL);
                 startActivity(Intent.createChooser(i, "Share URL"));
                 break;
 

@@ -645,9 +645,9 @@ public class CoronaStateActivity extends Activity implements View.OnClickListene
                 double cmhPer = (Double.parseDouble(query.getTotal_cmh()) / Double.parseDouble(query.getTotal_affected())) * 100;
 
 
-                tv_recover.setText(query.getTotal_recovered() + "( " + df2.format(recoverPer) + "% )");
-                tv_death.setText(query.getTotal_death() + "( " + df2.format(deathPer) + "% )");
-                tv_cmh.setText(query.getTotal_cmh() + "( " + df2.format(cmhPer) + "% )");
+                tv_recover.setText(query.getTotal_recovered() + " (" + df2.format(recoverPer) + "%)");
+                tv_death.setText(query.getTotal_death() + " (" + df2.format(deathPer) + "%)");
+                tv_cmh.setText(query.getTotal_cmh() + " (" + df2.format(cmhPer) + "%)");
 
                 tv_present.setText(query.getTotal_affected());
                 tv_isolation.setText(query.getTotal_isolation());

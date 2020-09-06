@@ -13,7 +13,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="bottom_text">                                       Free shall we keep the sky of Bangladesh                                </string>
     <string name="mapbox_access_token">pk.eyJ1IjoiYWxpLW1ic3R1LWljdCIsImEiOiJja2Nxa3BpdHQwaDR5MnFtZ2U0ZjFlamQ2In0.n_kdLBox5bym8mE-kCYKpA</string>
-    <string name="password_text">To access this section of app user need authentication from Air HQ, Please cantact with BAF Comm Unit</string>
+    <string name="password_text">To access this section, application users need authentication from Air Headquarter. Please contact with Bangladesh Air Force communication unit.</string>
     <string name="success_story_head">একজন বিমানসেনার করােনা জয়ের যুদ্ধ</string>
     <string name="corona_direction_head_1" >ভূমিকা, ভাইরাস বিস্তার, লক্ষণ সমূহ</string>
     <string name="corona_direction_head_2" >প্রতিরোধ ব্যবস্থা</string>

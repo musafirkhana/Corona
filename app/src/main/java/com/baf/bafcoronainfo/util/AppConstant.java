@@ -17,7 +17,7 @@ public class AppConstant extends Application {
     public static String HELP_BASE = "BSR";
     public static String APP_PASSWORD = "1234";
     public static String SELECTION = "0";
-    public static String SHARE_URL = "https://baf.mil.bd/website/";
+
 
 
 

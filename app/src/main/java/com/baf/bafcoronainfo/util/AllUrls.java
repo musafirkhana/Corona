@@ -10,7 +10,7 @@ public class AllUrls {
     public static String BASE_WISE_KEY = "basewisetotal?api_token="+TOKEN;
     public static String TODAY_KEY = "today?api_token="+TOKEN;
     public static String YESTREDAY_KEY = "yesterday?api_token="+TOKEN;
-
+    public static String SHARE_URL = "https://baf.mil.bd/coronainfo/Baf_Corona_Info.apk";
     public static String API_KEY = "";
     public static String COUNTRY_API="https://coronavirus-19-api.herokuapp.com/countries/bangladesh";
 }
