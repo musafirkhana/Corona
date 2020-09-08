@@ -273,7 +273,7 @@
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginTop="10dp"
-                                android:text="Powered By"
+                                android:text="Developed and Supervised By"
                                 android:textColor="@color/button_background"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
