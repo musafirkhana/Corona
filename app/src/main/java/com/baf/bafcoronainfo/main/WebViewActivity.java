@@ -94,6 +94,12 @@ public class WebViewActivity extends Activity {
         } else if (sectionString.equalsIgnoreCase("5")) {
             webView.loadUrl("file:///android_asset/direction_5.html");
 //            topbar.setText(getResources().getString(R.string.corona_direction_head_4));
+        }else if (sectionString.equalsIgnoreCase("7")) {
+            webView.loadUrl("file:///android_asset/direction_7.html");
+//            topbar.setText(getResources().getString(R.string.corona_direction_head_4));
+        }else if (sectionString.equalsIgnoreCase("8")) {
+            webView.loadUrl("file:///android_asset/direction_8.html");
+//            topbar.setText(getResources().getString(R.string.corona_direction_head_4));
         }
         if (sectionString.equalsIgnoreCase("10")) {
             webView.loadUrl("file:///android_asset/terms_condition.html");

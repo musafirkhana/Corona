@@ -24,6 +24,11 @@ public class WhattoDoActivity extends Activity implements View.OnClickListener {
     private MaterialCardView mat_direction_3;
     private MaterialCardView mat_direction_4;
     private MaterialCardView mat_direction_5;
+    private MaterialCardView mat_direction_6;
+    private MaterialCardView mat_direction_7;
+    private MaterialCardView mat_direction_8;
+
+
 
     private String titleText;
     private TextView topbar;
@@ -49,11 +54,17 @@ public class WhattoDoActivity extends Activity implements View.OnClickListener {
         mat_direction_3=(MaterialCardView)findViewById(R.id.mat_direction_3);
         mat_direction_4=(MaterialCardView)findViewById(R.id.mat_direction_4);
         mat_direction_5=(MaterialCardView)findViewById(R.id.mat_direction_5);
+        mat_direction_6=(MaterialCardView)findViewById(R.id.mat_direction_6);
+        mat_direction_7=(MaterialCardView)findViewById(R.id.mat_direction_7);
+        mat_direction_8=(MaterialCardView)findViewById(R.id.mat_direction_8);
         mat_direction_1.setOnClickListener(this);
         mat_direction_2.setOnClickListener(this);
         mat_direction_3.setOnClickListener(this);
         mat_direction_4.setOnClickListener(this);
         mat_direction_5.setOnClickListener(this);
+        mat_direction_6.setOnClickListener(this);
+        mat_direction_7.setOnClickListener(this);
+        mat_direction_8.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
@@ -87,6 +98,23 @@ public class WhattoDoActivity extends Activity implements View.OnClickListener {
                 intent5.putExtra("section", "5");
                 intent5.putExtra("title", getResources().getString(R.string.corona_direction_head_5_));
                 startActivity(intent5);
+                break;
+            case R.id.mat_direction_6:
+                Intent intent6 = new Intent(this, MailWebViewActivity.class);
+                intent6.putExtra("title", getResources().getString(R.string.corona_direction_head_6));
+                startActivity(intent6);
+                break;
+            case R.id.mat_direction_7:
+                Intent intent7 = new Intent(this, WebViewActivity.class);
+                intent7.putExtra("section", "7");
+                intent7.putExtra("title", getResources().getString(R.string.corona_direction_head_7));
+                startActivity(intent7);
+                break;
+            case R.id.mat_direction_8:
+                Intent intent8 = new Intent(this, WebViewActivity.class);
+                intent8.putExtra("section", "8");
+                intent8.putExtra("title", getResources().getString(R.string.corona_direction_head_8));
+                startActivity(intent8);
                 break;
         }
 

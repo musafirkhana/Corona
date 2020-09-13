@@ -21,6 +21,9 @@
     <string name="corona_direction_head_4" >কোয়ারেন্টিন</string>
     <string name="corona_direction_head_5" >স্বাস্থ্য সেবা প্রদানকরী ব্যক্তিবর্গের জন্য করণীয়</string>
     <string name="corona_direction_head_5_" >স্বাস্থ্য সেবা প্রদানকরী ব্যক্তিবর্গের ...</string>
+    <string name="corona_direction_head_6" >বহির্দেশ ভ্রমণ সংক্রান্ত বার্তা</string>
+    <string name="corona_direction_head_7" >COVID-19 এর উপসর্গ সমূহ</string>
+    <string name="corona_direction_head_8" >করোনা সংক্রান্ত বার্তা</string>
 
     <!--Home page -->
     <string name="prsente_state">PRESENT STATE</string>
