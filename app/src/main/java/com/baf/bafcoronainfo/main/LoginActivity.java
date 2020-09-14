@@ -25,12 +25,14 @@ public class LoginActivity extends Activity  implements View.OnClickListener {
     private TextInputEditText et_password;
     private ToastUtil toastUtil;
 
-    String[] alphabet = new String[]{"dai", "dplans", "dfs", "drect", "dproj", "dac", "dao", "dat", "dad",
-            "dedn", "dmet", "dats", "dcwit", "doao", "dengg", "dce", "darmt", "dsup", "dpers", "dwks", "dfin",
-            "pm", "dms", "dwc","coas", "pstocoas", "airsecy", "dyairsecy", "ci","acaso", "acasp", "acasm", "acasa",
-            "chairmancaab","aocbsr","aocbbd","aoczhr","aocmtr","aocpkp","aocairhq","aocsheikhhasina","vcbsmraau",
-            "comdtbafa","comdtati","ocadminbsr","ocadminbbd","ocadminzhr","ocadminmtr","ocadminpkp" ,
-            "ocadminsheikhhasina","ocbru","ocmru","ocssn","oclmh","bafcorona","sdsair"
+    String[] alphabet = new String[]{
+            "dai", "dplans", "dfs", "drect", "dproj", "dac", "dao", "dat", "dad", "dedn",
+            "dmet", "dats", "dcwit", "doao", "dengg", "dce", "darmt", "dsup", "dpers", "dwks",
+            "dfin", "pm", "dms", "dwc","coas", "pstocoas", "airsecy", "dyairsecy", "ci","acaso",
+            "acasp", "acasm", "acasa", "chairmancaab","aocbsr","aocbbd","aoczhr","aocmtr","aocpkp","aocairhq",
+            "aocsheikhhasina","vcbsmraau", "comdtbafa","comdtati","ocadminbsr","ocadminbbd","ocadminzhr",
+            "ocadminmtr","ocadminpkp" , "ocadminsheikhhasina","ocbru","ocmru","ocssn","oclmh","bafcorona",
+            "sdsair","scsngr","ocbsru"
     };
     List<String> list = Arrays.asList(alphabet);
 
