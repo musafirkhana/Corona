@@ -106,7 +106,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         for (int i = 1; i < 4; i++) {
             SliderItem sliderItem = new SliderItem();
             sliderItem.setDescription("Slider Item " + i);
-            sliderItem.setImageUrl("https://skyapi.website/storage/images/image" + i + ".jpg");
+            sliderItem.setImageUrl("https://www.baf.mil.bd/coronainfo/storage/images/image" + i + ".jpg");
             sliderItemList.add(sliderItem);
         }
         adapter.renewItems(sliderItemList);

@@ -71,7 +71,10 @@ public class SuccessStoryActivity extends Activity  {
 
 //        webView.loadDataWithBaseURL(null, getResources().getString(R.string.corona_direction_body_1), "text/html", "UTF-8", null);
 //        webView.loadUrl("file:///android_res/raw/test.html");
-			webView.loadUrl("https://skyapi.website/allpost");
+
+
+//			webView.loadUrl("https://skyapi.website/allpost");
+        webView.loadUrl("https://www.baf.mil.bd/coronainfo/allpost");
 
 
 
